@@ -4,28 +4,25 @@ import reactElementToJSXString from 'react-element-to-jsx-string'
 
 import Highlight from 'react-highlight'
 
-// http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html#stylable-classes
-
-function stringifyChildren (children) {
-  return Children.map(children, (child) => stringifyChild(child)).join('\n\n')
-}
-
-function stringifyChild (child) {
-  const formattingOptions = {
-    filterProps: [ 'key' ],
-    showDefaultProps: false,
-    showFunctions: true,
-    tabStop: 2
-  }
-  return reactElementToJSXString(child, formattingOptions)
-}
-
-const Code = ({ children, language, noPreview, previewWidth, noSource }) => {
+const Code = ({ children, displayName, filterProps, language, noPreview, previewWidth, noSource }) => {
   const codePreviewItemClassNames = classNames(
     'code__preview-item',
     'one-whole',
     previewWidth === 'auto' ? 'code__preview-item--auto' : previewWidth
   )
+  const formattingOptions = {
+    ...displayName && { displayName: () => displayName },
+    filterProps: [ 'key', ...filterProps ],
+    showDefaultProps: false,
+    showFunctions: true,
+    tabStop: 2
+  }
+
+  function stringifyChildren () {
+    return Children.map(children, (child) => {
+      return reactElementToJSXString(child, formattingOptions)
+    }).join('\n\n')
+  }
 
   return (
     <div className="code">
@@ -39,7 +36,7 @@ const Code = ({ children, language, noPreview, previewWidth, noSource }) => {
       {!noSource &&
         <div className="code__source">
           <Highlight className={language}>
-            {stringifyChildren(children)}
+            {stringifyChildren()}
           </Highlight>
         </div>
       }
@@ -48,6 +45,7 @@ const Code = ({ children, language, noPreview, previewWidth, noSource }) => {
 }
 
 Code.defaultProps = {
+  filterProps: [],
   language: 'html',
   noPreview: false,
   noSource: false,
@@ -55,7 +53,9 @@ Code.defaultProps = {
 }
 
 Code.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
+  displayName: PropTypes.string,
+  filterProps: PropTypes.arrayOf(PropTypes.string),
   language: PropTypes.string,
   noPreview: PropTypes.bool,
   noSource: PropTypes.bool,
