@@ -1,25 +1,14 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // Layout Components
 import A11yNavigation from '../layout/a11y-navigation/A11yNavigation'
 import Footer from '../layout/footer/Footer'
 import Header from '../layout/header/Header'
 import Navigation from '../layout/navigation/Navigation'
+import Routes from '../../Routes'
 
 import Masthead from '../masthead/Masthead'
-
-// Site Pages
-import IndexPage from '../page/IndexPage'
-import NotFoundPage from '../page/NotFoundPage'
-
-// Component Pages
-import ButtonPage from '../page/ButtonPage'
-import CardPage from '../page/CardPage'
-import ControlPage from '../page/ControlPage'
-import FieldPage from '../page/FieldPage'
-import ResponsiveMediaPage from '../page/ResponsiveMediaPage'
-import SwatchPage from '../page/SwatchPage'
 
 class App extends Component {
   render () {
@@ -36,18 +25,7 @@ class App extends Component {
               </div>
               <div className="grid__item tablet-three-quarters">
                 <main className="main-content" id="content" role="main">
-
-                  <Switch>
-                    <Route exact path="/" component={IndexPage} />
-                    <Route exact path="/button" component={ButtonPage} />
-                    <Route exact path="/card" component={CardPage} />
-                    <Route exact path="/control" component={ControlPage} />
-                    <Route exact path="/field" component={FieldPage} />
-                    <Route exact path="/responsive-media" component={ResponsiveMediaPage} />
-                    <Route exact path="/swatch" component={SwatchPage} />
-                    <Route component={NotFoundPage} />
-                  </Switch>
-
+                  <Routes />
                 </main>
               </div>
             </div>

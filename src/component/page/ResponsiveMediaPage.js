@@ -7,7 +7,7 @@ import ResponsiveMedia from '../responsive-media/ResponsiveMedia'
 const ResponsiveMediaPage = () => (
   <div className="prose">
     <h1>Responsive Media</h1>
-    <Code spaced>
+    <Code>
       <ResponsiveMedia ratio="1:1">
         <img
           src="http://img.clock.co.uk/500x500"
