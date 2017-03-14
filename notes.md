@@ -1,8 +1,3 @@
-TODO:
-
-- [ ] Scroll to top on route change
-
-
 Style Guide:
 
 - `import classNames`, not `import classnames`
@@ -19,3 +14,9 @@ Style Guide:
 General
 
 - Trialling ITCSS approach to organising Stylus, using underscored dirnames to reflect triangle depth
+
+
+Naming conventions
+- Heading, not Title - matches HTML <heading1> etc
+- Consider state props - hasClose vs close vs closable etc. Consider existing examples e.g. required isn't isRequired
+- Color not colour (code only, spell it like a civilised person in copy)
