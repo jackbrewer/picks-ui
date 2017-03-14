@@ -33,14 +33,15 @@
     "stylus-mixins": "^0.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "watch": "concurrently --names \"webpack,stylus\" --prefix name \"npm run start\" \"npm run watch:styles\"",
     "build:styles": "stylus -m -c -u stylus-mixins -u responsive-grid -u poststylus --with \"['autoprefixer']\" ./src/asset/stylus/index*.styl -o ./src/asset/css/",
-    "watch:styles": "npm run build:styles -- -w",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "fix:js": "npm run js:lint -- --fix",
     "lint:js": "eslint .",
-    "fix:js": "npm run js:lint -- --fix"
+    "pretest": "concurrently --names \"Lint JS\" --prefix name \"npm run lint:js\" --prefix-colors \"bgYellow.bold\"",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
+    "watch:styles": "npm run build:styles -- -w",
+    "watch": "concurrently --names \"webpack,stylus\" --prefix name \"npm run start\" \"npm run watch:styles\" --prefix-colors \"bgBlue.bold,bgMagenta.bold\""
   }
 }
