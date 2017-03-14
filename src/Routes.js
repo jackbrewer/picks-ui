@@ -10,6 +10,7 @@ import ButtonPage from './component/page/ButtonPage'
 import CardPage from './component/page/CardPage'
 import ControlPage from './component/page/ControlPage'
 import FieldPage from './component/page/FieldPage'
+import IconPage from './component/page/IconPage'
 import NotificationPage from './component/page/NotificationPage'
 import ResponsiveMediaPage from './component/page/ResponsiveMediaPage'
 import SwatchPage from './component/page/SwatchPage'
@@ -23,6 +24,7 @@ class Routes extends Component {
         <Route exact path="/card" component={CardPage} />
         <Route exact path="/control" component={ControlPage} />
         <Route exact path="/field" component={FieldPage} />
+        <Route exact path="/icon" component={IconPage} />
         <Route exact path="/notification" component={NotificationPage} />
         <Route exact path="/responsive-media" component={ResponsiveMediaPage} />
         <Route exact path="/swatch" component={SwatchPage} />
