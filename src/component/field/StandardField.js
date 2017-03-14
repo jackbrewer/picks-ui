@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
 import TextControl from '../control/TextControl'
 
 const StandardField = (props) => {
-  const { name, label, assistance, error, fieldClassName } = props
+  const { assistance, error, fieldClassName, label, name } = props
   const fieldClasses = classNames('field', fieldClassName, { 'field--error': error })
   return (
     <div
-      id={`field--${name}`}
       className={fieldClasses}
+      id={`field--${name}`}
       >
       <div className="field__question">
         <label htmlFor={`control--${name}`}>
@@ -28,17 +28,17 @@ const StandardField = (props) => {
 StandardField.defaultProps = {}
 
 StandardField.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  label: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.node
-  ]).isRequired,
-  assistance: React.PropTypes.string,
-  error: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.node
+  assistance: PropTypes.string,
+  error: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
   ]),
-  fieldClassName: React.PropTypes.string
+  fieldClassName: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
+  ]).isRequired,
+  name: PropTypes.string.isRequired
 }
 
 export default StandardField

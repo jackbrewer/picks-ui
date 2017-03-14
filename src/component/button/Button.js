@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
 import { Link } from 'react-router-dom'
 
-const Button = ({ href, type, children, onClick, className, disabled }) => {
+const Button = ({ children, className, disabled, href, onClick, type }) => {
   const ButtonEl = href ? Link : 'button'
   const buttonClasses = classNames('button', className)
 
@@ -26,12 +26,12 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
-  children: React.PropTypes.any.isRequired,
-  className: React.PropTypes.string,
-  disabled: React.PropTypes.bool,
-  href: React.PropTypes.string,
-  onClick: React.PropTypes.func,
-  type: React.PropTypes.string
+  children: PropTypes.any.isRequired,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  href: PropTypes.string,
+  onClick: PropTypes.func,
+  type: PropTypes.string
 }
 
 export default Button

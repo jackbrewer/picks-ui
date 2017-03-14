@@ -7,8 +7,7 @@ import Highlight from 'react-highlight'
 // http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html#stylable-classes
 
 function stringifyChildren (children) {
-  // Look into React.children.toArray
-  return Children.map(children, (child) => stringifyChild(child) + '\n')
+  return Children.map(children, (child) => stringifyChild(child)).join('\n\n')
 }
 
 function stringifyChild (child) {
@@ -16,8 +15,7 @@ function stringifyChild (child) {
     filterProps: [ 'key' ],
     showDefaultProps: false,
     showFunctions: true,
-    tabStop: 2,
-    maxInlineAttributesLineLength: 50
+    tabStop: 2
   }
   return reactElementToJSXString(child, formattingOptions)
 }

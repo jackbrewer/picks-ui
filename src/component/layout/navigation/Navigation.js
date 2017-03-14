@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom'
 const NavigationItem = ({ to, text }) => (
   <li>
     <NavLink
-      to={to}
-      className="navigation__link"
       activeClassName="is-active"
+      className="navigation__link"
+      to={to}
       >
       {text}
     </NavLink>
@@ -19,7 +19,12 @@ NavigationItem.propTypes = {
 }
 
 const Navigation = () => (
-  <nav className="navigation" id="navigation" role="navigation" aria-label="Primary Navigation">
+  <nav
+    aria-label="Primary Navigation"
+    className="navigation"
+    id="navigation"
+    role="navigation"
+    >
     <h2 className="is-vhidden">Primary Navigation</h2>
     <div className="navigation__group">
 
@@ -36,7 +41,5 @@ const Navigation = () => (
     </div>
   </nav>
 )
-
-React.propTypes = {}
 
 export default Navigation

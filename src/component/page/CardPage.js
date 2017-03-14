@@ -20,12 +20,12 @@ const IndexPage = () => {
           actionText="Action"
           actionUrl="http://example.com"
           centered
+          className="additional-class"
           heading="Example Heading"
           imgAlt="A placeholder image"
           imgRatio="16:9"
           imgSrc="http://img.clock.co.uk/800x450"
           text="Fusce dapibus, tellus ac cursus commodo, tortor mauris."
-          className="additional-class"
         />
       </Code>
       <Code previewWidth={previewWidth}>

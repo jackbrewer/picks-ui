@@ -7,6 +7,4 @@ const A11yNavigation = () => (
   </div>
 )
 
-React.propTypes = {}
-
 export default A11yNavigation

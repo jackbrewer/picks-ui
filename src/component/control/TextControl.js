@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import moment from 'moment'
 import classnames from 'classnames'
 
 const TextControl = (props) => {
-  const { type, name, onChange, disabled, maxLength, required, onBlur, autoFocus, controlClassName, placeholder, error } = props
+  const { autoFocus, controlClassName, disabled, error, maxLength, name, onBlur, onChange, placeholder, required, type } = props
   let { value } = props
 
   const controlClasses = classnames('control', 'control--text', controlClassName, { 'control--error': error })
@@ -14,46 +14,46 @@ const TextControl = (props) => {
 
   return (
     <input
-      type={type}
-      name={name}
-      value={value}
-      id={`control--${name}`}
-      className={controlClasses}
       autoFocus={autoFocus}
+      className={controlClasses}
       disabled={disabled}
-      onChange={onChange}
-      onBlur={onBlur}
+      id={`control--${name}`}
       maxLength={maxLength}
-      required={required}
+      name={name}
+      onBlur={onBlur}
+      onChange={onChange}
       placeholder={placeholder}
+      required={required}
+      type={type}
+      value={value}
       />
   )
 }
 
 TextControl.defaultProps = {
-  type: 'text',
-  value: '',
-  required: false,
   autoFocus: false,
-  disabled: false
+  disabled: false,
+  required: false,
+  type: 'text',
+  value: ''
 }
 
 TextControl.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string,
-  type: React.PropTypes.string,
-  controlClassName: React.PropTypes.string,
-  onChange: React.PropTypes.func,
-  onBlur: React.PropTypes.func,
-  required: React.PropTypes.bool,
-  disabled: React.PropTypes.bool,
-  autoFocus: React.PropTypes.bool,
-  maxLength: React.PropTypes.number,
-  placeholder: React.PropTypes.string,
-  error: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.node
-  ])
+  autoFocus: PropTypes.bool,
+  controlClassName: PropTypes.string,
+  disabled: PropTypes.bool,
+  error: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
+  ]),
+  maxLength: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+  type: PropTypes.string,
+  value: PropTypes.string
 }
 
 export default TextControl

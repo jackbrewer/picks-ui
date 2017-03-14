@@ -1,40 +1,40 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-const BooleanControl = ({ type, value, name, onChange, disabled, required, onBlur, controlClassName, checked }) => {
+const BooleanControl = ({ checked, controlClassName, disabled, name, onBlur, onChange, required, type, value }) => {
   return (
     <input
-      type={type}
-      name={name}
-      value={value}
-      className={classnames('control', 'control--boolean', controlClassName)}
-      required={required}
-      disabled={disabled}
-      onChange={onChange}
-      onBlur={onBlur}
       checked={checked}
+      className={classnames('control', 'control--boolean', controlClassName)}
+      disabled={disabled}
+      name={name}
+      onBlur={onBlur}
+      onChange={onChange}
+      required={required}
+      type={type}
+      value={value}
     />
   )
 }
 
 BooleanControl.defaultProps = {
-  type: 'checkbox',
-  value: '',
-  required: false,
+  checked: false,
   disabled: false,
-  checked: false
+  required: false,
+  type: 'checkbox',
+  value: ''
 }
 
 BooleanControl.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string,
-  type: React.PropTypes.oneOf([ 'radio', 'checkbox' ]),
-  controlClassName: React.PropTypes.string,
-  onChange: React.PropTypes.func,
-  onBlur: React.PropTypes.func,
-  required: React.PropTypes.bool,
-  disabled: React.PropTypes.bool,
-  checked: React.PropTypes.bool
+  checked: PropTypes.bool,
+  controlClassName: PropTypes.string,
+  disabled: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  required: PropTypes.bool,
+  type: PropTypes.oneOf([ 'radio', 'checkbox' ]),
+  value: PropTypes.string
 }
 
 export default BooleanControl

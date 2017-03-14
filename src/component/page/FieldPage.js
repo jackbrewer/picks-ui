@@ -36,49 +36,49 @@ class FieldPage extends React.Component {
         <h2>Standard Layout</h2>
         <Code>
           <StandardField
-            name="exampleField"
-            label="Example Label"
             assistance="Additional text to provide assistance"
             fieldClassName="additional-field-class"
+            label="Example Label"
+            name="exampleField"
             onChange={this.handleValueChange}
-            value={this.state['exampleField']}
             placeholder="Placeholder Text"
+            value={this.state['exampleField']}
             />
         </Code>
         <Code>
           <StandardField
-            type="email"
-            name="erroredField"
-            label="Example Label"
             assistance="Additional text to provide assistance"
-            fieldClassName="additional-field-class"
-            onChange={this.handleValueChange}
-            value={this.state['erroredField']}
             error={'Forced error message'}
+            fieldClassName="additional-field-class"
+            label="Example Label"
+            name="erroredField"
+            onChange={this.handleValueChange}
+            type="email"
+            value={this.state['erroredField']}
             />
         </Code>
         <h2>Boolean Layout</h2>
         <Code>
           <BooleanField
-            name="exampleBoolean"
-            label="Example Label"
             assistance="Additional text to provide assistance"
+            checked={this.state['exampleBoolean']}
             fieldClassName="additional-field-class"
+            label="Example Label"
+            name="exampleBoolean"
             onChange={this.handleBooleanChange}
             value="Example"
-            checked={this.state['exampleBoolean']}
             />
         </Code>
         <Code>
           <p><em>Work in progress</em></p>
           <BooleanField
-            name="exampleMultiBoolean"
-            label="Example Multi Label"
             assistance="Additional text to provide assistance"
+            checked={this.state['exampleBoolean']}
             fieldClassName="additional-field-class"
+            label="Example Multi Label"
+            name="exampleMultiBoolean"
             onChange={this.handleBooleanChange}
             value="Example"
-            checked={this.state['exampleBoolean']}
             />
         </Code>
       </div>

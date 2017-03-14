@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
 import PickSvg from '../../svg/Pick'
 
-const SiteTitle = ({ isFeature, href }) => {
+const SiteTitle = ({ href, isFeature }) => {
   const siteTitleClasses = classNames('site-title', { 'site-title--feature': isFeature })
   const SiteTitleEl = href ? Link : 'div'
   return (
@@ -23,8 +23,8 @@ SiteTitle.defaultProps = {
 }
 
 SiteTitle.propTypes = {
-  isFeature: React.PropTypes.bool,
-  href: React.PropTypes.string
+  href: PropTypes.string,
+  isFeature: PropTypes.bool
 }
 
 export default SiteTitle

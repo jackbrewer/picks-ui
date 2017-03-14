@@ -41,17 +41,17 @@ class ControlPage extends React.Component {
         <p>These need splitting and explaining better</p>
         <Code noPreview>
           <TextControl
-            type="password"
-            name="exampleFull"
-            controlClassName="additional-control-class"
             autoFocus
+            controlClassName="additional-control-class"
             disabled
             maxLength={20}
-            required
-            onChange={this.handleTextChange}
+            name="exampleFull"
             onBlur={this.handleTextChange}
-            value={this.state['exampleFull']}
+            onChange={this.handleTextChange}
             placeholder="Placeholder Text"
+            required
+            type="password"
+            value={this.state['exampleFull']}
           />
         </Code>
         <h2>Boolean Control</h2>
@@ -65,15 +65,15 @@ class ControlPage extends React.Component {
         <p>These need splitting and explaining better</p>
         <Code noPreview>
           <BooleanControl
-            type="radio"
-            name="exampleBoolean"
+            checked
             controlClassName="additional-control-class"
             disabled
-            required
-            onChange={this.handleBooleanChange}
+            name="exampleBoolean"
             onBlur={this.handleBooleanChange}
+            onChange={this.handleBooleanChange}
+            required
+            type="radio"
             value={this.state['exampleBoolean']}
-            checked
           />
         </Code>
         <h2>Multiline Control</h2>
@@ -88,9 +88,9 @@ class ControlPage extends React.Component {
         <Code>
           <ChoiceControl
             name="exampleChoice"
-            value={this.state.exampleChoice}
-            options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]}
             onChange={this.handleChoiceChange}
+            options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]}
+            value={this.state.exampleChoice}
           />
         </Code>
       </div>

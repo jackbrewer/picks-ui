@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
 import BooleanControl from '../control/BooleanControl'
 
 const BooleanField = (props) => {
-  const { name, label, assistance, error, fieldClassName } = props
+  const { assistance, error, fieldClassName, label, name } = props
   const fieldClasses = classNames('field', 'field--boolean', fieldClassName, { 'field--error': error })
   return (
     <div
-      id={`field--${name}`}
       className={fieldClasses}
+      id={`field--${name}`}
       >
       <div className="field__answer">
         <label className="control-wrap">
@@ -30,17 +30,17 @@ const BooleanField = (props) => {
 BooleanField.defaultProps = {}
 
 BooleanField.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  label: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.node
-  ]).isRequired,
-  assistance: React.PropTypes.string,
-  error: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.node
+  assistance: PropTypes.string,
+  error: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
   ]),
-  fieldClassName: React.PropTypes.string
+  fieldClassName: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
+  ]).isRequired,
+  name: PropTypes.string.isRequired
 }
 
 export default BooleanField

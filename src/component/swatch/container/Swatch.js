@@ -1,31 +1,33 @@
-import React, { Component } from 'react'
+import React, { PropTypes } from 'react'
 import convertColor from 'css-color-converter'
 
 import Swatch from '../Swatch'
 
-class SwatchContainer extends Component {
-  render () {
-    const { name, value, handleClick, displayFormat } = this.props
-    const convertedColor = convertColor(value)
-    let displayValue
+const SwatchContainer = ({ displayFormat, handleClick, name, value }) => {
+  const convertedColor = convertColor(value)
+  let displayValue
 
-    switch (displayFormat) {
-      case 'Hex':
-        displayValue = convertedColor.toHexString()
-        break
-      case 'RGB':
-        displayValue = convertedColor.toRgbString()
-        break
-      case 'HSL':
-        displayValue = convertedColor.toHslString()
-        break
-      default:
-        break
-    }
-    return (
-      <Swatch name={name} format={displayFormat} value={displayValue} handleClick={handleClick} />
-    )
+  switch (displayFormat) {
+    case 'Hex':
+      displayValue = convertedColor.toHexString()
+      break
+    case 'RGB':
+      displayValue = convertedColor.toRgbString()
+      break
+    case 'HSL':
+      displayValue = convertedColor.toHslString()
+      break
+    default:
+      break
   }
+  return (
+    <Swatch
+      format={displayFormat}
+      handleClick={handleClick}
+      name={name}
+      value={displayValue}
+    />
+  )
 }
 
 SwatchContainer.defaultProps = {
@@ -33,10 +35,10 @@ SwatchContainer.defaultProps = {
 }
 
 SwatchContainer.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string,
-  displayFormat: React.PropTypes.string,
-  handleClick: React.PropTypes.func
+  displayFormat: PropTypes.string,
+  handleClick: PropTypes.func,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string
 }
 
 export default SwatchContainer

@@ -30,16 +30,45 @@ class SwatchPage extends Component {
   }
 
   render () {
+    const previewWidth = 'tablet-one-half desktop-one-third'
     return (
       <div className="prose">
         <h1>Swatch</h1>
-        <Code previewWidth="tablet-one-half desktop-one-third">
-          <Swatch name=".50mm" value="#eb4b5c" />
+        <Code previewWidth={previewWidth}>
+          <Swatch
+            name=".50mm"
+            value="#eb4b5c"
+            />
+          <Swatch
+            displayFormat="RGB"
+            name=".60mm"
+            value="#ec765c"
+            />
+          <Swatch
+            displayFormat="HSL"
+            name=".73mm"
+            value="#e8d135"
+            />
         </Code>
-        <Code previewWidth="tablet-one-half desktop-one-third" noSource >
-          <Swatch name=".50mm" value="#eb4b5c" handleClick={this.handleClick} displayFormat={this.state.displayFormat} />
-          <Swatch name=".60mm" value="rgb(236, 118, 92)" handleClick={this.handleClick} displayFormat={this.state.displayFormat} />
-          <Swatch name=".73mm" value="hsl(52, 80%, 56%)" handleClick={this.handleClick} displayFormat={this.state.displayFormat} />
+        <Code previewWidth={previewWidth}>
+          <Swatch
+            displayFormat={this.state.displayFormat}
+            handleClick={this.handleClick}
+            name=".88mm"
+            value="#57a65e"
+          />
+          <Swatch
+            displayFormat={this.state.displayFormat}
+            handleClick={this.handleClick}
+            name="1.0mm"
+            value="#4f86a9"
+          />
+          <Swatch
+            displayFormat={this.state.displayFormat}
+            handleClick={this.handleClick}
+            name="1.14mm"
+            value="#9c5386"
+          />
         </Code>
       </div>
 

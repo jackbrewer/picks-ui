@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // Layout Components
 import A11yNavigation from '../layout/a11y-navigation/A11yNavigation'
+import Footer from '../layout/footer/Footer'
 import Header from '../layout/header/Header'
 import Navigation from '../layout/navigation/Navigation'
-import Footer from '../layout/footer/Footer'
 
 import Masthead from '../masthead/Masthead'
 

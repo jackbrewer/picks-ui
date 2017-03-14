@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-const ChoiceControl = ({ value, options, name, onChange, disabled, onBlur, required, autoFocus, controlClassName }) => {
+const ChoiceControl = ({ autoFocus, controlClassName, disabled, name, onBlur, onChange, options, required, value }) => {
   return (
     <select
-      defaultValue={value}
-      name={name}
-      onChange={onChange}
-      onBlur={onBlur}
-      disabled={disabled}
-      required={required}
       autoFocus={autoFocus}
       className={classnames('control', 'control--choice', controlClassName)}
+      defaultValue={value}
+      disabled={disabled}
+      name={name}
+      onBlur={onBlur}
+      onChange={onChange}
+      required={required}
       >
       {options.map(({ value, text }, i) =>
         <option key={`${i}-${value}`} value={value}>{text}</option>)}
@@ -20,35 +20,35 @@ const ChoiceControl = ({ value, options, name, onChange, disabled, onBlur, requi
 }
 
 ChoiceControl.defaultProps = {
-  type: 'text',
-  value: '',
-  required: false,
   autoFocus: false,
-  disabled: false
+  disabled: false,
+  required: false,
+  type: 'text',
+  value: ''
 }
 
 ChoiceControl.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  value: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
-  ]),
-  controlClassName: React.PropTypes.string,
-  onChange: React.PropTypes.func,
-  onBlur: React.PropTypes.func,
-  required: React.PropTypes.bool,
-  disabled: React.PropTypes.bool,
-  autoFocus: React.PropTypes.bool,
-  options: React.PropTypes.arrayOf(React.PropTypes.shape({
-    text: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
+  autoFocus: PropTypes.bool,
+  controlClassName: PropTypes.string,
+  disabled: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  options: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
     ]),
-    value: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
     ])
-  }))
+  })),
+  required: PropTypes.bool,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
 }
 
 export default ChoiceControl
