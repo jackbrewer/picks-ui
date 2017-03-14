@@ -12,8 +12,8 @@
 //
 
 body
-  background-color $base--body-bg
-  min-width $base--min-width
+  background-color $color--white
+  min-width $mq--resize-min
 
 //
 // LISTS
@@ -114,7 +114,7 @@ hr
   width 100%
   border 0
   background-color $color--grey
-  margin $base--spacing 0
+  margin $spacing--default 0
 
   +width-min($mq--tablet)
-    margin ($base--spacing * 2) 0
+    margin ($spacing--default * 2) 0

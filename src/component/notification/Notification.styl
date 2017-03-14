@@ -10,10 +10,11 @@
 
 .notification
   position relative
-  padding $base--spacing
+  padding $spacing--default
   background $color--grey
   border 1px solid shade($color--grey, 10%)
-  color $base--font-color
+  color $color--black
+  transition opacity $transition--default-out ease-out
 
 .notification__heading
   font-size rem(20)
@@ -35,15 +36,17 @@
 .notification__action
   float right
   position relative
-  top $base--spacing * -0.25
-  right $base--spacing * -0.5
-  padding $base--spacing * 0.5
+  top $spacing--default * -0.25
+  right $spacing--default * -0.5
+  padding $spacing--default * 0.5
   opacity 0.5
+  transition opacity $transition--default-out ease-out
 
   &:hover
   &:focus
   &:active
     opacity 1
+    transition-duration $transition--default-in
 
   .icon
   svg
@@ -51,7 +54,7 @@
     line-height 14px
 
   path
-    fill $base--font-color
+    fill $color--black
 
 
 //

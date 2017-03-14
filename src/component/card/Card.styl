@@ -1,6 +1,6 @@
 .card
   border 1px solid $color--grey
-  border-radius $base--border-radius
+  border-radius $border-radius--default
 
 .card--centered
   text-align center
@@ -9,11 +9,11 @@
   //
 
 .card__image
-  border-top-left-radius calc($base--border-radius - 1px)
-  border-top-right-radius calc($base--border-radius -1px)
+  border-top-left-radius calc($border-radius--default - 1px)
+  border-top-right-radius calc($border-radius--default -1px)
 
 .card__content
-  padding $base--spacing
+  padding $spacing--default
 
   > * + *
-    margin-top $base--spacing
+    margin-top $spacing--default
