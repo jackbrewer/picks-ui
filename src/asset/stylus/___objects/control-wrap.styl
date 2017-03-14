@@ -1,0 +1,37 @@
+//
+// CONTROL WRAP
+// ============
+// Used to ensure text accompanying a boolean control doesn't wrap beneath it
+// when too long.
+//
+
+.control-wrap
+  display table
+  // Ensure labels can shrink to fit content. Otherwise hit-areas can grow too wide.
+  width auto
+
+.control-wrap--full-width
+  width 100%
+
+.control-wrap__item
+  display table-cell
+  vertical-align top
+
+  .control-wrap--vertical-middle &
+    vertical-align middle
+
+.control-wrap__item--shrink
+  // This will expand to fit the minimum width of its content
+  width 1px
+
+
+//
+// STACK FOR SPECIFIC BREAKPOINTS
+//
+
++width-max($mq--tablet - 1)
+  .control-wrap--stack-mobile
+    &
+    .control-wrap__item
+      display block
+      width auto

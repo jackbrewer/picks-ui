@@ -1,0 +1,84 @@
+//
+// FONT SAMPLES
+// ============
+//
+
+
+.sg-font-sample--tempo-heavy-condensed
+  font-family $font--tempo
+  font-weight normal
+  font-style normal
+
+.sg-font-sample--roboto
+  font-family $font--roboto
+  font-weight 400
+  font-style normal
+
+.sg-font-sample--roboto-bold
+  font-family $font--roboto
+  font-weight 700
+  font-style normal
+
+.sg-font-sample--roboto-slab
+  font-family $font--roboto-slab
+  font-weight 400
+  font-style normal
+
+.sg-font-sample--roboto-slab-bold
+  font-family $font--roboto-slab
+  font-weight 700
+  font-style normal
+
+.sg-font-sample
+  //
+
+.sg-font-sample__size--huge
+  overflow hidden
+  line-height 1em
+  padding 0
+  font-size 140px
+  +width-min($mq--tablet)
+    font-size 200px
+
+.sg-font-sample__glyph-range
+  line-height 1.1em
+  text-rendering optimizeLegibility
+  word-break break-all
+  font-size 36px
+  +width-min($mq--tablet)
+    font-size 60px
+
+.sg-font-sample__size-waterfall
+  overflow-x auto
+  -webkit-overflow-scrolling touch
+
+  div
+    white-space nowrap
+
+  span
+    display inline-block
+    font-size 12px !important //@stylint ignore
+    width 2em
+
+.sg-font-sample__size-grid
+  //
+
+.sg-font-sample__size-grid-item
+  position relative
+  overflow hidden
+  margin-bottom 30px
+  max-height 4.5em
+  text-rendering optimizeLegibility
+
+  +width-min($mq--desktop)
+    height 140px
+    max-height none
+
+  &:after
+    content ''
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    height 1em
+    background-image linear-gradient(to bottom, rgba($color--white, 0), rgba($color--white, 1))

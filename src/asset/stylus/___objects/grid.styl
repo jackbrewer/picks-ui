@@ -1,0 +1,34 @@
+//
+// GRID
+// ====
+// Reference: https://github.com/clocklimited/responsive-grid
+//
+
+$grid--gutter = $base--spacing
+
+//
+// BASE GRID STYLES
+//
+
+grid-base()
+
+
+//
+// GRID WIDTHS
+// Only add widths when required, to keep compiled CSS clean
+//
+
+grid-widths('', 1)
+
++width-min($mq--tablet)
+  grid-widths('tablet', 2 4)
+
++width-min($mq--desktop)
+  grid-widths('desktop', 2 3)
+
+.grid--full-height
+  display flex
+  flex-wrap wrap
+
+  > .grid-item
+    width 100%

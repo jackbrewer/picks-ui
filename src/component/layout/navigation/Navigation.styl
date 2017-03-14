@@ -1,0 +1,35 @@
+//
+// MAIN NAVIGATION
+// ===============
+//
+
+
+.navigation
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+  position sticky
+  top $base--spacing
+  margin-bottom $base--spacing
+
+.navigation__group
+  //
+
+  h3
+    font-weight bold
+
+  li
+    display block
+
+.navigation__link
+  color $color--black
+
+  &.is-active
+    color $color--primary
+    text-decoration none
+
+  &:hover
+  &:active
+  &:focus
+    color $color--primary
+    text-decoration underline

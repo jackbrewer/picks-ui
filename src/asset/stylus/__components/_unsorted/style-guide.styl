@@ -1,0 +1,86 @@
+//
+// STYLE GUIDE
+// ===========
+//
+
+.sg-content
+  padding 20px
+  background $color--white
+
+.sg-heading
+  font-size rem(36)
+  margin-bottom $base--spacing
+
+.sg-subheading
+  font-size rem(24)
+  margin-bottom $base--spacing
+
+grid-widths('sg', 2)
+
++width-min($mq--tablet)
+  grid-widths('sg-tablet', 2 3)
+
++width-min($mq--desktop)
+  grid-widths('sg-desktop', 2 3 4)
+
+.sg-nav
+  //
+
+.sg-dark-section
+  background $color--navy
+  margin 0 -20px 20px
+  padding 20px
+  color $color--white
+
+  & + &
+    margin-top -20px
+
+.sg-dark-section--success
+  background $color--success
+
+.sg-dark-section--error
+  background $color--error
+
+.sg-nav__root
+  display none
+
+.sg-nav--fixed
+  position absolute
+  top 0
+  right 0
+  z-index 1000
+
+  &:before
+    content '\2630'
+    display block
+    position absolute
+    top 0
+    right 0
+    background-color $color--black
+    color $color--white
+    padding 5px 10px
+
+  nav
+    display none
+    background-color $color--black
+    padding 40px 10px 10px
+
+  strong
+  a
+    color $color--white
+    &:hover
+      color $color--white
+      text-decoration underline
+
+  p
+    display none
+
+  &:hover nav
+    display block
+
+  .sg-nav__root
+    display block
+
+.sg-code-sample
+  background $color--grey
+  padding $base--spacing

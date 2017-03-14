@@ -1,0 +1,44 @@
+//
+// PROSE
+// =====
+// Used for any 'generic' text, such as article content or service page copy.
+// Should be applied to output of any CMS content where a WYSIWYG is in place.
+//
+
+.prose
+
+  > * + *
+    margin-top $base--spacing
+
+  h1, h2, h3, h4, h5, h6
+    font-family $base--font-heading
+    font-weight normal
+    line-height 1.2
+    color $color--black
+
+  h1
+    font-size rem(60)
+    line-height 1
+  h2
+    font-size 1.6em
+  h3
+    font-size 1.4em
+  h4
+    font-size 1.2em
+  h5
+    font-size 1.1em
+  h6
+    font-size 1em
+
+  // Stop text extending beyond a reasonable line-length
+  p, li
+    max-width rem(900)
+
+  // Stop lists next to floated elements losing their bullets/numbers.
+  // Commented as was causing issues in components such as Swatch when nested in prose
+  // ul, ol
+  //   display table
+
+  a:not(.button)
+    color $color--dark-grey
+    text-decoration underline

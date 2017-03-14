@@ -1,0 +1,42 @@
+//
+// MOBILE NAV TOGGLE
+// =================
+//
+
+
+.mobile-nav-toggle
+  position absolute
+  top 0
+  height 50px
+  opacity 0
+  pointer-events none
+  transition opacity 0.3s ease-out
+
+  .has-nav-initialised &
+    opacity 1
+    pointer-events auto
+
+  .no-js &
+    display none
+
+  +width-min($nav--toggle-width)
+    display none
+
+  circle
+    transition fill 0.3s ease-out
+
+  &.is-active
+    circle
+      transition-duration 0s
+      fill $color--red
+
+// .mobile-nav-toggle--left
+//   left 0
+
+.mobile-nav-toggle--right
+  right 0
+  padding rem(11) rem(15)
+  vertical-align middle
+
+  .icon
+    line-height 6px

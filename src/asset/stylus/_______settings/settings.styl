@@ -1,0 +1,88 @@
+//
+// SETTINGS
+// ========
+//
+
+//
+// BREAKPOINTS AND MEDIA QUERIES
+// Setup standard widths to pass to media queries
+//
+
+$mq--mobile--portrait  = 300px
+$mq--mobile--landscape = 400px
+$mq--tablet--portrait  = 550px
+$mq--tablet--landscape = 800px
+$mq--desktop--small    = 960px
+$mq--desktop--medium   = 1280px
+$mq--desktop--large    = 1600px
+
+// Common aliases
+$mq--mobile  = $mq--mobile--portrait
+$mq--tablet  = $mq--tablet--portrait
+$mq--desktop = $mq--desktop--small
+
+//
+// COLOURS
+//
+
+// Project Colours
+$color--pink   = #eb4b5c // .50mm
+$color--orange = #ec765c // .60mm
+$color--yellow = #e8d135 // .73mm
+$color--green  = #57a65e // .88mm
+$color--blue   = #4f86a9 // 1.0mm
+$color--purple = #9c5386 // 1.14mm
+
+$color--black = #444
+$color--white = #fff
+
+$color--grey  = #c8c8c8
+$color--mid-grey  = #9b9b9b
+$color--light-grey  = #dbdbdb
+
+$color--primary = $color--green
+
+// Default Notification Colours
+$color--success = #47a967
+$color--notice  = #4791a9
+$color--warning = #dc7f2a
+$color--error   = #ca4427
+
+// $sg-swatches = {
+//   red: $color--red,
+//   pink: $color--pink,
+//   navy: $color--navy,
+//   black: $color--black,
+//   dark-grey: $color--dark-grey,
+//   grey: $color--grey,
+//   white: $color--white
+// }
+
+//
+// TYPEFACES
+// Amend variable names to suit fonts used.
+//
+
+$font--system = -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+
+//
+// BASE STYLES
+//
+
+$base--font-heading = $font--system
+$base--font-body    = $font--system
+$base--font-color   = $color--black
+$base--font-size    = 16px
+$base--line-height  = 1.5
+$base--spacing      = rem(20)
+$base--body-bg      = $color--white
+$base--min-width    = $mq--mobile
+$base--max-width    = $mq--desktop
+
+$content--gutter = $base--spacing
+$content--gutter--mobile = ($base--spacing / 2)
+
+// Refactor/remove
+$base--border-radius = 3px
+$main-nav-item--mobile-height = 60px
+$pre-header--height = 30px

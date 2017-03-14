@@ -1,0 +1,19 @@
+.card
+  border 1px solid $color--grey
+  border-radius $base--border-radius
+
+.card--centered
+  text-align center
+
+.card__hero
+  //
+
+.card__image
+  border-top-left-radius calc($base--border-radius - 1px)
+  border-top-right-radius calc($base--border-radius -1px)
+
+.card__content
+  padding $base--spacing
+
+  > * + *
+    margin-top $base--spacing

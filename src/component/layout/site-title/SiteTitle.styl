@@ -1,0 +1,46 @@
+//
+// SITE TITLE
+// ==========
+//
+
+
+.site-title
+  white-space nowrap
+  padding ($base--spacing * 0.5) $base--spacing ($base--spacing * 0.5) 0
+  color $color--black
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+  span
+    font-weight bold
+
+  a&:hover
+  a&:active
+  a&:focus
+    color $color--primary
+    text-decoration underline
+
+  i
+    vertical-align middle
+    margin-top $base--spacing * -1.25
+    margin-bottom $base--spacing * -1.25
+    margin-right $base--spacing * 0.5
+
+  svg
+    width 66px
+
+
+.site-title--feature
+  padding 0
+  color $color--white
+  font-size rem(50)
+
+  i
+    margin-top 0
+    margin-bottom 0
+
+  svg
+    width 100px
+
+  path
+    fill $color--white

@@ -1,0 +1,23 @@
+.code
+  overflow hidden
+  border 1px solid $color--grey
+  border-radius $base--border-radius
+
+.code__preview
+  padding $base--spacing
+  margin-left auto
+  margin-right auto
+  text-align center
+
+.code__preview-item
+  padding $base--spacing * 0.5
+  display inline-block
+  text-align left
+  vertical-align top
+
+.code__preview-item--auto
+  width auto
+
+.code__source
+  .code__preview + &
+    border-top 1px solid $color--grey

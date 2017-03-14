@@ -1,0 +1,21 @@
+//
+// MAIN HEADER
+// ===========
+//
+
+
+.header
+  margin-top $base--spacing
+  border-top 1px solid $color--light-grey
+  border-bottom 1px solid $color--light-grey
+  margin-bottom $base--spacing
+  padding-top rem(5)
+  padding-bottom rem(5)
+
+  +width-min($mq--tablet)
+    margin-bottom $base--spacing * 2
+
+.header__inner
+  display flex
+  justify-content space-between
+  align-items center
