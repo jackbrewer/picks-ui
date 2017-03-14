@@ -1,11 +1,10 @@
 import React from 'react'
 
-import Code from '../code/Code'
-
-import BooleanControl from '../control/BooleanControl'
-import ChoiceControl from '../control/ChoiceControl'
-import MultilineControl from '../control/MultilineControl'
-import TextControl from '../control/TextControl'
+import Code from '../component/code/Code'
+import BooleanControl from '../component/control/BooleanControl'
+import ChoiceControl from '../component/control/ChoiceControl'
+import MultilineControl from '../component/control/MultilineControl'
+import TextControl from '../component/control/TextControl'
 
 class ControlPage extends React.Component {
   constructor () {

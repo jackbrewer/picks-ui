@@ -1,7 +1,8 @@
 import React from 'react'
-import Code from '../code/Code'
-import Icon from '../icon/Icon'
-import PickSvg from '../svg/Pick'
+
+import Code from '../component/code/Code'
+import Icon from '../component/icon/Icon'
+import PickSvg from '../component/svg/Pick'
 
 const ResponsiveMediaPage = () => (
   <div className="prose">

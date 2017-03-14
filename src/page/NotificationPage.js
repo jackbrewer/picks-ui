@@ -1,8 +1,7 @@
 import React from 'react'
 
-import Code from '../code/Code'
-
-import Notification from '../notification/Notification'
+import Code from '../component/code/Code'
+import Notification from '../component/notification/Notification'
 
 function dismissNotification (e) {
   const notificationEl = e.target.closest('.notification')

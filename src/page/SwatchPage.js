@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 
-import Code from '../code/Code'
-
-import Swatch from '../swatch/container/Swatch'
+import Code from '../component/code/Code'
+import Swatch from '../component/swatch/container/Swatch'
 
 class SwatchPage extends Component {
   constructor (props) {

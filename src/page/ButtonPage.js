@@ -1,8 +1,7 @@
 import React from 'react'
 
-import Code from '../code/Code'
-
-import Button from '../button/Button'
+import Code from '../component/code/Code'
+import Button from '../component/button/Button'
 
 class ButtonPage extends React.Component {
   constructor () {

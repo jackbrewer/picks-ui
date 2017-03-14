@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 // Site Pages
-import IndexPage from './component/page/IndexPage'
-import NotFoundPage from './component/page/NotFoundPage'
+import IndexPage from './page/IndexPage'
+import NotFoundPage from './page/NotFoundPage'
 
 // Component Pages
-import ButtonPage from './component/page/ButtonPage'
-import CardPage from './component/page/CardPage'
-import ControlPage from './component/page/ControlPage'
-import FieldPage from './component/page/FieldPage'
-import IconPage from './component/page/IconPage'
-import NotificationPage from './component/page/NotificationPage'
-import ResponsiveMediaPage from './component/page/ResponsiveMediaPage'
-import SwatchPage from './component/page/SwatchPage'
+import ButtonPage from './page/ButtonPage'
+import CardPage from './page/CardPage'
+import ControlPage from './page/ControlPage'
+import FieldPage from './page/FieldPage'
+import IconPage from './page/IconPage'
+import NotificationPage from './page/NotificationPage'
+import ResponsiveMediaPage from './page/ResponsiveMediaPage'
+import SwatchPage from './page/SwatchPage'
 
 class Routes extends Component {
   render () {

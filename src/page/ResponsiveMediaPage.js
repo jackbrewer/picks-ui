@@ -1,8 +1,7 @@
 import React from 'react'
 
-import Code from '../code/Code'
-
-import ResponsiveMedia from '../responsive-media/ResponsiveMedia'
+import Code from '../component/code/Code'
+import ResponsiveMedia from '../component/responsive-media/ResponsiveMedia'
 
 const ResponsiveMediaPage = () => (
   <div className="prose">

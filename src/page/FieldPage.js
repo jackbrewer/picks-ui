@@ -1,9 +1,8 @@
 import React from 'react'
 
-import Code from '../code/Code'
-
-import StandardField from '../field/StandardField'
-import BooleanField from '../field/BooleanField'
+import Code from '../component/code/Code'
+import StandardField from '../component/field/StandardField'
+import BooleanField from '../component/field/BooleanField'
 
 class FieldPage extends React.Component {
   constructor () {

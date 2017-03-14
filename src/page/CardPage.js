@@ -1,8 +1,7 @@
 import React from 'react'
 
-import Code from '../code/Code'
-
-import Card from '../card/Card'
+import Code from '../component/code/Code'
+import Card from '../component/card/Card'
 
 const IndexPage = () => {
   const previewWidth = 'desktop-one-half'
