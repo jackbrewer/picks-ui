@@ -34,7 +34,7 @@ class SwatchPage extends Component {
     return (
       <div className="prose">
         <h1>Swatch</h1>
-        <Code previewWidth={previewWidth}>
+        <Code previewWidth={previewWidth} displayName="Swatch">
           <Swatch
             name=".50mm"
             value="#eb4b5c"
@@ -50,7 +50,7 @@ class SwatchPage extends Component {
             value="#e8d135"
             />
         </Code>
-        <Code previewWidth={previewWidth}>
+        <Code previewWidth={previewWidth} displayName="Swatch">
           <Swatch
             displayFormat={this.state.displayFormat}
             handleClick={this.handleClick}
