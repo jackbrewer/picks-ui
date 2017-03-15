@@ -39,6 +39,10 @@ class ButtonPage extends React.Component {
           <Button disabled href="#">Anchor</Button>
           <Button disabled>Button</Button>
         </Code>
+        <h2>Buttons with target</h2>
+        <Code previewWidth="auto">
+          <Button href="https://mathiasbynens.github.io/rel-noopener/" target="_blank">Anchor</Button>
+        </Code>
         <h2>onClick</h2>
         <Code previewWidth="auto">
           <Button

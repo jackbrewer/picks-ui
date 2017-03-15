@@ -3,20 +3,47 @@ import classNames from 'classnames'
 
 import { Link } from 'react-router-dom'
 
-const Button = ({ children, className, disabled, href, onClick, type }) => {
-  const ButtonEl = href ? Link : 'button'
-  const buttonClasses = classNames('button', className)
+const Button = ({ children, className, disabled, href, onClick, target, type }) => {
+  const absoluteUrlRegEx = /^\w[\w-.+]+:/ // http://regexr.com/3fhfg
+  const commonAttributes = {
+    className: classNames('button', className),
+    disabled,
+    onClick
+  }
 
+  // No href means we need a button element
+  if (!href) {
+    return (
+      <button
+        type={type}
+        {...commonAttributes}
+        >
+        {children}
+      </button>
+    )
+  }
+
+  if (absoluteUrlRegEx.exec(href)) {
+    return (
+      <a
+        href={href}
+        {...target && { target }}
+        {...target === '_blank' && { rel: 'noopener' }}
+        {...commonAttributes}
+        >
+        {children}
+      </a>
+    )
+  }
+
+  // Internal link, use react-router's Link component
   return (
-    <ButtonEl
-      className={buttonClasses}
+    <Link
       to={href}
-      type={href ? undefined : type}
-      onClick={onClick}
-      disabled={disabled}
+      {...commonAttributes}
       >
       {children}
-    </ButtonEl>
+    </Link>
   )
 }
 
@@ -31,7 +58,8 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   href: PropTypes.string,
   onClick: PropTypes.func,
-  type: PropTypes.string
+  target: PropTypes.string,
+  type: PropTypes.oneOf([ 'button', 'reset', 'submit' ])
 }
 
 export default Button
