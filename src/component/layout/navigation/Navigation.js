@@ -39,6 +39,7 @@ const Navigation = () => (
         <NavigationItem to="/notification" text="Notification" />
         <NavigationItem to="/responsive-media" text="Responsive Media" />
         <NavigationItem to="/swatch" text="Swatch" />
+        <NavigationItem to="/typography" text="Typography" />
       </ul>
 
     </div>

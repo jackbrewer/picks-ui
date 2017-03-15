@@ -15,6 +15,7 @@ import NotificationPage from './page/NotificationPage'
 import NotePage from './page/NotePage'
 import ResponsiveMediaPage from './page/ResponsiveMediaPage'
 import SwatchPage from './page/SwatchPage'
+import TypographyPage from './page/TypographyPage'
 
 class Routes extends Component {
   render () {
@@ -30,6 +31,7 @@ class Routes extends Component {
         <Route exact path="/notification" component={NotificationPage} />
         <Route exact path="/responsive-media" component={ResponsiveMediaPage} />
         <Route exact path="/swatch" component={SwatchPage} />
+        <Route exact path="/typography" component={TypographyPage} />
         <Route component={NotFoundPage} />
       </Switch>
     )
