@@ -23,6 +23,11 @@ describe('Component: Notification', () => {
     assert.equal(wrapper.hasClass('optional-class'), true)
   })
 
+  it('should output children if set', () => {
+    const wrapper = shallow(<Notification><p>Hi</p></Notification>)
+    assert.equal(wrapper.find('p').text(), 'Hi')
+  })
+
   it('should add correct class if `state` prop set', () => {
     const wrapper = shallow(<Notification heading="Example Heading" />)
     assert.equal(wrapper.hasClass('notification--error'), false, 'Should not have “error” state class by default')
