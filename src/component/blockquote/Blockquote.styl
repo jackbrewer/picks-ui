@@ -1,0 +1,33 @@
+//
+// BLOCKQUOTE
+// ==========
+//
+
+
+.blockquote
+  background-color $color--light-grey
+  padding $spacing--default $spacing--default * 2
+
+  p
+    font-size 1.4em
+    line-height 1.2
+    font-style normal
+
+    // Fake hanging punctuation for the opening quote
+    &:first-of-type
+      text-indent -1ch
+
+      &:before
+        content open-quote
+        display inline-block
+        width 1ch
+        text-align right
+
+    &:last-of-type:after
+      content close-quote
+
+.blockquote__citation
+  margin-top 0.2em
+
+  &:before
+    content "– "

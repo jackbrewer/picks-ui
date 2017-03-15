@@ -6,6 +6,7 @@ import IndexPage from './page/IndexPage'
 import NotFoundPage from './page/NotFoundPage'
 
 // Component Pages
+import BlockquotePage from './page/BlockquotePage'
 import ButtonPage from './page/ButtonPage'
 import CardPage from './page/CardPage'
 import ControlPage from './page/ControlPage'
@@ -22,6 +23,7 @@ class Routes extends Component {
     return (
       <Switch>
         <Route exact path="/" component={IndexPage} />
+        <Route exact path="/blockquote" component={BlockquotePage} />
         <Route exact path="/button" component={ButtonPage} />
         <Route exact path="/card" component={CardPage} />
         <Route exact path="/control" component={ControlPage} />

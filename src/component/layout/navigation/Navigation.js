@@ -30,6 +30,7 @@ const Navigation = () => (
 
       <h3>Components</h3>
       <ul className="list--inline list--unstyled">
+        <NavigationItem to="/blockquote" text="Blockquote" />
         <NavigationItem to="/button" text="Button" />
         <NavigationItem to="/card" text="Card" />
         <NavigationItem to="/control" text="Control" />
