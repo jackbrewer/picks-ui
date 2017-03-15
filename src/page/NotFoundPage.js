@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ButtonPage = () => (
+const NotFoundPage = () => (
   <div className="prose">
     <h1>Not Found</h1>
   </div>
 )
 
-export default ButtonPage
+export default NotFoundPage

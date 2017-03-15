@@ -1,9 +1,15 @@
+swap concurrently for npm run all?
+
 ## Bugs
 - [ ] Scroll to top on route change
+- [ ] Swatches should copy to clipboard by defualt, with option to select global colour format
+- [ ] Review absolute URL checking in Button
 
 ## Code Quality
 - [ ] Remove `prose` wrapper from pages - only wrap prose parts
 - [ ] Better naming convention for colour variables
+- [ ] Refactor notification__heading, note__heading etc to use standard title styles
+- [ ] More spacing settings - narrow, wide etc
 
 ## HTML
 - [ ] Tidy index.html
