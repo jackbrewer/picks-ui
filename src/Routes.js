@@ -12,6 +12,7 @@ import ControlPage from './page/ControlPage'
 import FieldPage from './page/FieldPage'
 import IconPage from './page/IconPage'
 import NotificationPage from './page/NotificationPage'
+import NotePage from './page/NotePage'
 import ResponsiveMediaPage from './page/ResponsiveMediaPage'
 import SwatchPage from './page/SwatchPage'
 
@@ -25,6 +26,7 @@ class Routes extends Component {
         <Route exact path="/control" component={ControlPage} />
         <Route exact path="/field" component={FieldPage} />
         <Route exact path="/icon" component={IconPage} />
+        <Route exact path="/note" component={NotePage} />
         <Route exact path="/notification" component={NotificationPage} />
         <Route exact path="/responsive-media" component={ResponsiveMediaPage} />
         <Route exact path="/swatch" component={SwatchPage} />

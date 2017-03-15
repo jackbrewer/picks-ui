@@ -35,6 +35,7 @@ const Navigation = () => (
         <NavigationItem to="/control" text="Control" />
         <NavigationItem to="/field" text="Field" />
         <NavigationItem to="/icon" text="Icon" />
+        <NavigationItem to="/note" text="Note" />
         <NavigationItem to="/notification" text="Notification" />
         <NavigationItem to="/responsive-media" text="Responsive Media" />
         <NavigationItem to="/swatch" text="Swatch" />
