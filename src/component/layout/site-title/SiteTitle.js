@@ -10,7 +10,7 @@ const SiteTitle = ({ href, isFeature }) => {
   return (
     <SiteTitleEl
       className={siteTitleClasses}
-      to={href || undefined}
+      {...href && { to: href }}
       >
       <i className="icon icon--pick"><PickSvg /></i>
       Picks <span>UI</span>
