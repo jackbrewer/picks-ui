@@ -9,6 +9,7 @@ import NotFoundPage from './page/NotFoundPage'
 import BlockquotePage from './page/BlockquotePage'
 import ButtonPage from './page/ButtonPage'
 import CardPage from './page/CardPage'
+import CodePage from './page/CodePage'
 import ControlPage from './page/ControlPage'
 import FieldPage from './page/FieldPage'
 import IconPage from './page/IconPage'
@@ -26,6 +27,7 @@ class Routes extends Component {
         <Route exact path="/blockquote" component={BlockquotePage} />
         <Route exact path="/button" component={ButtonPage} />
         <Route exact path="/card" component={CardPage} />
+        <Route exact path="/code" component={CodePage} />
         <Route exact path="/control" component={ControlPage} />
         <Route exact path="/field" component={FieldPage} />
         <Route exact path="/icon" component={IconPage} />

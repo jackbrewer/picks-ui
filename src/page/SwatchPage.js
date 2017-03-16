@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import Swatch from '../component/swatch/container/Swatch'
 
 class SwatchPage extends Component {
@@ -33,7 +33,7 @@ class SwatchPage extends Component {
     return (
       <div className="prose">
         <h1>Swatch</h1>
-        <Code previewWidth={previewWidth} displayName="Swatch">
+        <Example previewWidth={previewWidth} displayName="Swatch">
           <Swatch
             name=".50mm"
             value="#eb4b5c"
@@ -48,8 +48,8 @@ class SwatchPage extends Component {
             name=".73mm"
             value="#e8d135"
             />
-        </Code>
-        <Code previewWidth={previewWidth} displayName="Swatch">
+        </Example>
+        <Example previewWidth={previewWidth} displayName="Swatch">
           <Swatch
             displayFormat={this.state.displayFormat}
             handleClick={this.handleClick}
@@ -68,7 +68,7 @@ class SwatchPage extends Component {
             name="1.14mm"
             value="#9c5386"
           />
-        </Code>
+        </Example>
       </div>
 
     )

@@ -1,0 +1,23 @@
+.example
+  overflow hidden
+  border 1px solid $color--grey
+  border-radius $border-radius--default
+
+.example__preview
+  padding $spacing--default
+  margin-left auto
+  margin-right auto
+  text-align center
+
+.example__preview-item
+  padding $spacing--default * 0.5
+  display inline-block
+  text-align left
+  vertical-align top
+
+.example__preview-item--auto
+  width auto
+
+.example__source
+  .example__preview + &
+    border-top 1px solid $color--grey

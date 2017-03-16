@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import ResponsiveMedia from '../component/responsive-media/ResponsiveMedia'
 
 const ResponsiveMediaPage = () => (
   <div className="prose">
     <h1>Responsive Media</h1>
-    <Code>
+    <Example>
       <ResponsiveMedia ratio="1:1">
         <img
           src="http://img.clock.co.uk/500x500"
@@ -25,8 +25,8 @@ const ResponsiveMediaPage = () => (
           alt=""
         />
       </ResponsiveMedia>
-    </Code>
-    <Code>
+    </Example>
+    <Example>
       <ResponsiveMedia ratio="16:9">
         <iframe
           src="//www.youtube.com/embed/TkyLnWm1iCs"
@@ -35,7 +35,7 @@ const ResponsiveMediaPage = () => (
           frameBorder="0"
         />
       </ResponsiveMedia>
-    </Code>
+    </Example>
   </div>
 )
 

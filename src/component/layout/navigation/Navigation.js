@@ -33,6 +33,7 @@ const Navigation = () => (
         <NavigationItem to="/blockquote" text="Blockquote" />
         <NavigationItem to="/button" text="Button" />
         <NavigationItem to="/card" text="Card" />
+        <NavigationItem to="/code" text="Code" />
         <NavigationItem to="/control" text="Control" />
         <NavigationItem to="/field" text="Field" />
         <NavigationItem to="/icon" text="Icon" />

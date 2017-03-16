@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import Card from '../component/card/Card'
 
 const IndexPage = () => {
@@ -8,13 +8,13 @@ const IndexPage = () => {
   return (
     <div className="prose">
       <h1>Card</h1>
-      <Code previewWidth={previewWidth}>
+      <Example previewWidth={previewWidth}>
         <Card
           heading="Simple"
           text="Fusce dapibus, tellus ac cursus commodo, tortor mauris."
         />
-      </Code>
-      <Code previewWidth={previewWidth}>
+      </Example>
+      <Example previewWidth={previewWidth}>
         <Card
           actionText="Action"
           actionUrl="http://example.com"
@@ -26,23 +26,23 @@ const IndexPage = () => {
           imgSrc="http://img.clock.co.uk/800x450"
           text="Fusce dapibus, tellus ac cursus commodo, tortor mauris."
         />
-      </Code>
-      <Code previewWidth={previewWidth}>
+      </Example>
+      <Example previewWidth={previewWidth}>
         <Card>
           <ul>
             <li>Custom content</li>
             <li>Passed as children</li>
           </ul>
         </Card>
-      </Code>
-      <Code previewWidth={previewWidth}>
+      </Example>
+      <Example previewWidth={previewWidth}>
         <Card
           heading="You can"
           imgSrc="http://img.clock.co.uk/800x450"
           >
           <p>Mix <strong>prop</strong> content with <em>children</em> content.</p>
         </Card>
-      </Code>
+      </Example>
     </div>
   )
 }

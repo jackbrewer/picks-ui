@@ -1,27 +1,27 @@
 import React from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import Note from '../component/note/Note'
 
 const NotePage = () => (
   <div className="prose">
     <h1>Note</h1>
-    <Code>
+    <Example>
       <Note
         heading="Example Title"
         text="Donec id elit non mi porta gravida at eget metus."
         className="optional-class"
       />
-    </Code>
-    <Code>
+    </Example>
+    <Example>
       <Note>
         <p>Example with <a href="#">Link</a></p>
         <ul>
           <li>children passed via props</li>
         </ul>
       </Note>
-    </Code>
-    <Code>
+    </Example>
+    <Example>
       <Note
         state="notice"
         >
@@ -42,7 +42,7 @@ const NotePage = () => (
         >
         Donec id elit non mi <a href="#">porta gravida</a> at eget metus.
       </Note>
-    </Code>
+    </Example>
   </div>
 )
 

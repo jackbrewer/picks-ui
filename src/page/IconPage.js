@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import Icon from '../component/icon/Icon'
 import PickSvg from '../component/svg/Pick'
 
@@ -8,7 +8,7 @@ const ResponsiveMediaPage = () => (
   <div className="prose">
     <h1>Icon</h1>
     <p>Icons require a child element, usually an SVG.</p>
-    <Code previewWidth="auto">
+    <Example previewWidth="auto">
       <Icon>
         <PickSvg />
       </Icon>
@@ -19,7 +19,7 @@ const ResponsiveMediaPage = () => (
         >
         <PickSvg />
       </Icon>
-    </Code>
+    </Example>
   </div>
 )
 

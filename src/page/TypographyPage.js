@@ -111,13 +111,13 @@ n o p q r s t u v w x y z
 1 2 3 4 5 6 7 8 9 0 # ? !
 @ £ $ % ^ & * ( ) ; ' " /`}</pre>
     <pre><code>{`<!DOCTYPE html>
-  <html>
-    <head>
-    </head>
-    <body>
-        <h1 class="site-title">Site Title<div>
-    </body>
-  </html>`}</code></pre>
+<html>
+  <head>
+  </head>
+  <body>
+      <h1 class="site-title">Site Title<div>
+  </body>
+</html>`}</code></pre>
   </div>
 )
 

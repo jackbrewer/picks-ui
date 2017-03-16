@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import BooleanControl from '../component/control/BooleanControl'
 import ChoiceControl from '../component/control/ChoiceControl'
 import MultilineControl from '../component/control/MultilineControl'
@@ -33,12 +33,12 @@ class ControlPage extends React.Component {
         <h1>Control</h1>
         <p>Controls are basic inputs and will rarely be used directly. You’ll likely use fields which will pull in the desired control type.</p>
         <h2>Text Control</h2>
-        <Code>
+        <Example>
           <TextControl name="exampleName" onChange={this.handleTextChange} value={this.state['exampleName']} />
-        </Code>
+        </Example>
         <h3>Attributes</h3>
         <p>These need splitting and explaining better</p>
-        <Code noPreview>
+        <Example noPreview>
           <TextControl
             autoFocus
             controlClassName="additional-control-class"
@@ -52,17 +52,17 @@ class ControlPage extends React.Component {
             type="password"
             value={this.state['exampleFull']}
           />
-        </Code>
+        </Example>
         <h2>Boolean Control</h2>
-        <Code>
+        <Example>
           <BooleanControl name="exampleCheckbox" onChange={this.handleBooleanChange} value="foo" checked={this.state['exampleCheckbox']} />
-        </Code>
-        <Code>
+        </Example>
+        <Example>
           <BooleanControl name="exampleRadio" type="radio" onChange={this.handleBooleanChange} value="bar" checked={this.state['exampleRadio']} />
-        </Code>
+        </Example>
         <h3>Attributes</h3>
         <p>These need splitting and explaining better</p>
-        <Code noPreview>
+        <Example noPreview>
           <BooleanControl
             checked
             controlClassName="additional-control-class"
@@ -74,24 +74,24 @@ class ControlPage extends React.Component {
             type="radio"
             value={this.state['exampleBoolean']}
           />
-        </Code>
+        </Example>
         <h2>Multiline Control</h2>
-        <Code>
+        <Example>
           <MultilineControl
             name="exampleMultiline"
             onChange={this.handleTextChange}
             value={this.state['exampleMultiline']}
           />
-        </Code>
+        </Example>
         <h2>Choice Control</h2>
-        <Code>
+        <Example>
           <ChoiceControl
             name="exampleChoice"
             onChange={this.handleChoiceChange}
             options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]}
             value={this.state.exampleChoice}
           />
-        </Code>
+        </Example>
       </div>
     )
   }

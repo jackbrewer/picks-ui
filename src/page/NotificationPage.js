@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import Notification from '../component/notification/Notification'
 
 function dismissNotification (e) {
@@ -12,22 +12,22 @@ function dismissNotification (e) {
 const NotificationPage = () => (
   <div className="prose">
     <h1>Notification</h1>
-    <Code>
+    <Example>
       <Notification
         heading="Example Title"
         text="Donec id elit non mi porta gravida at eget metus."
         className="optional-class"
       />
-    </Code>
-    <Code>
+    </Example>
+    <Example>
       <Notification>
         <p>Example with <a href="#">Link</a></p>
         <ul>
           <li>children passed via props</li>
         </ul>
       </Notification>
-    </Code>
-    <Code>
+    </Example>
+    <Example>
       <Notification
         state="notice"
         >
@@ -48,8 +48,8 @@ const NotificationPage = () => (
         >
         Donec id elit non mi <a href="#">porta gravida</a> at eget metus.
       </Notification>
-    </Code>
-    <Code>
+    </Example>
+    <Example>
       <Notification
         handleDismiss={dismissNotification}
         text="Donec id elit non mi porta gravida at eget metus."
@@ -74,7 +74,7 @@ const NotificationPage = () => (
         state="error"
         text="Donec id elit non mi porta gravida at eget metus."
       />
-    </Code>
+    </Example>
   </div>
 )
 

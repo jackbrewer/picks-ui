@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import StandardField from '../component/field/StandardField'
 import BooleanField from '../component/field/BooleanField'
 
@@ -33,7 +33,7 @@ class FieldPage extends React.Component {
       <div className="prose">
         <h1>Field</h1>
         <h2>Standard Layout</h2>
-        <Code>
+        <Example>
           <StandardField
             assistance="Additional text to provide assistance"
             fieldClassName="additional-field-class"
@@ -43,8 +43,8 @@ class FieldPage extends React.Component {
             placeholder="Placeholder Text"
             value={this.state['exampleField']}
             />
-        </Code>
-        <Code>
+        </Example>
+        <Example>
           <StandardField
             assistance="Additional text to provide assistance"
             error={'Forced error message'}
@@ -55,9 +55,9 @@ class FieldPage extends React.Component {
             type="email"
             value={this.state['erroredField']}
             />
-        </Code>
+        </Example>
         <h2>Boolean Layout</h2>
-        <Code>
+        <Example>
           <BooleanField
             assistance="Additional text to provide assistance"
             checked={this.state['exampleBoolean']}
@@ -67,8 +67,8 @@ class FieldPage extends React.Component {
             onChange={this.handleBooleanChange}
             value="Example"
             />
-        </Code>
-        <Code>
+        </Example>
+        <Example>
           <p><em>Work in progress</em></p>
           <BooleanField
             assistance="Additional text to provide assistance"
@@ -79,7 +79,7 @@ class FieldPage extends React.Component {
             onChange={this.handleBooleanChange}
             value="Example"
             />
-        </Code>
+        </Example>
       </div>
     )
   }

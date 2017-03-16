@@ -2,14 +2,22 @@ import React, { Children, PropTypes } from 'react'
 import classNames from 'classnames'
 import reactElementToJSXString from 'react-element-to-jsx-string'
 
-import Highlight from 'react-highlight'
+import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light'
+import bash from 'highlight.js/lib/languages/bash'
+import css from 'highlight.js/lib/languages/css'
+import html from 'highlight.js/lib/languages/xml'
+import js from 'highlight.js/lib/languages/javascript'
+import json from 'highlight.js/lib/languages/json'
+import stylus from 'highlight.js/lib/languages/stylus'
 
-const Code = ({ children, displayName, filterProps, language, noPreview, previewWidth, noSource }) => {
-  const codePreviewItemClassNames = classNames(
-    'code__preview-item',
-    'one-whole',
-    previewWidth === 'auto' ? 'code__preview-item--auto' : previewWidth
-  )
+registerLanguage('bash', bash)
+registerLanguage('css', css)
+registerLanguage('html', html)
+registerLanguage('javascript', js)
+registerLanguage('json', json)
+registerLanguage('stylus', stylus)
+
+const Code = ({ children, displayName, filterProps, language }) => {
   const formattingOptions = {
     ...displayName && { displayName: () => displayName },
     filterProps: [ 'key', ...filterProps ],
@@ -17,6 +25,10 @@ const Code = ({ children, displayName, filterProps, language, noPreview, preview
     showFunctions: true,
     tabStop: 2
   }
+  const codeClassNames = classNames(
+    'code',
+    language
+  )
 
   function stringifyChildren () {
     return Children.map(children, (child) => {
@@ -25,41 +37,26 @@ const Code = ({ children, displayName, filterProps, language, noPreview, preview
   }
 
   return (
-    <div className="code">
-      {!noPreview &&
-        <div className="code__preview">
-          {Children.map(children, (child, key) => {
-            return <div className={codePreviewItemClassNames} key={key}>{child}</div>
-          })}
-        </div>
-      }
-      {!noSource &&
-        <div className="code__source">
-          <Highlight className={language}>
-            {stringifyChildren()}
-          </Highlight>
-        </div>
-      }
-    </div>
+    <SyntaxHighlighter
+      language={language}
+      useInlineStyles={false}
+      codeTagProps={{ className: codeClassNames }}
+      >
+      {stringifyChildren()}
+    </SyntaxHighlighter>
   )
 }
 
 Code.defaultProps = {
   filterProps: [],
-  language: 'html',
-  noPreview: false,
-  noSource: false,
-  spaced: false
+  language: 'html'
 }
 
 Code.propTypes = {
   children: PropTypes.any.isRequired,
   displayName: PropTypes.string,
   filterProps: PropTypes.arrayOf(PropTypes.string),
-  language: PropTypes.string,
-  noPreview: PropTypes.bool,
-  noSource: PropTypes.bool,
-  previewWidth: PropTypes.string
+  language: PropTypes.string
 }
 
 export default Code

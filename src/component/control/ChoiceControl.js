@@ -43,7 +43,7 @@ ChoiceControl.propTypes = {
       PropTypes.string,
       PropTypes.number
     ])
-  })),
+  })).isRequired,
   required: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,

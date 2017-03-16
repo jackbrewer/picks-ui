@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Code from '../component/code/Code'
+import Example from '../component/example/Example'
 import Button from '../component/button/Button'
 
 class ButtonPage extends React.Component {
@@ -21,37 +21,37 @@ class ButtonPage extends React.Component {
         <h1>Button</h1>
         <p>Buttons can be used for blah blah. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
         <h2>Standard</h2>
-        <Code previewWidth="auto">
+        <Example previewWidth="auto">
           <Button href="#">Anchor</Button>
           <Button>Button</Button>
-        </Code>
-        <Code previewWidth="auto">
+        </Example>
+        <Example previewWidth="auto">
           <Button href="#">Anchor<br />with multi-line</Button>
           <Button>Button<br />with multi-line</Button>
-        </Code>
+        </Example>
         <h2>Button Primary</h2>
-        <Code previewWidth="auto">
+        <Example previewWidth="auto">
           <Button className="button--primary" href="#">Anchor</Button>
           <Button className="button--primary">Button</Button>
-        </Code>
+        </Example>
         <h2>Disabled Buttons</h2>
-        <Code previewWidth="auto">
+        <Example previewWidth="auto">
           <Button disabled href="#">Anchor</Button>
           <Button disabled>Button</Button>
-        </Code>
+        </Example>
         <h2>Buttons with target</h2>
-        <Code previewWidth="auto">
+        <Example previewWidth="auto">
           <Button href="https://mathiasbynens.github.io/rel-noopener/" target="_blank">Anchor</Button>
-        </Code>
+        </Example>
         <h2>onClick</h2>
-        <Code previewWidth="auto">
+        <Example previewWidth="auto">
           <Button
             onClick={this.handleClick}
             >
             Clicked {this.state.clickCount} time{this.state.clickCount !== 1 && 's'}
             {this.state.clickCount > 10 && ' - enough already!'}
           </Button>
-        </Code>
+        </Example>
       </div>
     )
   }
