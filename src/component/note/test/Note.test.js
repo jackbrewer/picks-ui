@@ -28,18 +28,12 @@ describe('Component: Note', () => {
   })
 
   it('should add correct class if `state` prop set', () => {
+    const states = [ 'error', 'notice', 'success', 'warning' ]
     const wrapper = shallow(<Note heading="Example Heading" />)
-    assert.equal(wrapper.hasClass('note--error'), false, 'Should not have “error” state class by default')
-    assert.equal(wrapper.hasClass('note--notice'), false, 'Should not have “notice” state class by default')
-    assert.equal(wrapper.hasClass('note--success'), false, 'Should not have “success” state class by default')
-    assert.equal(wrapper.hasClass('note--warning'), false, 'Should not have “warning” state class by default')
-    wrapper.setProps({ state: 'error' })
-    assert.equal(wrapper.hasClass('note--error'), true, 'Should have “error” state class')
-    wrapper.setProps({ state: 'notice' })
-    assert.equal(wrapper.hasClass('note--notice'), true, 'Should have “notice state class')
-    wrapper.setProps({ state: 'success' })
-    assert.equal(wrapper.hasClass('note--success'), true, 'Should have “success state class')
-    wrapper.setProps({ state: 'warning' })
-    assert.equal(wrapper.hasClass('note--warning'), true, 'Should have “warning state class')
+    states.map(state => {
+      assert.equal(wrapper.hasClass(`note--${state}`), false, 'Should not have “warning” state class by default')
+      wrapper.setProps({ state })
+      assert.equal(wrapper.hasClass(`note--${state}`), true, `Should have “${state}” state class`)
+    })
   })
 })

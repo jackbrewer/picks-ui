@@ -29,19 +29,13 @@ describe('Component: Notification', () => {
   })
 
   it('should add correct class if `state` prop set', () => {
+    const states = [ 'error', 'notice', 'success', 'warning' ]
     const wrapper = shallow(<Notification heading="Example Heading" />)
-    assert.equal(wrapper.hasClass('notification--error'), false, 'Should not have “error” state class by default')
-    assert.equal(wrapper.hasClass('notification--notice'), false, 'Should not have “notice” state class by default')
-    assert.equal(wrapper.hasClass('notification--success'), false, 'Should not have “success” state class by default')
-    assert.equal(wrapper.hasClass('notification--warning'), false, 'Should not have “warning” state class by default')
-    wrapper.setProps({ state: 'error' })
-    assert.equal(wrapper.hasClass('notification--error'), true, 'Should have “error” state class')
-    wrapper.setProps({ state: 'notice' })
-    assert.equal(wrapper.hasClass('notification--notice'), true, 'Should have “notice state class')
-    wrapper.setProps({ state: 'success' })
-    assert.equal(wrapper.hasClass('notification--success'), true, 'Should have “success state class')
-    wrapper.setProps({ state: 'warning' })
-    assert.equal(wrapper.hasClass('notification--warning'), true, 'Should have “warning state class')
+    states.map(state => {
+      assert.equal(wrapper.hasClass(`notification--${state}`), false, 'Should not have “warning” state class by default')
+      wrapper.setProps({ state })
+      assert.equal(wrapper.hasClass(`notification--${state}`), true, `Should have “${state}” state class`)
+    })
   })
 
   it('should not be dismissable by default', () => {
