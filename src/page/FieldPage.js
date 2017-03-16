@@ -2,7 +2,7 @@ import React from 'react'
 
 import Example from '../component/example/Example'
 import StandardField from '../component/field/StandardField'
-import BooleanField from '../component/field/BooleanField'
+import CheckField from '../component/field/CheckField'
 
 class FieldPage extends React.Component {
   constructor () {
@@ -12,7 +12,7 @@ class FieldPage extends React.Component {
       erroredField: 'example'
     }
     this.handleValueChange = this.handleValueChange.bind(this)
-    this.handleBooleanChange = this.handleBooleanChange.bind(this)
+    this.handleCheckChange = this.handleCheckChange.bind(this)
     this.handleChoiceChange = this.handleChoiceChange.bind(this)
   }
 
@@ -20,7 +20,7 @@ class FieldPage extends React.Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleBooleanChange (e) {
+  handleCheckChange (e) {
     this.setState({ [e.target.name]: e.target.checked })
   }
 
@@ -35,6 +35,7 @@ class FieldPage extends React.Component {
         <h2>Standard Layout</h2>
         <Example>
           <StandardField
+            type="text"
             assistance="Additional text to provide assistance"
             fieldClassName="additional-field-class"
             label="Example Label"
@@ -58,25 +59,27 @@ class FieldPage extends React.Component {
         </Example>
         <h2>Boolean Layout</h2>
         <Example>
-          <BooleanField
+          <CheckField
+            type="checkbox"
             assistance="Additional text to provide assistance"
-            checked={this.state['exampleBoolean']}
+            checked={this.state['exampleCheckbox'] || false}
             fieldClassName="additional-field-class"
             label="Example Label"
-            name="exampleBoolean"
-            onChange={this.handleBooleanChange}
+            name="exampleCheckbox"
+            onChange={this.handleCheckChange}
             value="Example"
             />
         </Example>
+        <p><em>Work in progress</em></p>
         <Example>
-          <p><em>Work in progress</em></p>
-          <BooleanField
+          <CheckField
+            type="radio"
             assistance="Additional text to provide assistance"
-            checked={this.state['exampleBoolean']}
+            checked={this.state['exampleRadio'] || false}
             fieldClassName="additional-field-class"
             label="Example Multi Label"
-            name="exampleMultiBoolean"
-            onChange={this.handleBooleanChange}
+            name="exampleRadio"
+            onChange={this.handleCheckChange}
             value="Example"
             />
         </Example>

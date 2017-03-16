@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-const MultilineControl = ({ autoFocus, controlClassName, disabled, maxLength, name, onBlur, onChange, required, rows, value }) => {
+const TextareaControl = ({ additional, controlClassName, disabled, error, maxLength, name, onBlur, onChange, required, rows, value }) => {
   return (
     <textarea
-      className={classnames('control', 'control--text', 'control--multiline', controlClassName)}
+      className={classnames('control', 'control--text', 'control--multiline', controlClassName, { 'control--error': error })}
       disabled={disabled}
       name={name}
       onBlur={onBlur}
@@ -12,21 +12,23 @@ const MultilineControl = ({ autoFocus, controlClassName, disabled, maxLength, na
       required={required}
       rows={rows}
       value={value}
+      {...additional}
     />
   )
 }
 
-MultilineControl.defaultProps = {
+TextareaControl.defaultProps = {
   disabled: false,
   required: false,
   rows: 3,
   value: ''
 }
 
-MultilineControl.propTypes = {
-  autoFocus: PropTypes.bool,
+TextareaControl.propTypes = {
+  additional: PropTypes.object,
   controlClassName: PropTypes.string,
   disabled: PropTypes.bool,
+  error: PropTypes.string,
   maxLength: PropTypes.number,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
@@ -36,4 +38,4 @@ MultilineControl.propTypes = {
   value: PropTypes.string
 }
 
-export default MultilineControl
+export default TextareaControl

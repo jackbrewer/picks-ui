@@ -1,0 +1,111 @@
+//
+// CUSTOM CHECK
+// ============
+// Styles check inputs (checkbox/radio) using CSS, by hiding the input
+// and showing a styled placeholder.
+//
+
+.custom-check
+  //
+
+.custom-check__control
+  position absolute
+  z-index -1
+  opacity 0
+
+.custom-check__indicator
+  position relative
+  display inline-block
+  top -2px
+  width rem(25)
+  height rem(25)
+  background $color--white
+  vertical-align middle
+  margin-right rem(10)
+  border 1px solid $color--grey
+  border-radius $border-radius--default
+  transition border-color 0.4s ease
+
+  .custom-check--error &
+    border-color $color--error
+
+  // Hover and focus states
+  .custom-check__control:hover:not([disabled]) ~ &
+  .custom-check__control:focus ~ &
+    border-color $color--dark-grey
+    transition-duration 0.1s
+
+  // Checked state
+  .custom-check__control:checked ~ &
+    border-color $color--primary
+
+  // Hover and focus states whilst checked
+  .custom-check__control:hover:not([disabled]):checked ~ &
+  .custom-check__control:checked:focus ~ &
+    border-color $color--primary
+    box-shadow 0 0 0 1px $color--primary inset
+
+  // Disabled state
+  .custom-check__control:disabled ~ &
+    opacity 0.6
+    border-color $color--grey
+    cursor not-allowed
+
+  &:after
+    position absolute
+    content ''
+    opacity 0
+    transform scale(0)
+    transition opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.6, 1.5, 0.8, 1.15)
+
+  .custom-check__control:checked ~ &:after
+    opacity 1
+    transform scale(1)
+    transition-duration 0.1s
+
+
+//
+// CHECKBOX
+//
+
+.custom-check--checkbox
+
+  // Checkbox tick
+  .custom-check__indicator:after
+    top 3px
+    left 8px
+    width 7px
+    height 14px
+    transform scale(0) rotate(45deg)
+    border solid $color--primary
+    border-width 0 3px 3px 0
+
+  .custom-check__control:checked ~ .custom-check__indicator:after
+    transform scale(1) rotate(45deg)
+
+  // Disabled tick colour
+  .custom-check__control:disabled ~ .custom-check__indicator:after
+    border-color $color--grey
+
+
+//
+// RADIO
+//
+
+.custom-check--radio
+
+  .custom-check__indicator
+    border-radius 50%
+
+  // Radio button inner circle
+  .custom-check__indicator:after
+    top 5px
+    left 5px
+    width rem(13)
+    height rem(13)
+    border-radius 50%
+    background $color--primary
+
+  // Disabled circle colour
+  .custom-check__control:disabled ~ .custom-check__indicator:after
+    background $color--grey

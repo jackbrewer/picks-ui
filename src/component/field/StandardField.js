@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
-import TextControl from '../control/TextControl'
+import Control from '../control/Control'
 
 const StandardField = (props) => {
   const { assistance, error, fieldClassName, label, name } = props
@@ -17,7 +17,7 @@ const StandardField = (props) => {
         </label>
       </div>
       <div className="field__answer">
-        <TextControl {...props} />
+        <Control {...props} />
       </div>
       {error ? <div className="field__feedback">{error}</div> : null}
       {assistance ? <div className="field__assistance">{assistance}</div> : null}

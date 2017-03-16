@@ -1,17 +1,17 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-const ChoiceControl = ({ autoFocus, controlClassName, disabled, name, onBlur, onChange, options, required, value }) => {
+const SelectControl = ({ additional, controlClassName, disabled, error, name, onBlur, onChange, options, required, value }) => {
   return (
     <select
-      autoFocus={autoFocus}
-      className={classnames('control', 'control--choice', controlClassName)}
+      className={classnames('control', 'control--choice', controlClassName, { 'control--error': error })}
       defaultValue={value}
       disabled={disabled}
       name={name}
       onBlur={onBlur}
       onChange={onChange}
       required={required}
+      {...additional}
       >
       {options.map(({ value, text }, i) =>
         <option key={`${i}-${value}`} value={value}>{text}</option>)}
@@ -19,18 +19,18 @@ const ChoiceControl = ({ autoFocus, controlClassName, disabled, name, onBlur, on
   )
 }
 
-ChoiceControl.defaultProps = {
-  autoFocus: false,
+SelectControl.defaultProps = {
   disabled: false,
   required: false,
   type: 'text',
   value: ''
 }
 
-ChoiceControl.propTypes = {
-  autoFocus: PropTypes.bool,
+SelectControl.propTypes = {
+  additional: PropTypes.object,
   controlClassName: PropTypes.string,
   disabled: PropTypes.bool,
+  error: PropTypes.string,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
@@ -51,4 +51,4 @@ ChoiceControl.propTypes = {
   ])
 }
 
-export default ChoiceControl
+export default SelectControl

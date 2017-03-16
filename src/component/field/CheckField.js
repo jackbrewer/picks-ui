@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
-import BooleanControl from '../control/BooleanControl'
+import Control from '../control/Control'
 
-const BooleanField = (props) => {
+const CheckField = (props) => {
   const { assistance, error, fieldClassName, label, name } = props
-  const fieldClasses = classNames('field', 'field--boolean', fieldClassName, { 'field--error': error })
+  const fieldClasses = classNames('field', 'field--check', fieldClassName, { 'field--error': error })
   return (
     <div
       className={fieldClasses}
@@ -14,7 +14,7 @@ const BooleanField = (props) => {
       <div className="field__answer">
         <label className="control-wrap">
           <span className="control-wrap__item control-wrap__item--shrink">
-            <BooleanControl {...props} />
+            <Control {...props} />
           </span>
           <span className="control-wrap__item">
             {label}
@@ -27,9 +27,9 @@ const BooleanField = (props) => {
   )
 }
 
-BooleanField.defaultProps = {}
+CheckField.defaultProps = {}
 
-BooleanField.propTypes = {
+CheckField.propTypes = {
   assistance: PropTypes.string,
   error: PropTypes.oneOfType([
     PropTypes.string,
@@ -43,4 +43,4 @@ BooleanField.propTypes = {
   name: PropTypes.string.isRequired
 }
 
-export default BooleanField
+export default CheckField
