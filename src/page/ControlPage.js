@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Example from '../component/example/Example'
+import Control from '../component/control/Control'
 import BooleanControl from '../component/control/BooleanControl'
 import ChoiceControl from '../component/control/ChoiceControl'
 import MultilineControl from '../component/control/MultilineControl'
@@ -91,6 +92,16 @@ class ControlPage extends React.Component {
             options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]}
             value={this.state.exampleChoice}
           />
+        </Example>
+        <h2>Generic Component Name</h2>
+        <Example>
+          <Control name="controlText" onChange={this.handleTextChange} value={this.state['controlText']} />
+          <Control type="checkbox" name="controlCheckbox" onChange={this.handleBooleanChange} value="" checked={this.state['controlCheckbox']} />
+          <Control type="radio" name="controlRadio" onChange={this.handleBooleanChange} value="" checked={this.state['controlRadio']} />
+          <Control type="choice" name="controlChoice" onChange={this.handleChoiceChange} value={this.state['controlChoice']} options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]} />
+          <Control type="multiline" name="controlMultiline" onChange={this.handleTextChange} value={this.state['controlMultiline']} />
+          <Control type="date" name="controlDate" onChange={this.handleTextChange} value={this.state['controlDate']} />
+          <Control type="number" name="controlNumer" onChange={this.handleTextChange} value={this.state['controlNumer']} />
         </Example>
       </div>
     )
