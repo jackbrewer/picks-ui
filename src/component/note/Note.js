@@ -20,7 +20,7 @@ const Note = ({ children, className, heading, text, state }) => {
 }
 
 Note.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.node,
   className: PropTypes.string,
   heading: PropTypes.string,
   text: PropTypes.string,

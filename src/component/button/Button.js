@@ -53,7 +53,7 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   href: PropTypes.string,

@@ -18,7 +18,7 @@ const Blockquote = ({ children, citation, citationUrl, quote }) => {
 }
 
 Blockquote.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.node,
   citation: PropTypes.string,
   citationUrl: PropTypes.string,
   quote: PropTypes.string

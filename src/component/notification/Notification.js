@@ -32,7 +32,7 @@ const Notification = ({ children, className, handleDismiss, heading, text, state
 }
 
 Notification.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.node,
   className: PropTypes.string,
   handleDismiss: PropTypes.func,
   heading: PropTypes.string,

@@ -39,7 +39,7 @@ Card.propTypes = {
   actionText: PropTypes.string,
   actionUrl: PropTypes.string,
   centered: PropTypes.bool,
-  children: PropTypes.any,
+  children: PropTypes.node,
   className: PropTypes.string,
   heading: PropTypes.string,
   imgAlt: PropTypes.string,

@@ -23,7 +23,7 @@ const ResponsiveMedia = ({ children, ratio }) => {
 ResponsiveMedia.defaultProps = {}
 
 ResponsiveMedia.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.node.isRequired,
   ratio: (props, propName, componentName) => {
     const ratio = props[propName]
     return !ratio || ratioRegex.exec(ratio) ? null : new Error(`${propName} (${props[propName]}) in ${componentName} is not in the expected format (e.g. 16:9)`)

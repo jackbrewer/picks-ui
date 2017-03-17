@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
-export default function Icon ({ a11yText, children, className, type, width }) {
+export default function Icon ({ a11yText, children, className, width }) {
   const iconsClassNames = classNames(
     'icon',
     { 'icon--custom-width': width },
@@ -23,8 +23,7 @@ export default function Icon ({ a11yText, children, className, type, width }) {
 
 Icon.propTypes = {
   a11yText: PropTypes.string,
-  children: PropTypes.any.isRequired,
-  className: PropTypes.any,
-  type: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   width: PropTypes.number
 }

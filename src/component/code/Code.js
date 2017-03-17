@@ -53,7 +53,7 @@ Code.defaultProps = {
 }
 
 Code.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.node.isRequired,
   displayName: PropTypes.string,
   filterProps: PropTypes.arrayOf(PropTypes.string),
   language: PropTypes.string
