@@ -27,7 +27,7 @@ const IndexPage = () => {
           text="Fusce dapibus, tellus ac cursus commodo, tortor mauris."
         />
       </Example>
-      <Example previewWidth={previewWidth}>
+      <Example previewWidth={previewWidth} toggleSource>
         <Card>
           <ul>
             <li>Custom content</li>
@@ -35,7 +35,7 @@ const IndexPage = () => {
           </ul>
         </Card>
       </Example>
-      <Example previewWidth={previewWidth}>
+      <Example previewWidth={previewWidth} toggleSource>
         <Card
           heading="You can"
           imgSrc="http://img.clock.co.uk/800x450"
