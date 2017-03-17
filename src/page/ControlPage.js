@@ -6,9 +6,10 @@ import Control from '../component/control/Control'
 class ControlPage extends React.Component {
   constructor () {
     super()
-    this.state = {}
+    this.state = { exampleCheckbox: [] }
     this.handleTextChange = this.handleTextChange.bind(this)
     this.handleCheckChange = this.handleCheckChange.bind(this)
+    this.handleMultiCheckChange = this.handleMultiCheckChange.bind(this)
     this.handleSelectChange = this.handleSelectChange.bind(this)
   }
 
@@ -17,7 +18,20 @@ class ControlPage extends React.Component {
   }
 
   handleCheckChange (e) {
-    this.setState({ [e.target.name]: e.target.checked })
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleMultiCheckChange (e) {
+    const name = e.target.name
+    const val = [ ...this.state[e.target.name] ]
+    const newVal = e.target.value
+    const index = val.indexOf(newVal)
+    if (val.indexOf(newVal) !== -1) {
+      val.splice(index, 1)
+    } else {
+      val.push(e.target.value)
+    }
+    this.setState({ [name]: val })
   }
 
   handleSelectChange (e) {
@@ -51,10 +65,30 @@ class ControlPage extends React.Component {
         </Example>
         <h2>Check Control</h2>
         <Example filterProps={filterProps}>
-          <label><Control type="checkbox" name="exampleCheckbox" onChange={this.handleCheckChange} value="foo" checked={this.state['exampleCheckbox'] || false} /></label>
+          <Control
+            type="checkbox"
+            name="exampleCheckbox"
+            onChange={this.handleMultiCheckChange}
+            options={[
+              { text: 'Text here 1', value: 'Foo1', ...(this.state['exampleCheckbox'].indexOf('Foo1') !== -1) && { checked: true } },
+              { text: 'Text here 2', value: 'Foo2', ...(this.state['exampleCheckbox'].indexOf('Foo2') !== -1) && { checked: true } },
+              { text: 'Text here 3', value: 'Foo3', ...(this.state['exampleCheckbox'].indexOf('Foo3') !== -1) && { checked: true } },
+              { text: 'Text here 4', value: 'Foo4', ...(this.state['exampleCheckbox'].indexOf('Foo4') !== -1) && { checked: true } }
+            ]}
+          />
         </Example>
         <Example filterProps={filterProps}>
-          <label><Control type="radio" name="exampleRadio" onChange={this.handleCheckChange} value="bar" checked={this.state['exampleRadio'] || false} /></label>
+          <Control
+            type="radio"
+            name="exampleRadio"
+            onChange={this.handleCheckChange}
+            options={[
+              { text: 'Text here 1', value: 'Bar1', ...(this.state['exampleRadio'] === 'Bar1') && { checked: true } },
+              { text: 'Text here 2', value: 'Bar2', ...(this.state['exampleRadio'] === 'Bar2') && { checked: true } },
+              { text: 'Text here 3', value: 'Bar3', ...(this.state['exampleRadio'] === 'Bar3') && { checked: true } },
+              { text: 'Text here 4', value: 'Bar4', ...(this.state['exampleRadio'] === 'Bar4') && { checked: true } }
+            ]}
+            />
         </Example>
         <h3>Attributes</h3>
         <p>These need splitting and explaining better</p>
@@ -93,10 +127,10 @@ class ControlPage extends React.Component {
         <h2>Generic Component Name</h2>
         <Example filterProps={filterProps}>
           <Control type="text" additional={{ size: 2 }} name="controlText" onChange={this.handleTextChange} value={this.state['controlText'] || ''} />
-          <label><Control type="checkbox" name="controlCheckbox" onChange={this.handleCheckChange} value="" checked={this.state['controlCheckbox'] || false} /></label>
-          <label><Control type="radio" name="controlRadio" onChange={this.handleCheckChange} value="" checked={this.state['controlRadio'] || false} /></label>
-          <label><Control type="checkbox" native name="controlNativeCheckbox" onChange={this.handleCheckChange} value="" checked={this.state['controlNativeCheckbox'] || false} /></label>
-          <label><Control type="radio" native name="controlNativeRadio" onChange={this.handleCheckChange} value="" checked={this.state['controlNativeRadio'] || false} /></label>
+          <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo' } ]} name="controlCheckbox" onChange={this.handleCheckChange} checked={this.state['controlCheckbox'] || false} />
+          <Control type="radio" options={[ { text: 'Text here', value: 'Foo' } ]} name="controlRadio" onChange={this.handleCheckChange} checked={this.state['controlRadio'] || false} />
+          <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo' } ]} native name="controlNativeCheckbox" onChange={this.handleCheckChange} checked={this.state['controlNativeCheckbox'] || false} />
+          <Control type="radio" options={[ { text: 'Text here', value: 'Foo' } ]} native name="controlNativeRadio" onChange={this.handleCheckChange} checked={this.state['controlNativeRadio'] || false} />
           <Control type="select" name="controlSelect" onChange={this.handleSelectChange} value={this.state['controlSelect'] || ''} options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]} />
           <Control type="select" native name="controlNativeSelect" onChange={this.handleSelectChange} value={this.state['controlNativeSelect'] || ''} options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]} />
           <Control type="textarea" name="controlTextarea" onChange={this.handleTextChange} value={this.state['controlTextarea'] || ''} />

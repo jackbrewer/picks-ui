@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import CustomCheckControl from './custom-check/CustomCheck'
+import CheckControl from './check/Check'
 import CustomSelectControl from './custom-select/CustomSelect'
 import FileControl from './file/File'
 import DateControl from './date/Date'
@@ -13,7 +13,7 @@ const Control = (props) => {
   switch (type) {
     case 'checkbox':
     case 'radio':
-      return <CustomCheckControl {...props} />
+      return <CheckControl {...props} />
     case 'date':
       return <DateControl {...props} />
     case 'file':

@@ -1,8 +1,8 @@
 import React from 'react'
 
 import Example from '../component/example/Example'
-import StandardField from '../component/field/StandardField'
-import CheckField from '../component/field/CheckField'
+import Field from '../component/field/Field'
+import Control from '../component/control/Control'
 
 class FieldPage extends React.Component {
   constructor () {
@@ -21,7 +21,7 @@ class FieldPage extends React.Component {
   }
 
   handleCheckChange (e) {
-    this.setState({ [e.target.name]: e.target.checked })
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   handleChoiceChange (e) {
@@ -34,54 +34,91 @@ class FieldPage extends React.Component {
         <h1>Field</h1>
         <h2>Standard Layout</h2>
         <Example>
-          <StandardField
-            type="text"
+          <Field
             assistance="Additional text to provide assistance"
-            fieldClassName="additional-field-class"
+            className="additional-field-class"
             label="Example Label"
-            name="exampleField"
-            onChange={this.handleValueChange}
-            placeholder="Placeholder Text"
-            value={this.state['exampleField']}
-            />
-        </Example>
-        <Example>
-          <StandardField
-            assistance="Additional text to provide assistance"
-            error={'Forced error message'}
-            fieldClassName="additional-field-class"
+            controlName="exampleField"
+            required
+            >
+            <Control type="text" name="exampleField" />
+          </Field>
+          <Field
             label="Example Label"
-            name="erroredField"
-            onChange={this.handleValueChange}
-            type="email"
-            value={this.state['erroredField']}
-            />
+            controlName="exampleSelect"
+            >
+            <Control type="select" name="exampleSelect" options={[
+              {
+                text: 'One',
+                value: 1
+              },
+              {
+                text: 'Two',
+                value: 2
+              },
+              {
+                text: 'Three',
+                value: 3
+              }
+            ]} />
+          </Field>
+          <Field
+            error="Example Error"
+            label="Example Label"
+            controlName="erroredField"
+            >
+            <Control type="text" name="erroredField" error="Example Error" />
+          </Field>
         </Example>
+
         <h2>Boolean Layout</h2>
         <Example>
-          <CheckField
-            type="checkbox"
+          <Field
+            layout="check"
             assistance="Additional text to provide assistance"
-            checked={this.state['exampleCheckbox'] || false}
-            fieldClassName="additional-field-class"
+            className="additional-field-class"
             label="Example Label"
-            name="exampleCheckbox"
-            onChange={this.handleCheckChange}
-            value="Example"
-            />
+            controlName="exampleCheckbox"
+            >
+            <Control type="checkbox" name="exampleCheckbox" options={[ { text: 'Text here', value: 'Foo' } ]} />
+          </Field>
+          <Field
+            layout="check"
+            label="Example Label"
+            controlName="exampleCheckboxError"
+            error="Example Error"
+            >
+            <Control type="checkbox" name="exampleCheckboxError" error="Example Error" options={[ { text: 'Text here', value: 'Foo' } ]} />
+          </Field>
         </Example>
-        <p><em>Work in progress</em></p>
+
         <Example>
-          <CheckField
-            type="radio"
+          <Field
+            layout="check"
             assistance="Additional text to provide assistance"
-            checked={this.state['exampleRadio'] || false}
-            fieldClassName="additional-field-class"
+            className="additional-field-class"
             label="Example Multi Label"
-            name="exampleRadio"
-            onChange={this.handleCheckChange}
-            value="Example"
+            controlName="exampleRadio"
+            >
+            <Control
+              type="checkbox"
+              name="exampleRadio"
+              options={[
+                {
+                  text: 'One',
+                  value: 1
+                },
+                {
+                  text: 'Two',
+                  value: 2
+                },
+                {
+                  text: 'Three',
+                  value: 3
+                }
+              ]}
             />
+          </Field>
         </Example>
       </div>
     )

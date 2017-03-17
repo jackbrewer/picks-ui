@@ -1,42 +1,60 @@
 import React, { PropTypes } from 'react'
-import classnames from 'classnames'
 
-const CheckControl = ({ additional, checked, className, disabled, error, name, onBlur, onChange, required, type, value }) => {
+import CustomCheckControl from '../custom-check/CustomCheck'
+import NativeCheckControl from '../native-check/NativeCheck'
+
+const CheckControl = (props) => {
+  const { options, native } = props
+
+  const SingleCheck = ({ text, value, checked }) => {
+    const CheckControlType = native ? NativeCheckControl : CustomCheckControl
+    return (
+      <label className="control-wrap">
+        <span className="control-wrap__item control-wrap__item--shrink">
+          <CheckControlType {...props} value={value} checked={checked} />
+        </span>
+        <span className="control-wrap__item">
+          <p>{text}</p>
+        </span>
+      </label>
+    )
+  }
+
+  SingleCheck.propTypes = {
+    checked: PropTypes.bool,
+    text: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
+  }
+
   return (
-    <input
-      checked={checked}
-      className={classnames('control', 'control--check', className, { 'control--error': error })}
-      disabled={disabled}
-      name={name}
-      onBlur={onBlur}
-      onChange={onChange}
-      required={required}
-      type={type}
-      value={value}
-      {...additional}
-    />
+    <ul className="control--check-list list--unstyled">
+      {options.map((option, i) => <li key={i}><SingleCheck {...option} /></li>)}
+    </ul>
   )
 }
 
 CheckControl.defaultProps = {
-  checked: false,
-  disabled: false,
-  required: false,
-  value: ''
+  native: false
 }
 
 CheckControl.propTypes = {
-  additional: PropTypes.object,
-  checked: PropTypes.bool,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  error: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  required: PropTypes.bool,
-  type: PropTypes.oneOf([ 'radio', 'checkbox' ]).isRequired,
-  value: PropTypes.string
+  native: PropTypes.bool,
+  options: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
+  }))
 }
 
 export default CheckControl
