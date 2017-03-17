@@ -6,7 +6,7 @@ import Control from '../component/control/Control'
 class ControlPage extends React.Component {
   constructor () {
     super()
-    this.state = { exampleCheckbox: [] }
+    this.state = {}
     this.handleTextChange = this.handleTextChange.bind(this)
     this.handleCheckChange = this.handleCheckChange.bind(this)
     this.handleMultiCheckChange = this.handleMultiCheckChange.bind(this)
@@ -18,12 +18,13 @@ class ControlPage extends React.Component {
   }
 
   handleCheckChange (e) {
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({ [e.target.name]: e.target.checked ? e.target.value : false })
   }
 
   handleMultiCheckChange (e) {
+    console.log(e.target.checked)
     const name = e.target.name
-    const val = [ ...this.state[e.target.name] ]
+    const val = [ ...(this.state[e.target.name] || []) ]
     const newVal = e.target.value
     const index = val.indexOf(newVal)
     if (val.indexOf(newVal) !== -1) {
@@ -31,7 +32,7 @@ class ControlPage extends React.Component {
     } else {
       val.push(e.target.value)
     }
-    this.setState({ [name]: val })
+    this.setState({ [name]: val.sort() })
   }
 
   handleSelectChange (e) {
@@ -66,27 +67,29 @@ class ControlPage extends React.Component {
         <h2>Check Control</h2>
         <Example filterProps={filterProps}>
           <Control
+            {...this.state['exampleCheckbox'] && { checkedValue: this.state['exampleCheckbox'] }}
             type="checkbox"
             name="exampleCheckbox"
             onChange={this.handleMultiCheckChange}
             options={[
-              { text: 'Text here 1', value: 'Foo1', ...(this.state['exampleCheckbox'].indexOf('Foo1') !== -1) && { checked: true } },
-              { text: 'Text here 2', value: 'Foo2', ...(this.state['exampleCheckbox'].indexOf('Foo2') !== -1) && { checked: true } },
-              { text: 'Text here 3', value: 'Foo3', ...(this.state['exampleCheckbox'].indexOf('Foo3') !== -1) && { checked: true } },
-              { text: 'Text here 4', value: 'Foo4', ...(this.state['exampleCheckbox'].indexOf('Foo4') !== -1) && { checked: true } }
+              { text: 'Text here 1', value: 'Foo1' },
+              { text: 'Text here 2', value: 'Foo2' },
+              { text: 'Text here 3', value: 'Foo3' },
+              { text: 'Text here 4', value: 'Foo4' }
             ]}
           />
         </Example>
         <Example filterProps={filterProps}>
           <Control
+            {...this.state['exampleRadio'] && { checkedValue: this.state['exampleRadio'] }}
             type="radio"
             name="exampleRadio"
             onChange={this.handleCheckChange}
             options={[
-              { text: 'Text here 1', value: 'Bar1', ...(this.state['exampleRadio'] === 'Bar1') && { checked: true } },
-              { text: 'Text here 2', value: 'Bar2', ...(this.state['exampleRadio'] === 'Bar2') && { checked: true } },
-              { text: 'Text here 3', value: 'Bar3', ...(this.state['exampleRadio'] === 'Bar3') && { checked: true } },
-              { text: 'Text here 4', value: 'Bar4', ...(this.state['exampleRadio'] === 'Bar4') && { checked: true } }
+              { text: 'Text here 1', value: 'Bar1' },
+              { text: 'Text here 2', value: 'Bar2' },
+              { text: 'Text here 3', value: 'Bar3' },
+              { text: 'Text here 4', value: 'Bar4' }
             ]}
             />
         </Example>
@@ -127,10 +130,10 @@ class ControlPage extends React.Component {
         <h2>Generic Component Name</h2>
         <Example filterProps={filterProps}>
           <Control type="text" additional={{ size: 20 }} name="controlText" onChange={this.handleTextChange} value={this.state['controlText'] || ''} />
-          <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo', ...(this.state['controlCheckbox'] === 'Foo') && { checked: true } } ]} name="controlCheckbox" onChange={this.handleCheckChange} />
-          <Control type="radio" options={[ { text: 'Text here', value: 'Foo' } ]} name="controlRadio" onChange={this.handleCheckChange} checked={this.state['controlRadio'] || false} />
-          <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo' } ]} native name="controlNativeCheckbox" onChange={this.handleCheckChange} checked={this.state['controlNativeCheckbox'] || false} />
-          <Control type="radio" options={[ { text: 'Text here', value: 'Foo' } ]} native name="controlNativeRadio" onChange={this.handleCheckChange} checked={this.state['controlNativeRadio'] || false} />
+          <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo' } ]} name="controlCheckbox" {...this.state['controlCheckbox'] && { checkedValue: this.state['controlCheckbox'] }} onChange={this.handleCheckChange} />
+          <Control type="radio" options={[ { text: 'Text here', value: 'Foo' } ]} name="controlRadio" {...this.state['controlRadio'] && { checkedValue: this.state['controlRadio'] }} onChange={this.handleCheckChange} />
+          <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo' } ]} native name="controlNativeCheckbox" {...this.state['controlNativeCheckbox'] && { checkedValue: this.state['controlNativeCheckbox'] }} onChange={this.handleCheckChange} />
+          <Control type="radio" options={[ { text: 'Text here', value: 'Foo' } ]} native name="controlNativeRadio" {...this.state['controlNativeRadio'] && { checkedValue: this.state['controlNativeRadio'] }} onChange={this.handleCheckChange} />
           <Control type="select" name="controlSelect" onChange={this.handleSelectChange} value={this.state['controlSelect'] || ''} options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]} />
           <Control type="select" native name="controlNativeSelect" onChange={this.handleSelectChange} value={this.state['controlNativeSelect'] || ''} options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]} />
           <Control type="textarea" name="controlTextarea" onChange={this.handleTextChange} value={this.state['controlTextarea'] || ''} />

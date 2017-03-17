@@ -4,14 +4,22 @@ import CustomCheckControl from '../custom-check/CustomCheck'
 import NativeCheckControl from '../native-check/NativeCheck'
 
 const CheckControl = (props) => {
-  const { options, native } = props
+  const { checkedValue, options, native } = props
 
   const SingleCheck = ({ text, value, checked }) => {
     const CheckControlType = native ? NativeCheckControl : CustomCheckControl
+
+    function isChecked (value) {
+      if (Array.isArray(checkedValue) && checkedValue.indexOf(value) !== -1) return true
+      if (checkedValue === value) return true
+      return false
+    }
+    // TODO: check if current value is array, to account for multi-checkbox method
+    // Needs standalone function to do radio/array checking
     return (
       <label className="control-wrap">
         <span className="control-wrap__item control-wrap__item--shrink">
-          <CheckControlType {...props} value={value} checked={checked} />
+          <CheckControlType {...props} value={value} {...isChecked(value) && { checked: true }} />
         </span>
         <span className="control-wrap__item">{text}</span>
       </label>
@@ -46,6 +54,11 @@ CheckControl.defaultProps = {
 }
 
 CheckControl.propTypes = {
+  checkedValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array
+  ]),
   native: PropTypes.bool,
   options: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.oneOfType([
