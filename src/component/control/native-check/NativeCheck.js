@@ -36,7 +36,10 @@ NativeCheckControl.propTypes = {
   onChange: PropTypes.func,
   required: PropTypes.bool,
   type: PropTypes.oneOf([ 'radio', 'checkbox' ]).isRequired,
-  value: PropTypes.string
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
 }
 
 export default NativeCheckControl

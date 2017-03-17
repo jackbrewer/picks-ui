@@ -126,8 +126,8 @@ class ControlPage extends React.Component {
         </Example>
         <h2>Generic Component Name</h2>
         <Example filterProps={filterProps}>
-          <Control type="text" additional={{ size: 2 }} name="controlText" onChange={this.handleTextChange} value={this.state['controlText'] || ''} />
-          <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo' } ]} name="controlCheckbox" onChange={this.handleCheckChange} checked={this.state['controlCheckbox'] || false} />
+          <Control type="text" additional={{ size: 20 }} name="controlText" onChange={this.handleTextChange} value={this.state['controlText'] || ''} />
+          <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo', ...(this.state['controlCheckbox'] === 'Foo') && { checked: true } } ]} name="controlCheckbox" onChange={this.handleCheckChange} />
           <Control type="radio" options={[ { text: 'Text here', value: 'Foo' } ]} name="controlRadio" onChange={this.handleCheckChange} checked={this.state['controlRadio'] || false} />
           <Control type="checkbox" options={[ { text: 'Text here', value: 'Foo' } ]} native name="controlNativeCheckbox" onChange={this.handleCheckChange} checked={this.state['controlNativeCheckbox'] || false} />
           <Control type="radio" options={[ { text: 'Text here', value: 'Foo' } ]} native name="controlNativeRadio" onChange={this.handleCheckChange} checked={this.state['controlNativeRadio'] || false} />

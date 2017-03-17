@@ -13,9 +13,7 @@ const CheckControl = (props) => {
         <span className="control-wrap__item control-wrap__item--shrink">
           <CheckControlType {...props} value={value} checked={checked} />
         </span>
-        <span className="control-wrap__item">
-          <p>{text}</p>
-        </span>
+        <span className="control-wrap__item">{text}</span>
       </label>
     )
   }
@@ -30,6 +28,10 @@ const CheckControl = (props) => {
       PropTypes.string,
       PropTypes.number
     ])
+  }
+
+  if (options.length === 1) {
+    return <SingleCheck {...options[0]} />
   }
 
   return (
