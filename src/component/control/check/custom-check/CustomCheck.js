@@ -20,8 +20,7 @@ const CustomCheckControl = (props) => {
 }
 
 CustomCheckControl.defaultProps = {
-  error: '',
-  native: false
+  error: ''
 }
 
 CustomCheckControl.propTypes = {
