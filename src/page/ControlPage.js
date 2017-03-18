@@ -22,7 +22,6 @@ class ControlPage extends React.Component {
   }
 
   handleMultiCheckChange (e) {
-    console.log(e.target.checked)
     const name = e.target.name
     const val = [ ...(this.state[e.target.name] || []) ]
     const newVal = e.target.value

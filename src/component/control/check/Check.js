@@ -14,8 +14,7 @@ const CheckControl = (props) => {
       if (checkedValue === value) return true
       return false
     }
-    // TODO: check if current value is array, to account for multi-checkbox method
-    // Needs standalone function to do radio/array checking
+
     return (
       <label className="control-wrap">
         <span className="control-wrap__item control-wrap__item--shrink">
@@ -57,7 +56,12 @@ CheckControl.propTypes = {
   checkedValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
-    PropTypes.array
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ])
+    )
   ]),
   native: PropTypes.bool,
   options: PropTypes.arrayOf(PropTypes.shape({
