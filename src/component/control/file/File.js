@@ -1,43 +1,20 @@
 import React, { PropTypes } from 'react'
-import classnames from 'classnames'
 
-const FileControl = ({ accept, additional, className, disabled, error, name, onBlur, onChange, required, value }) => {
-  const controlClasses = classnames('control', 'control--file', className, { 'control--error': error })
+import CustomFileControl from './custom-file/CustomFile'
+import NativeFileControl from './native-file/NativeFile'
+
+const FileControl = (props) => {
+  const { native } = props
+
+  const FileControlType = native ? NativeFileControl : CustomFileControl
 
   return (
-    <input
-      accept={accept}
-      className={controlClasses}
-      disabled={disabled}
-      id={`control--${name}`}
-      name={name}
-      onBlur={onBlur}
-      onChange={onChange}
-      required={required}
-      type="file"
-      value={value}
-      {...additional}
-    />
+    <FileControlType {...props} />
   )
 }
 
-FileControl.defaultProps = {
-  disabled: false,
-  required: false,
-  value: ''
-}
-
 FileControl.propTypes = {
-  accept: PropTypes.string,
-  additional: PropTypes.object,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  error: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  required: PropTypes.bool,
-  value: PropTypes.string
+  native: PropTypes.bool
 }
 
 export default FileControl

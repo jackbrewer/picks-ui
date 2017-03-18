@@ -19,11 +19,22 @@ class ControlPage extends React.Component {
     return (
       <div className="prose">
         <h1>File Control</h1>
+        <p>Uncontrolled input as it is not possibl to set a value on a file input.</p>
         <Example filterProps={filterProps}>
           <Control
             name="controlFile"
             onChange={this.handleTextChange}
             type="file"
+            additional={{ multiple: true }}
+            />
+        </Example>
+        <Example filterProps={filterProps}>
+          <Control
+            name="controlFile"
+            native
+            onChange={this.handleTextChange}
+            type="file"
+            additional={{ multiple: true }}
             value={this.state['controlFile'] || ''}
             />
         </Example>

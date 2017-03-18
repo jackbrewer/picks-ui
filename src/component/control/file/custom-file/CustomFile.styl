@@ -1,0 +1,59 @@
+//
+// CUSTOM FILE
+// ===========
+//
+
+.custom-file
+  overflow hidden
+
+.custom-file__button-wrapper,
+.custom-file__filename-wrapper
+  display inline-block
+  vertical-align top
+
+.custom-file__button-wrapper
+  width 34%
+  position relative
+  overflow hidden
+
+.custom-file__filename-wrapper
+  width 66%
+
+.custom-file__button
+  display inline-block
+  vertical-align top
+  border-top-right-radius 0
+  border-bottom-right-radius 0
+
+  // TODO, find a better way to extend/mixin a button's hover styles to avoid duplication here
+  .custom-file__button-wrapper:hover &
+    background-color lighten($color--grey, 10%)
+
+.custom-file__hidden-input
+  position absolute
+  top 0
+  right 0
+  min-width 100%
+  min-height 100%
+  font-size 100px
+  text-align right
+  opacity 0
+  outline 0
+  background $color--white
+  cursor inherit
+
+.custom-file__filename
+  border-left 0
+  border-top-left-radius 0
+  border-bottom-left-radius 0
+
+  .field--error &
+    border-color $color--error
+    color $color--error
+
+    &:hover
+    &:focus
+      background-color tint($color--error, 80)
+
+    &:active
+      background-color tint($color--error, 70)
