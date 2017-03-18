@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import CheckControl from './check/Check'
-import CustomSelectControl from './custom-select/CustomSelect'
+import SelectControl from './select/Select'
 import FileControl from './file/File'
 import DateControl from './date/Date'
 import InputControl from './input/Input'
@@ -23,7 +23,7 @@ const Control = (props) => {
     // case 'range':
     //   return null
     case 'select':
-      return <CustomSelectControl {...props} />
+      return <SelectControl {...props} />
     case 'textarea':
       return <TextareaControl {...props} />
     default:

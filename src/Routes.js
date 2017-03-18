@@ -11,6 +11,11 @@ import ButtonPage from './page/ButtonPage'
 import CardPage from './page/CardPage'
 import CodePage from './page/CodePage'
 import ControlPage from './page/ControlPage'
+import ControlCheckPage from './page/ControlCheckPage'
+import ControlDatePage from './page/ControlDatePage'
+import ControlFilePage from './page/ControlFilePage'
+import ControlSelectPage from './page/ControlSelectPage'
+import ControlTextareaPage from './page/ControlTextareaPage'
 import FieldPage from './page/FieldPage'
 import IconPage from './page/IconPage'
 import NotificationPage from './page/NotificationPage'
@@ -29,6 +34,11 @@ class Routes extends Component {
         <Route exact path="/card" component={CardPage} />
         <Route exact path="/code" component={CodePage} />
         <Route exact path="/control" component={ControlPage} />
+        <Route exact path="/control/check" component={ControlCheckPage} />
+        <Route exact path="/control/date" component={ControlDatePage} />
+        <Route exact path="/control/file" component={ControlFilePage} />
+        <Route exact path="/control/select" component={ControlSelectPage} />
+        <Route exact path="/control/textarea" component={ControlTextareaPage} />
         <Route exact path="/field" component={FieldPage} />
         <Route exact path="/icon" component={IconPage} />
         <Route exact path="/note" component={NotePage} />

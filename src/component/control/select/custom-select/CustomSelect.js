@@ -1,32 +1,28 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
-import SelectControl from '../select/Select'
+import NativeSelectControl from '../native-select/NativeSelect'
 
 const CustomSelect = (props) => {
-  const { error, native } = props
+  const { error } = props
   const customSelectClassNames = classNames(
     'custom-select',
     { 'custom-select--error': error }
   )
 
-  if (native) return <SelectControl {...props} />
-
   return (
     <span className={customSelectClassNames}>
-      <SelectControl {...props} />
+      <NativeSelectControl {...props} />
     </span>
   )
 }
 
 CustomSelect.defaultProps = {
-  error: '',
-  native: false
+  error: ''
 }
 
 CustomSelect.propTypes = {
-  error: PropTypes.string,
-  native: PropTypes.bool
+  error: PropTypes.string
 }
 
 export default CustomSelect

@@ -1,54 +1,20 @@
 import React, { PropTypes } from 'react'
-import classnames from 'classnames'
 
-const SelectControl = ({ additional, controlClassName, disabled, error, name, onBlur, onChange, options, required, value }) => {
+import CustomSelectControl from './custom-select/CustomSelect'
+import NativeSelectControl from './native-select/NativeSelect'
+
+const SelectControl = (props) => {
+  const { native } = props
+
+  const SelectControlType = native ? NativeSelectControl : CustomSelectControl
+
   return (
-    <select
-      className={classnames('control', 'control--choice', controlClassName, { 'control--error': error })}
-      defaultValue={value}
-      disabled={disabled}
-      name={name}
-      onBlur={onBlur}
-      onChange={onChange}
-      required={required}
-      {...additional}
-      >
-      {options.map(({ value, text }, i) =>
-        <option key={`${i}-${value}`} value={value}>{text}</option>)}
-    </select>
+    <SelectControlType {...props} />
   )
 }
 
-SelectControl.defaultProps = {
-  disabled: false,
-  required: false,
-  type: 'text',
-  value: ''
-}
-
 SelectControl.propTypes = {
-  additional: PropTypes.object,
-  controlClassName: PropTypes.string,
-  disabled: PropTypes.bool,
-  error: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  options: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ])
-  })).isRequired,
-  required: PropTypes.bool,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
+  native: PropTypes.bool
 }
 
 export default SelectControl

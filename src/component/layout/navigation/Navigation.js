@@ -1,22 +1,6 @@
-import React, { PropTypes } from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react'
 
-const NavigationItem = ({ to, text }) => (
-  <li>
-    <NavLink
-      activeClassName="is-active"
-      className="navigation__link"
-      to={to}
-      >
-      {text}
-    </NavLink>
-  </li>
-)
-
-NavigationItem.propTypes = {
-  to: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
-}
+import NavigationItem from './NavigationItem'
 
 const Navigation = () => (
   <nav
@@ -29,12 +13,18 @@ const Navigation = () => (
     <div className="navigation__group">
 
       <h3>Components</h3>
-      <ul className="list--inline list--unstyled">
+      <ul className="list--unstyled">
         <NavigationItem to="/blockquote" text="Blockquote" />
         <NavigationItem to="/button" text="Button" />
         <NavigationItem to="/card" text="Card" />
         <NavigationItem to="/code" text="Code" />
-        <NavigationItem to="/control" text="Control" />
+        <NavigationItem to="/control" text="Control">
+          <NavigationItem to="/control/check" text="Check" />
+          <NavigationItem to="/control/date" text="Date" />
+          <NavigationItem to="/control/file" text="File" />
+          <NavigationItem to="/control/select" text="Select" />
+          <NavigationItem to="/control/textarea" text="Textarea" />
+        </NavigationItem>
         <NavigationItem to="/field" text="Field" />
         <NavigationItem to="/icon" text="Icon" />
         <NavigationItem to="/note" text="Note" />

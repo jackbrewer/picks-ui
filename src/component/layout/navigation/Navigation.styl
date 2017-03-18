@@ -21,6 +21,18 @@
   li
     display block
 
+    li
+      margin-left 20px
+
+    ul
+      // TODO: Better a11y hiding method
+      display none
+
+    a.is-active + ul
+      display block
+
+
+
 .navigation__link
   color $color--black
 
