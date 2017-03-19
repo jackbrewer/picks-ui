@@ -11,14 +11,7 @@ const CheckField = (props) => {
       >
       {label && <div className="field__question">{label}</div>}
       <div className="field__answer">
-        <label className="control-wrap">
-          <span className="control-wrap__item control-wrap__item--shrink">
-            {children}
-          </span>
-          <span className="control-wrap__item">
-            {label}
-          </span>
-        </label>
+        {children}
       </div>
       {error && <div className="field__feedback">{error}</div>}
       {assistance && <div className="field__assistance">{assistance}</div>}
