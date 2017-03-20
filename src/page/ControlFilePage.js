@@ -21,7 +21,7 @@ class ControlPage extends React.Component {
         <Helmet title="File Control" />
         <h1>File Control</h1>
         <p>Uncontrolled input as it is not possibl to set a value on a file input.</p>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             name="controlFile"
             onChange={this.handleTextChange}
@@ -29,7 +29,7 @@ class ControlPage extends React.Component {
             additional={{ multiple: true }}
             />
         </Example>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             name="controlFile"
             native

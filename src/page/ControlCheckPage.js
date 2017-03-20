@@ -34,7 +34,7 @@ class ControlCheckPage extends React.Component {
       <div className="prose">
         <Helmet title="Check Control" />
         <h1>Check Control</h1>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             {...this.state['exampleCheckbox'] && { currentValue: this.state['exampleCheckbox'] }}
             type="checkbox"
@@ -48,7 +48,7 @@ class ControlCheckPage extends React.Component {
             ]}
           />
         </Example>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             {...this.state['exampleRadio'] && { currentValue: this.state['exampleRadio'] }}
             name="exampleRadio"
@@ -62,7 +62,7 @@ class ControlCheckPage extends React.Component {
             type="radio"
             />
         </Example>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             {...this.state['exampleNativeRadio'] && { currentValue: this.state['exampleNativeRadio'] }}
             name="exampleNativeRadio"

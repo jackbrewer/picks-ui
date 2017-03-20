@@ -20,7 +20,7 @@ class ControlPage extends React.Component {
       <div className="prose">
         <Helmet title="Date Control" />
         <h1>Date Control</h1>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             name="controlDate"
             onChange={this.handleTextChange}

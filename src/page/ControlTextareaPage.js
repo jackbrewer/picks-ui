@@ -20,7 +20,7 @@ class ControlTextareaPage extends React.Component {
       <div className="prose">
         <Helmet title="Textarea Control" />
         <h1>Textarea Control</h1>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             type="textarea"
             name="exampleTextarea"

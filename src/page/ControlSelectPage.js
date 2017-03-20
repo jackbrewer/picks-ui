@@ -20,7 +20,7 @@ class ControlSelectPage extends React.Component {
       <div className="prose">
         <Helmet title="Select Control" />
         <h1>Select Control</h1>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             currentValue={this.state.exampleSelect || ''}
             name="exampleSelect"
@@ -29,7 +29,7 @@ class ControlSelectPage extends React.Component {
             type="select"
           />
         </Example>
-        <Example filterProps={filterProps}>
+        <Example>
           <Control
             currentValue={this.state.exampleSelect || ''}
             name="exampleNativeSelect"
