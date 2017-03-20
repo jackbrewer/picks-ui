@@ -30,7 +30,6 @@ class ControlCheckPage extends React.Component {
   }
 
   render () {
-    const filterProps = [ 'onChange' ]
     return (
       <div className="prose">
         <Helmet title="Check Control" />

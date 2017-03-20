@@ -16,7 +16,6 @@ class ControlSelectPage extends React.Component {
   }
 
   render () {
-    const filterProps = [ 'onChange' ]
     return (
       <div className="prose">
         <Helmet title="Select Control" />

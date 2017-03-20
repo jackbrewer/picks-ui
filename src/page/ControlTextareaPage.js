@@ -16,7 +16,6 @@ class ControlTextareaPage extends React.Component {
   }
 
   render () {
-    const filterProps = [ 'onChange' ]
     return (
       <div className="prose">
         <Helmet title="Textarea Control" />
