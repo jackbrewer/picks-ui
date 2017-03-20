@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Control from '../component/control/Control'
@@ -32,6 +33,7 @@ class ControlCheckPage extends React.Component {
     const filterProps = [ 'onChange' ]
     return (
       <div className="prose">
+        <Helmet title="Check Control" />
         <h1>Check Control</h1>
         <Example filterProps={filterProps}>
           <Control

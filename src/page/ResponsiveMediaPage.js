@@ -1,10 +1,12 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import ResponsiveMedia from '../component/responsive-media/ResponsiveMedia'
 
 const ResponsiveMediaPage = () => (
   <div className="prose">
+    <Helmet title="Responsive Media" />
     <h1>Responsive Media</h1>
     <Example>
       <ResponsiveMedia ratio="1:1">

@@ -1,10 +1,12 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Note from '../component/note/Note'
 
 const NotePage = () => (
   <div className="prose">
+    <Helmet title="Note" />
     <h1>Note</h1>
     <Example>
       <Note

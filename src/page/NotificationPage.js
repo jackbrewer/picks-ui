@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Notification from '../component/notification/Notification'
@@ -11,6 +12,7 @@ function dismissNotification (e) {
 
 const NotificationPage = () => (
   <div className="prose">
+    <Helmet title="Notification" />
     <h1>Notification</h1>
     <Example>
       <Notification

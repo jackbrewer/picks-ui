@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Control from '../component/control/Control'
@@ -18,6 +19,7 @@ class ControlSelectPage extends React.Component {
     const filterProps = [ 'onChange' ]
     return (
       <div className="prose">
+        <Helmet title="Select Control" />
         <h1>Select Control</h1>
         <Example filterProps={filterProps}>
           <Control

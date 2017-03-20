@@ -1,7 +1,9 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 const TypographyPage = () => (
   <div className="prose">
+    <Helmet title="Typography" />
     <h1>Typography</h1>
     <p>Prose text generally appears on article pages or service pages. Any text that a User enters in a CMS will be styled this way.</p>
     <hr />

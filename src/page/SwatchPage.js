@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Swatch from '../component/swatch/container/Swatch'
@@ -32,6 +33,7 @@ class SwatchPage extends Component {
     const previewWidth = 'tablet-one-half desktop-one-third'
     return (
       <div className="prose">
+        <Helmet title="Swatch" />
         <h1>Swatch</h1>
         <Example previewWidth={previewWidth} displayName="Swatch">
           <Swatch

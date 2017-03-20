@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Helmet from 'react-helmet'
 
 // Layout Components
 import A11yNavigation from '../layout/a11y-navigation/A11yNavigation'
@@ -15,6 +16,10 @@ class App extends Component {
     return (
       <Router>
         <div className="site-container">
+          <Helmet
+            defaultTitle="Picks UI"
+            titleTemplate="%s | Picks UI"
+            />
           <A11yNavigation />
           <Route path="/:foo" component={Header} />
           <Route exact path="/" component={Masthead} />

@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Control from '../component/control/Control'
@@ -18,6 +19,7 @@ class ControlPage extends React.Component {
     const filterProps = [ 'onChange' ]
     return (
       <div className="prose">
+        <Helmet title="File Control" />
         <h1>File Control</h1>
         <p>Uncontrolled input as it is not possibl to set a value on a file input.</p>
         <Example filterProps={filterProps}>

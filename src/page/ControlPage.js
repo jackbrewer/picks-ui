@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Control from '../component/control/Control'
@@ -18,6 +19,7 @@ class ControlPage extends React.Component {
     const filterProps = [ 'onChange' ]
     return (
       <div className="prose">
+        <Helmet title="Control" />
         <h1>Control</h1>
         <p>Controls are basic inputs and will rarely be used directly. You’ll likely use fields which will pull in the desired control type.</p>
         <h2>Text Control</h2>

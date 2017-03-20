@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Button from '../component/button/Button'
@@ -18,6 +19,7 @@ class ButtonPage extends React.Component {
   render () {
     return (
       <div className="prose">
+        <Helmet title="Button" />
         <h1>Button</h1>
         <p>Buttons can be used for blah blah. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
         <h2>Standard</h2>
