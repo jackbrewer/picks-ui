@@ -35,6 +35,8 @@
   "scripts": {
     "build:styles": "stylus -m -c -u stylus-mixins -u responsive-grid -u poststylus --with \"['autoprefixer']\" ./src/asset/stylus/index*.styl -o ./src/asset/css/",
     "build": "react-scripts build",
+    "coverage": "npm test -- --coverage",
+    "coverage:component": "npm test -- --coverage --collectCoverageFrom=src/component/**/*.js",
     "eject": "react-scripts eject",
     "fix:js": "npm run js:lint -- --fix",
     "lint:js": "eslint .",
