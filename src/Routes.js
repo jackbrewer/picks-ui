@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
+import ScrollToTop from './component/scroll-to-top/ScrollToTop'
+
 // Site Pages
 import IndexPage from './page/IndexPage'
 import NotFoundPage from './page/NotFoundPage'
@@ -27,27 +29,29 @@ import TypographyPage from './page/TypographyPage'
 class Routes extends Component {
   render () {
     return (
-      <Switch>
-        <Route exact path="/" component={IndexPage} />
-        <Route exact path="/blockquote" component={BlockquotePage} />
-        <Route exact path="/button" component={ButtonPage} />
-        <Route exact path="/card" component={CardPage} />
-        <Route exact path="/code" component={CodePage} />
-        <Route exact path="/control" component={ControlPage} />
-        <Route exact path="/control/check" component={ControlCheckPage} />
-        <Route exact path="/control/date" component={ControlDatePage} />
-        <Route exact path="/control/file" component={ControlFilePage} />
-        <Route exact path="/control/select" component={ControlSelectPage} />
-        <Route exact path="/control/textarea" component={ControlTextareaPage} />
-        <Route exact path="/field" component={FieldPage} />
-        <Route exact path="/icon" component={IconPage} />
-        <Route exact path="/note" component={NotePage} />
-        <Route exact path="/notification" component={NotificationPage} />
-        <Route exact path="/responsive-media" component={ResponsiveMediaPage} />
-        <Route exact path="/swatch" component={SwatchPage} />
-        <Route exact path="/typography" component={TypographyPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
+      <ScrollToTop>
+        <Switch>
+          <Route exact path="/" component={IndexPage} />
+          <Route exact path="/blockquote" component={BlockquotePage} />
+          <Route exact path="/button" component={ButtonPage} />
+          <Route exact path="/card" component={CardPage} />
+          <Route exact path="/code" component={CodePage} />
+          <Route exact path="/control" component={ControlPage} />
+          <Route exact path="/control/check" component={ControlCheckPage} />
+          <Route exact path="/control/date" component={ControlDatePage} />
+          <Route exact path="/control/file" component={ControlFilePage} />
+          <Route exact path="/control/select" component={ControlSelectPage} />
+          <Route exact path="/control/textarea" component={ControlTextareaPage} />
+          <Route exact path="/field" component={FieldPage} />
+          <Route exact path="/icon" component={IconPage} />
+          <Route exact path="/note" component={NotePage} />
+          <Route exact path="/notification" component={NotificationPage} />
+          <Route exact path="/responsive-media" component={ResponsiveMediaPage} />
+          <Route exact path="/swatch" component={SwatchPage} />
+          <Route exact path="/typography" component={TypographyPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </ScrollToTop>
     )
   }
 }
