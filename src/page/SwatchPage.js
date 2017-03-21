@@ -19,15 +19,15 @@ class SwatchPage extends Component {
     const currentFormatIndex = this.state.formats.indexOf(this.state.displayFormat)
     const nextFormatIndex = currentFormatIndex + 1 < this.state.formats.length ? currentFormatIndex + 1 : 0
     this.setState({ displayFormat: this.state.formats[nextFormatIndex] })
-    localStorage.setItem('preferredColorFormat', this.state.formats[nextFormatIndex])
+    // localStorage.setItem('preferredColorFormat', this.state.formats[nextFormatIndex])
   }
 
-  componentDidMount () {
-    const preferredColorFormat = localStorage.getItem('preferredColorFormat')
-    if (preferredColorFormat) {
-      this.setState({ displayFormat: preferredColorFormat })
-    }
-  }
+  // componentDidMount () {
+  //   const preferredColorFormat = localStorage.getItem('preferredColorFormat')
+  //   if (preferredColorFormat) {
+  //     this.setState({ displayFormat: preferredColorFormat })
+  //   }
+  // }
 
   render () {
     const previewWidth = 'tablet-one-half desktop-one-third'

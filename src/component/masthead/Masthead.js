@@ -12,7 +12,7 @@ const Masthead = () => (
           <p>A well thought out strapline will appear here.</p>
           <p>
             <Button href="/docs">Documentation</Button>
-            <Button href="/docs">GitHub</Button>
+            <Button href="https://github.com/jackbrewer/picks-ui">GitHub</Button>
           </p>
         </div>
       </div>

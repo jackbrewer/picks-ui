@@ -10,7 +10,7 @@ Style Guide:
 - Group imports? React, modules, components
 - single-line attributes for pasted SVG markup?
 - classNames - static, template-string, conditional, props
-
+- no point setting default props if default is the falsey value if the propType e.g., false, '' etc. Only use to set truthy defaults, e.g. rows: 3
 General
 
 - Trialling ITCSS approach to organising Stylus, using underscored dirnames to reflect triangle depth

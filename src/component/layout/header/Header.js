@@ -11,7 +11,7 @@ const Header = () => (
     <div className="content-center content-gutter">
       <div className="header__inner">
         <SiteTitle href="/" />
-        <SiteSwitch href="/" />
+        <SiteSwitch label="GitHub" href="https://github.com/jackbrewer/picks-ui" />
       </div>
     </div>
   </header>

@@ -1,15 +1,14 @@
 import React, { PropTypes } from 'react'
-import { Link } from 'react-router-dom'
 
 import PickSvg from '../../svg/Pick'
 
-const SiteSwitch = ({ href }) => {
+const SiteSwitch = ({ href, label }) => {
   return (
-    <Link
+    <a
       className="site-switch"
-      {...href && { to: href }}
+      href={href}
       >
-      <span className="site-switch__label">More</span>
+      {label && <span className="site-switch__label">{label}</span>}
       <span className="site-switch__icon">
         <i className="icon icon--pick-group">
           <PickSvg />
@@ -18,12 +17,13 @@ const SiteSwitch = ({ href }) => {
           <PickSvg />
         </i>
       </span>
-    </Link>
+    </a>
   )
 }
 
 SiteSwitch.propTypes = {
-  href: PropTypes.string
+  href: PropTypes.string.isRequired,
+  label: PropTypes.string
 }
 
 export default SiteSwitch
