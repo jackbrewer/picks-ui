@@ -8,11 +8,6 @@ class ControlPage extends React.Component {
   constructor () {
     super()
     this.state = {}
-    this.handleTextChange = this.handleTextChange.bind(this)
-  }
-
-  handleTextChange (e) {
-    this.setState({ [e.target.name]: e.target.value })
   }
 
   render () {
@@ -36,7 +31,6 @@ class ControlPage extends React.Component {
             onChange={this.handleTextChange}
             type="file"
             additional={{ multiple: true }}
-            value={this.state['controlFile'] || ''}
             />
         </Example>
       </div>

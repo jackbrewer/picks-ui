@@ -40,14 +40,12 @@ class FieldPage extends React.Component {
             assistance="Additional text to provide assistance"
             className="additional-field-class"
             label="Example Label"
-            controlName="exampleField"
             required
             >
             <Control type="text" name="exampleField" />
           </Field>
           <Field
             label="Example Label"
-            controlName="exampleSelect"
             >
             <Control type="select" name="exampleSelect" options={[
               {
@@ -67,7 +65,6 @@ class FieldPage extends React.Component {
           <Field
             error="Example Error"
             label="Example Label"
-            controlName="erroredField"
             >
             <Control type="text" name="erroredField" error="Example Error" />
           </Field>
@@ -80,14 +77,12 @@ class FieldPage extends React.Component {
             assistance="Additional text to provide assistance"
             className="additional-field-class"
             label="Example Label"
-            controlName="exampleCheckbox"
             >
             <Control type="checkbox" name="exampleCheckbox" options={[ { text: 'Text here', value: 'Foo' } ]} />
           </Field>
           <Field
             layout="check"
             label="Example Label"
-            controlName="exampleCheckboxError"
             error="Example Error"
             >
             <Control type="checkbox" name="exampleCheckboxError" error="Example Error" options={[ { text: 'Text here', value: 'Foo' } ]} />
@@ -100,7 +95,6 @@ class FieldPage extends React.Component {
             assistance="Additional text to provide assistance"
             className="additional-field-class"
             label="Example Multi Label"
-            controlName="exampleRadio"
             >
             <Control
               type="checkbox"

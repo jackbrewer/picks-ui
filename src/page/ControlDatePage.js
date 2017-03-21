@@ -28,6 +28,14 @@ class ControlPage extends React.Component {
             value={this.state['controlDate'] || ''}
           />
         </Example>
+        <Example>
+          <Control
+            name="controlDate2"
+            onChange={this.handleTextChange}
+            type="date"
+            value={this.state['controlDate2'] || '2014-04-25T01:32:21.196Z'}
+          />
+        </Example>
       </div>
     )
   }

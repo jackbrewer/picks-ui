@@ -7,7 +7,7 @@ import Control from '../component/control/Control'
 class ControlSelectPage extends React.Component {
   constructor () {
     super()
-    this.state = {}
+    this.state = { exampleNativeSelect: 2 }
     this.handleSelectChange = this.handleSelectChange.bind(this)
   }
 
@@ -31,7 +31,7 @@ class ControlSelectPage extends React.Component {
         </Example>
         <Example>
           <Control
-            currentValue={this.state.exampleSelect || ''}
+            currentValue={this.state.exampleNativeSelect || ''}
             name="exampleNativeSelect"
             native
             onChange={this.handleSelectChange}

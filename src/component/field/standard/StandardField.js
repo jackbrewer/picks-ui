@@ -3,15 +3,18 @@ import classNames from 'classnames'
 
 import Control from '../../control/Control'
 
-const StandardField = ({ assistance, children, className, error, label, controlName }) => {
+const StandardField = (props) => {
+  const { assistance, children, className, label } = props
+  const { name, error } = children.props
   const fieldClasses = classNames('field', className, { 'field--error': error })
+
   return (
     <div
       className={fieldClasses}
-      id={`field--${controlName}`}
+      id={`field--${name}`}
       >
       <div className="field__question">
-        <label htmlFor={`control--${controlName}`}>
+        <label htmlFor={`control--${name}`}>
           {label}
         </label>
       </div>
@@ -30,15 +33,10 @@ StandardField.propTypes = {
   assistance: PropTypes.string,
   children: PropTypes.shape({ type: PropTypes.oneOf([ Control ]) }).isRequired,
   className: PropTypes.string,
-  error: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node
-  ]),
   label: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node
-  ]).isRequired,
-  controlName: PropTypes.string.isRequired
+  ]).isRequired
 }
 
 export default StandardField
