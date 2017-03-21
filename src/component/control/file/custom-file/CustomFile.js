@@ -6,20 +6,23 @@ import NativeFileControl from '../native-file/NativeFile'
 class CustomFileControl extends Component {
   constructor () {
     super()
-    this.state = { fileName: '' }
+    this.state = { fileName: 'No file chosen' }
     this.handleFileChange = this.handleFileChange.bind(this)
+    this.formatFileSelection = this.formatFileSelection.bind(this)
   }
 
   handleFileChange (e) {
-    const input = e.target
-    const fileCount = input.files ? input.files.length : 1
+    this.setState({
+      fileName: this.formatFileSelection(e.target.files)
+    })
+  }
+
+  formatFileSelection (files) {
+    const fileCount = files && files.length
     const fileName = fileCount > 1
       ? `${fileCount} files selected`
-      : input.value.replace(/.*\\/, '')
-    this.setState({
-      fileName,
-      value: input.value
-    })
+      : files[0].name.replace(/.*\\/, '')
+    return fileName
   }
 
   render () {
@@ -30,9 +33,9 @@ class CustomFileControl extends Component {
     )
 
     return (
-      <div className={customFileClassNames}>
+      <span className={customFileClassNames}>
 
-        <div className="custom-file__button-wrapper">
+        <span className="custom-file__button-wrapper">
           <button
             className="button button--block custom-file__button"
             type="button"
@@ -43,23 +46,14 @@ class CustomFileControl extends Component {
             {...this.props}
             onChange={this.handleFileChange}
             className="custom-file__hidden-input"
-            value={this.state.value}
           />
-        </div>
+        </span>
 
-        <label className="custom-file__filename-wrapper">
-          <span className="is-vhidden">File Name</span>
-          <input
-            className="control control--text custom-file__filename"
-            type="text"
-            placeholder="No file selected"
-            readOnly
-            disabled
-            value={this.state.fileName}
-          />
-        </label>
+        <span className="control control--text custom-file__filename">
+          {this.state.fileName}
+        </span>
 
-      </div>
+      </span>
     )
   }
 }

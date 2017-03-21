@@ -1,55 +1,52 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-const NativeSelectControl = ({ additional, controlClassName, disabled, error, name, onBlur, onChange, options, required, currentValue }) => {
+import Option from './Option'
+
+const NativeSelectControl = (props) => {
+  const { additional, className, currentValue, disabled, error, name, onBlur, onChange, onFocus, options, required } = props
+  const controlClassNames = classnames(
+    'control',
+    'control--choice',
+    className,
+    { 'control--error': error }
+  )
+
   return (
     <select
-      className={classnames('control', 'control--choice', controlClassName, { 'control--error': error })}
+      className={controlClassNames}
       disabled={disabled}
-      value={currentValue}
+      id={`control--${name}`}
       name={name}
       onBlur={onBlur}
       onChange={onChange}
+      onFocus={onFocus}
       required={required}
+      value={currentValue}
       {...additional}
       >
-      {options.map(({ value, text }, i) =>
-        <option key={`${i}-${value}`} value={value}>{text}</option>)
-      }
+      {options.map((option, i) =>
+        <Option key={i} {...option} />
+      )}
     </select>
   )
 }
 
-NativeSelectControl.defaultProps = {
-  disabled: false,
-  required: false,
-  type: 'text',
-  value: ''
-}
-
 NativeSelectControl.propTypes = {
   additional: PropTypes.object,
-  controlClassName: PropTypes.string,
+  className: PropTypes.string,
+  currentValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   disabled: PropTypes.bool,
   error: PropTypes.string,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
-  options: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ])
-  })).isRequired,
-  required: PropTypes.bool,
-  currentValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
+  onFocus: PropTypes.func,
+  options: PropTypes.array.isRequired,
+  required: PropTypes.bool
 }
 
 export default NativeSelectControl

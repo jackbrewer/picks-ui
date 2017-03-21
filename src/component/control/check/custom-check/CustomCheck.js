@@ -5,22 +5,18 @@ import NativeCheckControl from '../native-check/NativeCheck'
 
 const CustomCheckControl = (props) => {
   const { error, type } = props
-  const customCheckClassNames = classNames(
+  const controlClassNames = classNames(
     'custom-check',
     `custom-check--${type}`,
     { 'custom-check--error': error }
   )
 
   return (
-    <span className={customCheckClassNames}>
+    <span className={controlClassNames}>
       <NativeCheckControl {...props} className="custom-check__control" />
       <span className="custom-check__indicator" />
     </span>
   )
-}
-
-CustomCheckControl.defaultProps = {
-  error: ''
 }
 
 CustomCheckControl.propTypes = {

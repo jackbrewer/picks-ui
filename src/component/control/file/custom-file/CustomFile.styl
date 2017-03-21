@@ -7,7 +7,7 @@
   overflow hidden
 
 .custom-file__button-wrapper,
-.custom-file__filename-wrapper
+.custom-file__filename
   display inline-block
   vertical-align top
 
@@ -15,9 +15,6 @@
   width 34%
   position relative
   overflow hidden
-
-.custom-file__filename-wrapper
-  width 66%
 
 .custom-file__button
   display inline-block
@@ -43,11 +40,12 @@
   cursor inherit
 
 .custom-file__filename
+  width 66%
   border-left 0
   border-top-left-radius 0
   border-bottom-left-radius 0
 
-  .field--error &
+  .custom-file--error &
     border-color $color--error
     color $color--error
 

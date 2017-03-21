@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 import CustomCheckControl from '../custom-check/CustomCheck'
 import NativeCheckControl from '../native-check/NativeCheck'
 
-const SingleCheck = (props) => {
+const SingleCheckControl = (props) => {
   const { text, value, native, currentValue } = props
   const CheckControlType = native ? NativeCheckControl : CustomCheckControl
 
@@ -16,14 +16,14 @@ const SingleCheck = (props) => {
   return (
     <label className="control-wrap">
       <span className="control-wrap__item control-wrap__item--shrink">
-        <CheckControlType {...props} value={value} {...isChecked(value) && { checked: true }} />
+        <CheckControlType {...props} value={value} checked={isChecked(value)} />
       </span>
       <span className="control-wrap__item">{text}</span>
     </label>
   )
 }
 
-SingleCheck.propTypes = {
+SingleCheckControl.propTypes = {
   currentValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -45,4 +45,4 @@ SingleCheck.propTypes = {
   ])
 }
 
-export default SingleCheck
+export default SingleCheckControl

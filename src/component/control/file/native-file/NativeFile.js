@@ -1,34 +1,32 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-const NativeFileControl = ({ accept, additional, className, disabled, error, name, onBlur, onChange, required, value }) => {
-  const controlClasses = classnames('control', 'control--file', className, { 'control--error': error })
+const NativeFileControl = (props) => {
+  const { additional, className, disabled, error, name, onBlur, onChange, onFocus, required } = props
+  const controlClasses = classnames(
+    'control',
+    'control--file',
+    className,
+    { 'control--error': error }
+  )
 
   return (
     <input
-      accept={accept}
       className={controlClasses}
       disabled={disabled}
       id={`control--${name}`}
       name={name}
       onBlur={onBlur}
       onChange={onChange}
+      onFocus={onFocus}
       required={required}
       type="file"
-      value={value}
       {...additional}
     />
   )
 }
 
-NativeFileControl.defaultProps = {
-  disabled: false,
-  required: false,
-  value: ''
-}
-
 NativeFileControl.propTypes = {
-  accept: PropTypes.string,
   additional: PropTypes.object,
   className: PropTypes.string,
   disabled: PropTypes.bool,
@@ -36,8 +34,8 @@ NativeFileControl.propTypes = {
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
-  required: PropTypes.bool,
-  value: PropTypes.string
+  onFocus: PropTypes.func,
+  required: PropTypes.bool
 }
 
 export default NativeFileControl

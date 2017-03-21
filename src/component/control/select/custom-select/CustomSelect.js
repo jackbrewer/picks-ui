@@ -3,26 +3,22 @@ import classNames from 'classnames'
 
 import NativeSelectControl from '../native-select/NativeSelect'
 
-const CustomSelect = (props) => {
+const CustomSelectControl = (props) => {
   const { error } = props
-  const customSelectClassNames = classNames(
+  const controlClassNames = classNames(
     'custom-select',
     { 'custom-select--error': error }
   )
 
   return (
-    <span className={customSelectClassNames}>
+    <span className={controlClassNames}>
       <NativeSelectControl {...props} />
     </span>
   )
 }
 
-CustomSelect.defaultProps = {
-  error: ''
-}
-
-CustomSelect.propTypes = {
+CustomSelectControl.propTypes = {
   error: PropTypes.string
 }
 
-export default CustomSelect
+export default CustomSelectControl
