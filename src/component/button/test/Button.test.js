@@ -54,12 +54,24 @@ describe('Component: Button', () => {
       const wrapper = shallow(<Button href="http://example.com">Link Text</Button>)
       assert.equal(wrapper.type(), 'a')
       assert.equal(wrapper.prop('href'), 'http://example.com')
+      assert.equal(wrapper.prop('target'), undefined)
       assert.equal(wrapper.text(), 'Link Text')
     })
 
     it('should not output a `type` prop if also passed an `href` prop', () => {
       const wrapper = shallow(<Button type="submit" href="http://example.com">Link Text</Button>)
       assert.equal(wrapper.prop('type'), undefined)
+    })
+
+    it('should output a `target` if prop set', () => {
+      const wrapper = shallow(<Button target="_self" href="http://example.com">Link Text</Button>)
+      assert.equal(wrapper.prop('target'), '_self')
+    })
+
+    it('should output rel=noopener if `target` prop set to _blank', () => {
+      const wrapper = shallow(<Button target="_blank" href="http://example.com">Link Text</Button>)
+      assert.equal(wrapper.prop('target'), '_blank')
+      assert.equal(wrapper.prop('rel'), 'noopener')
     })
   })
 

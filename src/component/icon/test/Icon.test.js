@@ -1,13 +1,13 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import sinon from 'sinon'
+import { stub } from 'sinon'
 
 import Icon from '../Icon'
 
-describe('Component: Notification', () => {
+describe('Component: Icon', () => {
   it('should error if no children are passed', () => {
-    sinon.stub(console, 'error', (warning) => { throw new Error(warning) })
+    stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Icon />), Error)
   })
 
