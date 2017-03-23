@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import Option from './Option'
 
 const NativeSelectControl = (props) => {
-  const { additional, className, currentValue, disabled, error, id, name, onBlur, onChange, onFocus, options, required } = props
+  const { additional, className, value, disabled, error, id, name, onBlur, onChange, onFocus, options, required } = props
   const controlClassNames = classnames(
     'control',
     'control--choice',
@@ -22,11 +22,11 @@ const NativeSelectControl = (props) => {
       onChange={onChange}
       onFocus={onFocus}
       required={required}
-      value={currentValue}
+      value={value}
       {...additional}
       >
       {options.map((option, i) =>
-        <Option key={i} {...option} />
+        <Option key={i} option={option} />
       )}
     </select>
   )
@@ -35,7 +35,7 @@ const NativeSelectControl = (props) => {
 NativeSelectControl.propTypes = {
   additional: PropTypes.object,
   className: PropTypes.string,
-  currentValue: PropTypes.oneOfType([
+  value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
   ]),

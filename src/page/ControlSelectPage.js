@@ -22,7 +22,7 @@ class ControlSelectPage extends React.Component {
         <h1>Select Control</h1>
         <Example>
           <Control
-            currentValue={this.state.exampleSelect || ''}
+            value={this.state.exampleSelect || ''}
             name="exampleSelect"
             onChange={this.handleSelectChange}
             options={[ { text: 'One', value: 1 }, { text: 'Two', value: 2 }, { text: 'Three', value: 3 } ]}
@@ -31,7 +31,7 @@ class ControlSelectPage extends React.Component {
         </Example>
         <Example>
           <Control
-            currentValue={this.state.exampleNativeSelect || ''}
+            value={this.state.exampleNativeSelect || ''}
             name="exampleNativeSelect"
             native
             onChange={this.handleSelectChange}

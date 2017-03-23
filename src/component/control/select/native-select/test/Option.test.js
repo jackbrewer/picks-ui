@@ -6,8 +6,10 @@ import { stub } from 'sinon'
 import Option from '../Option'
 
 const defaultProps = {
-  text: 'Option 1',
-  value: 1
+  option: {
+    text: 'Option 1',
+    value: 1
+  }
 }
 
 describe('Component: Option', () => {
@@ -24,7 +26,7 @@ describe('Component: Option', () => {
   })
 
   it('should reuse text as value if value not set', () => {
-    const wrapper = shallow(<Option text="Example Text" />)
+    const wrapper = shallow(<Option option={{ text: 'Example Text' }} />)
     assert.equal(wrapper.prop('value'), 'Example Text')
     assert.equal(wrapper.text(), 'Example Text')
   })

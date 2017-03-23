@@ -51,7 +51,7 @@ describe('Component: NativeSelectControl', () => {
       onFocus={() => {}}
       placeholder="Example placeholder"
       required
-      currentValue="Example Value"
+      value="Example Value"
     />)
     assert.equal(wrapper.prop('className'), 'control control--choice test-class')
     assert.equal(wrapper.prop('disabled'), true)
@@ -108,10 +108,10 @@ describe('Component: NativeSelectControl', () => {
     assert.equal(wrapper.prop('className'), 'control control--choice control--error')
   })
 
-  it('should add a selected attribute if value === currentValue', () => {
+  it('should add a selected attribute if value === option value', () => {
     const wrapper = shallow(<NativeSelectControl {...defaultProps} />)
     assert.equal(wrapper.prop('value'), undefined)
-    wrapper.setProps({ currentValue: 1 })
+    wrapper.setProps({ value: 1 })
     assert.equal(wrapper.prop('value'), 1)
   })
 })

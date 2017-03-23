@@ -30,14 +30,14 @@ describe('Component: SingleCheckControl', () => {
     assert.equal(wrapper.find('span').at(1).text(), 'Option 1')
   })
 
-  it('should add a checked attribute if value === currentValue', () => {
+  it('should add a checked attribute if value === option.value', () => {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)
     wrapper.setProps({ value: 1 })
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), true)
   })
 
-  it('should add a checked attribute if value is in an array of currentValues', () => {
+  it('should add a checked attribute if value is in an array of option values', () => {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)
     wrapper.setProps({ value: [ 1, 2, 3 ] })

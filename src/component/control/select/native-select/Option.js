@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 const Option = (props) => {
-  const { text, value } = props
+  const { text, value } = props.option
 
   return (
     <option
@@ -13,14 +13,16 @@ const Option = (props) => {
 }
 
 Option.propTypes = {
-  text: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]).isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
+  option: PropTypes.shape({
+    text: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
+  })
 }
 
 export default Option
