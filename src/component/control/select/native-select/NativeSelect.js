@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import Option from './Option'
 
 const NativeSelectControl = (props) => {
-  const { additional, className, currentValue, disabled, error, name, onBlur, onChange, onFocus, options, required } = props
+  const { additional, className, currentValue, disabled, error, id, name, onBlur, onChange, onFocus, options, required } = props
   const controlClassNames = classnames(
     'control',
     'control--choice',
@@ -16,7 +16,7 @@ const NativeSelectControl = (props) => {
     <select
       className={controlClassNames}
       disabled={disabled}
-      id={`control--${name}`}
+      id={id}
       name={name}
       onBlur={onBlur}
       onChange={onChange}
@@ -41,6 +41,7 @@ NativeSelectControl.propTypes = {
   ]),
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,

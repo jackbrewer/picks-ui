@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
 const InputControl = (props) => {
-  const { additional, className, disabled, error, name, onBlur, onChange, onFocus, placeholder, required, type, value } = props
+  const { additional, className, disabled, error, id, name, onBlur, onChange, onFocus, placeholder, required, type, value } = props
   const controlClassNames = classNames(
     'control',
     'control--text',
@@ -14,7 +14,7 @@ const InputControl = (props) => {
     <input
       className={controlClassNames}
       disabled={disabled}
-      id={`control--${name}`}
+      id={id}
       name={name}
       onBlur={onBlur}
       onChange={onChange}
@@ -33,6 +33,7 @@ InputControl.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,

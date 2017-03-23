@@ -18,7 +18,6 @@ describe('Component: InputControl', () => {
   it('should not error with required props', () => {
     const wrapper = shallow(<InputControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'input')
-    assert.equal(wrapper.prop('id'), 'control--example')
     assert.equal(wrapper.prop('name'), 'example')
     assert.equal(wrapper.prop('type'), 'text')
     wrapper.setProps({ type: 'email' })
@@ -33,6 +32,7 @@ describe('Component: InputControl', () => {
     const wrapper = shallow(<InputControl {...defaultProps} />)
     assert.equal(wrapper.prop('className'), 'control control--text')
     assert.equal(wrapper.prop('disabled'), undefined)
+    assert.equal(wrapper.prop('id'), undefined)
     assert.equal(wrapper.prop('onBlur'), undefined)
     assert.equal(wrapper.prop('onChange'), undefined)
     assert.equal(wrapper.prop('onFocus'), undefined)
@@ -45,6 +45,7 @@ describe('Component: InputControl', () => {
     const wrapper = shallow(<InputControl {...defaultProps}
       className="test-class"
       disabled
+      id="example-id"
       onBlur={() => {}}
       onChange={() => {}}
       onFocus={() => {}}
@@ -54,6 +55,7 @@ describe('Component: InputControl', () => {
     />)
     assert.equal(wrapper.prop('className'), 'control control--text test-class')
     assert.equal(wrapper.prop('disabled'), true)
+    assert.equal(wrapper.prop('id'), 'example-id')
     assert.equal(typeof wrapper.prop('onBlur'), 'function')
     assert.equal(typeof wrapper.prop('onChange'), 'function')
     assert.equal(typeof wrapper.prop('onFocus'), 'function')

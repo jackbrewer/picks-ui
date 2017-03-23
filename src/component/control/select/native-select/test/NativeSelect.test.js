@@ -25,7 +25,6 @@ describe('Component: NativeSelectControl', () => {
   it('should not error with required props', () => {
     const wrapper = shallow(<NativeSelectControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'select')
-    assert.equal(wrapper.prop('id'), 'control--example')
     assert.equal(wrapper.prop('name'), 'example')
     assert.equal(wrapper.find('Option').length, 3)
   })
@@ -34,6 +33,7 @@ describe('Component: NativeSelectControl', () => {
     const wrapper = shallow(<NativeSelectControl {...defaultProps} />)
     assert.equal(wrapper.prop('className'), 'control control--choice')
     assert.equal(wrapper.prop('disabled'), undefined)
+    assert.equal(wrapper.prop('id'), undefined)
     assert.equal(wrapper.prop('onBlur'), undefined)
     assert.equal(wrapper.prop('onChange'), undefined)
     assert.equal(wrapper.prop('onFocus'), undefined)
@@ -45,6 +45,7 @@ describe('Component: NativeSelectControl', () => {
     const wrapper = shallow(<NativeSelectControl {...defaultProps}
       className="test-class"
       disabled
+      id="example-id"
       onBlur={() => {}}
       onChange={() => {}}
       onFocus={() => {}}
@@ -54,6 +55,7 @@ describe('Component: NativeSelectControl', () => {
     />)
     assert.equal(wrapper.prop('className'), 'control control--choice test-class')
     assert.equal(wrapper.prop('disabled'), true)
+    assert.equal(wrapper.prop('id'), 'example-id')
     assert.equal(typeof wrapper.prop('onBlur'), 'function')
     assert.equal(typeof wrapper.prop('onChange'), 'function')
     assert.equal(typeof wrapper.prop('onFocus'), 'function')

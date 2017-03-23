@@ -18,7 +18,6 @@ describe('Component: NativeFileControl', () => {
   it('should not error with required props', () => {
     const wrapper = shallow(<NativeFileControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'input')
-    assert.equal(wrapper.prop('id'), 'control--example')
     assert.equal(wrapper.prop('name'), 'example')
     assert.equal(wrapper.prop('type'), 'file')
   })
@@ -27,6 +26,7 @@ describe('Component: NativeFileControl', () => {
     const wrapper = shallow(<NativeFileControl {...defaultProps} />)
     assert.equal(wrapper.prop('className'), 'control control--file')
     assert.equal(wrapper.prop('disabled'), undefined)
+    assert.equal(wrapper.prop('id'), undefined)
     assert.equal(wrapper.prop('onBlur'), undefined)
     assert.equal(wrapper.prop('onChange'), undefined)
     assert.equal(wrapper.prop('onFocus'), undefined)
@@ -37,6 +37,7 @@ describe('Component: NativeFileControl', () => {
     const wrapper = shallow(<NativeFileControl {...defaultProps}
       className="test-class"
       disabled
+      id="example-id"
       onBlur={() => {}}
       onChange={() => {}}
       onFocus={() => {}}
@@ -45,6 +46,7 @@ describe('Component: NativeFileControl', () => {
     />)
     assert.equal(wrapper.prop('className'), 'control control--file test-class')
     assert.equal(wrapper.prop('disabled'), true)
+    assert.equal(wrapper.prop('id'), 'example-id')
     assert.equal(typeof wrapper.prop('onBlur'), 'function')
     assert.equal(typeof wrapper.prop('onChange'), 'function')
     assert.equal(typeof wrapper.prop('onFocus'), 'function')

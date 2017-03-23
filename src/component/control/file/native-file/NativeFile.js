@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
 const NativeFileControl = (props) => {
-  const { additional, className, disabled, error, name, onBlur, onChange, onFocus, required } = props
+  const { additional, className, disabled, error, id, name, onBlur, onChange, onFocus, required } = props
   const controlClasses = classnames(
     'control',
     'control--file',
@@ -14,7 +14,7 @@ const NativeFileControl = (props) => {
     <input
       className={controlClasses}
       disabled={disabled}
-      id={`control--${name}`}
+      id={id}
       name={name}
       onBlur={onBlur}
       onChange={onChange}
@@ -31,6 +31,7 @@ NativeFileControl.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
