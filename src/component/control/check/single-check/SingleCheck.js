@@ -4,27 +4,27 @@ import CustomCheckControl from '../custom-check/CustomCheck'
 import NativeCheckControl from '../native-check/NativeCheck'
 
 const SingleCheckControl = (props) => {
-  const { text, value, native, currentValue } = props
+  const { option, native, value } = props
   const CheckControlType = native ? NativeCheckControl : CustomCheckControl
 
-  function isChecked (value) {
-    if (Array.isArray(currentValue) && currentValue.indexOf(value) !== -1) return true
-    if (currentValue === value) return true
+  function isChecked (optionValue) {
+    if (Array.isArray(value) && value.indexOf(optionValue) !== -1) return true
+    if (value === optionValue) return true
     return false
   }
 
   return (
     <label className="control-wrap">
       <span className="control-wrap__item control-wrap__item--shrink">
-        <CheckControlType {...props} value={value} checked={isChecked(value)} />
+        <CheckControlType {...props} value={option.value} checked={isChecked(option.value)} />
       </span>
-      <span className="control-wrap__item">{text}</span>
+      <span className="control-wrap__item">{option.text}</span>
     </label>
   )
 }
 
 SingleCheckControl.propTypes = {
-  currentValue: PropTypes.oneOfType([
+  value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
@@ -35,14 +35,16 @@ SingleCheckControl.propTypes = {
     )
   ]),
   native: PropTypes.bool,
-  text: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
+  option: PropTypes.shape({
+    text: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
+  })
 }
 
 export default SingleCheckControl

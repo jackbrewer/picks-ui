@@ -79,7 +79,7 @@ class FieldPage extends React.Component {
             className="additional-field-class"
             label="Example Multi Label"
 
-            currentValue="Bar2"
+            value="Bar2"
             name="exampleRadioGroup"
             options={[
               { text: 'Text here 1', value: 'Bar1' },
@@ -95,7 +95,7 @@ class FieldPage extends React.Component {
             className="additional-field-class"
             label="Example Multi Label"
 
-            currentValue={[ 'Bar3' ]}
+            value={[ 'Bar3' ]}
             name="exampleCheckboxGroup"
             options={[
               { text: 'Text here 1', value: 'Bar1' },

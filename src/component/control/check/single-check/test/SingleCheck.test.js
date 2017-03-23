@@ -6,9 +6,11 @@ import SingleCheckControl from '../SingleCheck'
 
 const defaultProps = {
   name: 'example',
-  text: 'Option 1',
-  type: 'checkbox',
-  value: 1
+  option: {
+    text: 'Option 1',
+    value: 1
+  },
+  type: 'checkbox'
 }
 
 describe('Component: SingleCheckControl', () => {
@@ -31,14 +33,14 @@ describe('Component: SingleCheckControl', () => {
   it('should add a checked attribute if value === currentValue', () => {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)
-    wrapper.setProps({ currentValue: 1 })
+    wrapper.setProps({ value: 1 })
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), true)
   })
 
   it('should add a checked attribute if value is in an array of currentValues', () => {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)
-    wrapper.setProps({ currentValue: [ 1, 2, 3 ] })
+    wrapper.setProps({ value: [ 1, 2, 3 ] })
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), true)
   })
 })
