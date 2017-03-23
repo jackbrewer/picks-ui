@@ -4,31 +4,8 @@ import classNames from 'classnames'
 import Control from '../../control/Control'
 
 class CheckField extends Component {
-  constructor (props) {
-    super()
-    this.state = { currentValue: props.currentValue }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
-  }
-
-  handleChange (e) {
-    this.setState({ currentValue: e.target.value })
-  }
-
-  handleCheckboxChange (e) {
-    const val = [ ...(this.state.currentValue || []) ]
-    const newValue = e.target.value
-    const index = val.indexOf(newValue)
-    if (index !== -1) {
-      val.splice(index, 1)
-    } else {
-      val.push(newValue)
-    }
-    this.setState({ currentValue: val.sort() })
-  }
-
   render () {
-    const { assistance, className, error, id, label, name, type } = this.props
+    const { assistance, className, error, id, label, name } = this.props
     const fieldClasses = classNames(
       'field',
       'field--check',
@@ -45,8 +22,6 @@ class CheckField extends Component {
         <div className="field__answer">
           <Control
             {...this.props}
-            onChange={type === 'checkbox' ? this.handleCheckboxChange : this.handleChange}
-            {...this.state.currentValue && { currentValue: this.state.currentValue }}
             />
         </div>
         {error && <div className="field__feedback">{error}</div>}
@@ -61,24 +36,13 @@ CheckField.defaultProps = {}
 CheckField.propTypes = {
   assistance: PropTypes.string,
   className: PropTypes.string,
-  currentValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-      ])
-    )
-  ]),
   error: PropTypes.string,
   id: PropTypes.string,
   label: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node
   ]),
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 }
 
 export default CheckField
