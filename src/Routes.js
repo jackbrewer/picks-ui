@@ -19,6 +19,7 @@ import ControlFilePage from './page/ControlFilePage'
 import ControlSelectPage from './page/ControlSelectPage'
 import ControlTextareaPage from './page/ControlTextareaPage'
 import FieldPage from './page/FieldPage'
+import FormPage from './page/FormPage'
 import IconPage from './page/IconPage'
 import NotificationPage from './page/NotificationPage'
 import NotePage from './page/NotePage'
@@ -43,6 +44,7 @@ class Routes extends Component {
           <Route exact path="/control/select" component={ControlSelectPage} />
           <Route exact path="/control/textarea" component={ControlTextareaPage} />
           <Route exact path="/field" component={FieldPage} />
+          <Route exact path="/form" component={FormPage} />
           <Route exact path="/icon" component={IconPage} />
           <Route exact path="/note" component={NotePage} />
           <Route exact path="/notification" component={NotificationPage} />

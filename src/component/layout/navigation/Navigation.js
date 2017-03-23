@@ -26,6 +26,7 @@ const Navigation = () => (
           <NavigationItem to="/control/textarea" text="Textarea" />
         </NavigationItem>
         <NavigationItem to="/field" text="Field" />
+        <NavigationItem to="/form" text="Form" />
         <NavigationItem to="/icon" text="Icon" />
         <NavigationItem to="/note" text="Note" />
         <NavigationItem to="/notification" text="Notification" />
