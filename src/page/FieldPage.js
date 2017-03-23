@@ -5,6 +5,33 @@ import Example from '../component/example/Example'
 import Field from '../component/field/Field'
 
 class FieldPage extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      exampleRadioGroup: 'Bar2',
+      exampleCheckboxGroup: [ 'Bar3' ]
+    }
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+  }
+
+  handleInputChange (event) {
+    const target = event.target
+    const name = target.name
+    const value = target.type === 'checkbox'
+      ? this.handleCheckboxChange(name, target.value)
+      : target.value
+    this.setState({ [name]: value })
+  }
+
+  handleCheckboxChange (name, value) {
+    const valueArr = [ ...(this.state[name] || []) ]
+    valueArr.includes(value)
+      ? valueArr.splice(valueArr.indexOf(value), 1)
+      : valueArr.push(value)
+    return valueArr.sort()
+  }
+
   render () {
     return (
       <div className="prose">
@@ -17,15 +44,17 @@ class FieldPage extends React.Component {
             className="additional-field-class"
             label="Example Label"
             required
-
             type="text"
             name="exampleField"
-            value=""
+            onChange={this.handleInputChange}
+            value={this.state.exampleField}
           />
           <Field
             label="Example Label"
             type="select"
             name="exampleSelect"
+            onChange={this.handleInputChange}
+            value={this.state.exampleSelect}
             options={[
               {
                 text: 'One',
@@ -40,70 +69,70 @@ class FieldPage extends React.Component {
                 value: 3
               }
             ]}
-            value=""
           />
           <Field
             error="Example Error"
             label="Example Label"
             type="text"
             name="erroredField"
-            value=""
+            onChange={this.handleInputChange}
+            value={this.state.erroredField}
           />
         </Example>
 
         <h2>Boolean Layout</h2>
         <Example>
           <Field
-            layout="check"
             assistance="Additional text to provide assistance"
             className="additional-field-class"
             label="Example Label"
             type="checkbox"
             name="exampleCheckbox"
             options={[ { text: 'Text here', value: 'Foo' } ]}
+            onChange={this.handleInputChange}
+            value={this.state.exampleCheckbox}
           />
           <Field
-            layout="check"
             label="Example Label"
             error="Example Error"
             type="checkbox"
             name="exampleCheckboxError"
+            onChange={this.handleInputChange}
             options={[ { text: 'Text here', value: 'Foo' } ]}
+            value={this.state.exampleCheckboxError}
           />
         </Example>
 
         <Example>
           <Field
-            layout="check"
             assistance="Additional text to provide assistance"
             className="additional-field-class"
             label="Example Multi Label"
-
-            value="Bar2"
+            onChange={this.handleInputChange}
+            value={this.state.exampleRadioGroup}
             name="exampleRadioGroup"
+            type="radio"
             options={[
               { text: 'Text here 1', value: 'Bar1' },
               { text: 'Text here 2', value: 'Bar2' },
               { text: 'Text here 3', value: 'Bar3' },
               { text: 'Text here 4', value: 'Bar4' }
             ]}
-            type="radio"
           />
           <Field
-            layout="check"
             assistance="Additional text to provide assistance"
             className="additional-field-class"
             label="Example Multi Label"
-
-            value={[ 'Bar3' ]}
+            onChange={this.handleInputChange}
+            value={this.state.exampleCheckboxGroup}
             name="exampleCheckboxGroup"
+            type="checkbox"
             options={[
               { text: 'Text here 1', value: 'Bar1' },
               { text: 'Text here 2', value: 'Bar2' },
               { text: 'Text here 3', value: 'Bar3' },
               { text: 'Text here 4', value: 'Bar4' }
             ]}
-            type="checkbox"
           />
         </Example>
       </div>

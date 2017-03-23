@@ -7,11 +7,14 @@ import Control from '../component/control/Control'
 class ControlPage extends React.Component {
   constructor () {
     super()
-    this.state = {}
-    this.handleTextChange = this.handleTextChange.bind(this)
+    this.state = {
+      controlDate: '',
+      controlDate2: '2014-04-25T01:32:21.196Z'
+    }
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  handleTextChange (e) {
+  handleInputChange (e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -23,17 +26,17 @@ class ControlPage extends React.Component {
         <Example>
           <Control
             name="controlDate"
-            onChange={this.handleTextChange}
             type="date"
-            value={this.state['controlDate'] || ''}
+            onChange={this.handleInputChange}
+            value={this.state['controlDate']}
           />
         </Example>
         <Example>
           <Control
             name="controlDate2"
-            onChange={this.handleTextChange}
             type="date"
-            value={this.state['controlDate2'] || '2014-04-25T01:32:21.196Z'}
+            onChange={this.handleInputChange}
+            value={this.state['controlDate2']}
           />
         </Example>
       </div>

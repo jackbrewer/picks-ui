@@ -5,11 +5,6 @@ import Example from '../component/example/Example'
 import Control from '../component/control/Control'
 
 class ControlPage extends React.Component {
-  constructor () {
-    super()
-    this.state = {}
-  }
-
   render () {
     return (
       <div className="prose">

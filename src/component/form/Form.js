@@ -11,28 +11,21 @@ class Form extends Component {
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
   }
 
-  handleInputChange (event) {
-    const target = event.target
+  handleInputChange (e) {
+    const target = e.target
     const name = target.name
     const value = target.type === 'checkbox'
-      ? this.handleCheckboxChange(target)
+      ? this.handleCheckboxChange(name, target.value)
       : target.value
-    console.log(name, value)
-    this.setState({
-      [name]: value
-    })
+    this.setState({ [name]: value })
   }
 
-  handleCheckboxChange (target) {
-    const val = [ ...(this.state[target.name] || []) ]
-    const newValue = target.value
-    const index = val.indexOf(newValue)
-    if (index !== -1) {
-      val.splice(index, 1)
-    } else {
-      val.push(newValue)
-    }
-    return val.sort()
+  handleCheckboxChange (name, value) {
+    const valueArr = [ ...(this.state[name] || []) ]
+    valueArr.includes(value)
+      ? valueArr.splice(valueArr.indexOf(value), 1)
+      : valueArr.push(value)
+    return valueArr.sort()
   }
 
   render () {

@@ -7,11 +7,16 @@ import Control from '../component/control/Control'
 class ControlPage extends React.Component {
   constructor () {
     super()
-    this.state = {}
-    this.handleTextChange = this.handleTextChange.bind(this)
+    this.state = {
+      exampleName: '',
+      controlText: 'abcd',
+      controlNumber: '1234',
+      controlPassword: 'abcd'
+    }
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  handleTextChange (e) {
+  handleInputChange (e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -23,7 +28,12 @@ class ControlPage extends React.Component {
         <p>Controls are basic inputs and will rarely be used directly. You’ll likely use fields which will pull in the desired control type.</p>
         <h2>Text Control</h2>
         <Example>
-          <Control type="text" name="exampleName" onChange={this.handleTextChange} value={this.state['exampleName'] || ''} />
+          <Control
+            type="text"
+            name="exampleName"
+            onChange={this.handleInputChange}
+            value={this.state['exampleName']}
+          />
         </Example>
         <h3>Attributes</h3>
         <p>These need splitting and explaining better</p>
@@ -32,8 +42,8 @@ class ControlPage extends React.Component {
             controlClassName="additional-control-class"
             disabled
             name="exampleFull"
-            onBlur={this.handleTextChange}
-            onChange={this.handleTextChange}
+            onBlur={this.handleInputChange}
+            onChange={this.handleInputChange}
             placeholder="Placeholder Text"
             required
             type="password"
@@ -43,9 +53,25 @@ class ControlPage extends React.Component {
         </Example>
 
         <Example>
-          <Control type="text" additional={{ maxLength: 8, size: 20 }} name="controlText" onChange={this.handleTextChange} value={this.state['controlText'] || ''} />
-          <Control type="number" name="controlNumber" onChange={this.handleTextChange} value={this.state['controlNumber'] || ''} />
-          <Control type="password" name="controlPassword" onChange={this.handleTextChange} value={this.state['controlPassword'] || ''} />
+          <Control
+            type="text"
+            additional={{ maxLength: 8, size: 20 }}
+            name="controlText"
+            onChange={this.handleInputChange}
+            value={this.state['controlText']}
+          />
+          <Control
+            type="number"
+            name="controlNumber"
+            onChange={this.handleInputChange}
+            value={this.state['controlNumber']}
+          />
+          <Control
+            type="password"
+            name="controlPassword"
+            onChange={this.handleInputChange}
+            value={this.state['controlPassword']}
+          />
         </Example>
       </div>
     )

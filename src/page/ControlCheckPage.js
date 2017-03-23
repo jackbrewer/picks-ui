@@ -7,26 +7,29 @@ import Control from '../component/control/Control'
 class ControlCheckPage extends React.Component {
   constructor () {
     super()
-    this.state = {}
-    this.handleSingleCheckChange = this.handleSingleCheckChange.bind(this)
-    this.handleMultiCheckChange = this.handleMultiCheckChange.bind(this)
-  }
-
-  handleSingleCheckChange (e) {
-    this.setState({ [e.target.name]: e.target.checked ? e.target.value : false })
-  }
-
-  handleMultiCheckChange (e) {
-    const name = e.target.name
-    const val = [ ...(this.state[e.target.name] || []) ]
-    const newVal = e.target.value
-    const index = val.indexOf(newVal)
-    if (val.indexOf(newVal) !== -1) {
-      val.splice(index, 1)
-    } else {
-      val.push(e.target.value)
+    this.state = {
+      exampleCheckboxGroup: [ 'Foo3' ],
+      exampleRadioGroup: 'Bar2'
     }
-    this.setState({ [name]: val.sort() })
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+  }
+
+  handleInputChange (e) {
+    const target = e.target
+    const name = target.name
+    const value = target.type === 'checkbox'
+      ? this.handleCheckboxChange(name, target.value)
+      : target.value
+    this.setState({ [name]: value })
+  }
+
+  handleCheckboxChange (name, value) {
+    const valueArr = [ ...(this.state[name] || []) ]
+    valueArr.includes(value)
+      ? valueArr.splice(valueArr.indexOf(value), 1)
+      : valueArr.push(value)
+    return valueArr.sort()
   }
 
   render () {
@@ -36,10 +39,10 @@ class ControlCheckPage extends React.Component {
         <h1>Check Control</h1>
         <Example>
           <Control
-            {...this.state['exampleCheckbox'] && { currentValue: this.state['exampleCheckbox'] }}
+            value={this.state['exampleCheckboxGroup']}
             type="checkbox"
-            name="exampleCheckbox"
-            onChange={this.handleMultiCheckChange}
+            name="exampleCheckboxGroup"
+            onChange={this.handleInputChange}
             options={[
               { text: 'Text here 1', value: 'Foo1' },
               { text: 'Text here 2', value: 'Foo2' },
@@ -50,9 +53,9 @@ class ControlCheckPage extends React.Component {
         </Example>
         <Example>
           <Control
-            {...this.state['exampleRadio'] && { currentValue: this.state['exampleRadio'] }}
-            name="exampleRadio"
-            onChange={this.handleSingleCheckChange}
+            value={this.state['exampleRadioGroup']}
+            name="exampleRadioGroup"
+            onChange={this.handleInputChange}
             options={[
               { text: 'Text here 1', value: 'Bar1' },
               { text: 'Text here 2', value: 'Bar2' },
@@ -64,18 +67,18 @@ class ControlCheckPage extends React.Component {
         </Example>
         <Example>
           <Control
-            {...this.state['exampleNativeRadio'] && { currentValue: this.state['exampleNativeRadio'] }}
+            value={this.state['exampleNativeRadio']}
+            onChange={this.handleInputChange}
             name="exampleNativeRadio"
             native
-            onChange={this.handleSingleCheckChange}
             options={[ { text: 'Text here 1', value: 'Bar1' } ]}
             type="radio"
             />
           <Control
-            {...this.state['exampleNativeCheckbox'] && { currentValue: this.state['exampleNativeCheckbox'] }}
+            value={this.state['exampleNativeCheckbox']}
             name="exampleNativeCheckbox"
             native
-            onChange={this.handleSingleCheckChange}
+            onChange={this.handleInputChange}
             options={[ { text: 'Text here 1', value: 'Bar1' } ]}
             type="checkbox"
             />
@@ -88,11 +91,11 @@ class ControlCheckPage extends React.Component {
             controlClassName="additional-control-class"
             disabled
             name="exampleCheck"
-            onBlur={this.handleSingleCheckChange}
-            onChange={this.handleSingleCheckChange}
+            onBlur={this.handleInputChange}
+            onChange={this.handleInputChange}
             required
             type="radio"
-            value={this.state['exampleCheck'] || ''}
+            value={this.state['exampleCheck']}
           />
         </Example>
       </div>

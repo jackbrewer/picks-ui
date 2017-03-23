@@ -7,11 +7,13 @@ import Control from '../component/control/Control'
 class ControlTextareaPage extends React.Component {
   constructor () {
     super()
-    this.state = {}
-    this.handleTextChange = this.handleTextChange.bind(this)
+    this.state = {
+      exampleTextarea: ''
+    }
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  handleTextChange (e) {
+  handleInputChange (e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -24,8 +26,8 @@ class ControlTextareaPage extends React.Component {
           <Control
             type="textarea"
             name="exampleTextarea"
-            onChange={this.handleTextChange}
-            value={this.state['exampleTextarea'] || ''}
+            onChange={this.handleInputChange}
+            value={this.state['exampleTextarea']}
           />
         </Example>
       </div>
