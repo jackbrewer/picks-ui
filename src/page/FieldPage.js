@@ -3,32 +3,8 @@ import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Field from '../component/field/Field'
-import Control from '../component/control/Control'
 
 class FieldPage extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      exampleField: '',
-      erroredField: 'example'
-    }
-    this.handleValueChange = this.handleValueChange.bind(this)
-    this.handleCheckChange = this.handleCheckChange.bind(this)
-    this.handleChoiceChange = this.handleChoiceChange.bind(this)
-  }
-
-  handleValueChange (e) {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
-  handleCheckChange (e) {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
-  handleChoiceChange (e) {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
   render () {
     return (
       <div className="prose">
@@ -41,13 +17,16 @@ class FieldPage extends React.Component {
             className="additional-field-class"
             label="Example Label"
             required
-            >
-            <Control type="text" name="exampleField" />
-          </Field>
+
+            type="text"
+            name="exampleField"
+            value=""
+          />
           <Field
             label="Example Label"
-            >
-            <Control type="select" name="exampleSelect" options={[
+            type="select"
+            name="exampleSelect"
+            options={[
               {
                 text: 'One',
                 value: 1
@@ -60,14 +39,16 @@ class FieldPage extends React.Component {
                 text: 'Three',
                 value: 3
               }
-            ]} />
-          </Field>
+            ]}
+            value=""
+          />
           <Field
             error="Example Error"
             label="Example Label"
-            >
-            <Control type="text" name="erroredField" error="Example Error" />
-          </Field>
+            type="text"
+            name="erroredField"
+            value=""
+          />
         </Example>
 
         <h2>Boolean Layout</h2>
@@ -77,16 +58,18 @@ class FieldPage extends React.Component {
             assistance="Additional text to provide assistance"
             className="additional-field-class"
             label="Example Label"
-            >
-            <Control type="checkbox" name="exampleCheckbox" options={[ { text: 'Text here', value: 'Foo' } ]} />
-          </Field>
+            type="checkbox"
+            name="exampleCheckbox"
+            options={[ { text: 'Text here', value: 'Foo' } ]}
+          />
           <Field
             layout="check"
             label="Example Label"
             error="Example Error"
-            >
-            <Control type="checkbox" name="exampleCheckboxError" error="Example Error" options={[ { text: 'Text here', value: 'Foo' } ]} />
-          </Field>
+            type="checkbox"
+            name="exampleCheckboxError"
+            options={[ { text: 'Text here', value: 'Foo' } ]}
+          />
         </Example>
 
         <Example>
@@ -95,26 +78,33 @@ class FieldPage extends React.Component {
             assistance="Additional text to provide assistance"
             className="additional-field-class"
             label="Example Multi Label"
-            >
-            <Control
-              type="checkbox"
-              name="exampleRadio"
-              options={[
-                {
-                  text: 'One',
-                  value: 1
-                },
-                {
-                  text: 'Two',
-                  value: 2
-                },
-                {
-                  text: 'Three',
-                  value: 3
-                }
-              ]}
-            />
-          </Field>
+
+            currentValue="Bar2"
+            name="exampleRadioGroup"
+            options={[
+              { text: 'Text here 1', value: 'Bar1' },
+              { text: 'Text here 2', value: 'Bar2' },
+              { text: 'Text here 3', value: 'Bar3' },
+              { text: 'Text here 4', value: 'Bar4' }
+            ]}
+            type="radio"
+          />
+          <Field
+            layout="check"
+            assistance="Additional text to provide assistance"
+            className="additional-field-class"
+            label="Example Multi Label"
+
+            currentValue={[ 'Bar3' ]}
+            name="exampleCheckboxGroup"
+            options={[
+              { text: 'Text here 1', value: 'Bar1' },
+              { text: 'Text here 2', value: 'Bar2' },
+              { text: 'Text here 3', value: 'Bar3' },
+              { text: 'Text here 4', value: 'Bar4' }
+            ]}
+            type="checkbox"
+          />
         </Example>
       </div>
     )
