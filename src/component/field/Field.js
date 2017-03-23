@@ -4,10 +4,19 @@ import CheckField from './check/CheckField'
 import StandardField from './standard/StandardField'
 
 const Field = (props) => {
-  const { layout } = props
+  const { layout, type } = props
 
-  switch (layout) {
-    case 'check':
+  if (layout) {
+    switch (layout) {
+      case 'check':
+        return <CheckField {...props} />
+      default:
+    }
+  }
+
+  switch (type) {
+    case 'checkbox':
+    case 'radio':
       return <CheckField {...props} />
     default:
       return <StandardField {...props} />
@@ -15,7 +24,8 @@ const Field = (props) => {
 }
 
 Field.propTypes = {
-  layout: PropTypes.string
+  layout: PropTypes.string,
+  type: PropTypes.string
 }
 
 export default Field
