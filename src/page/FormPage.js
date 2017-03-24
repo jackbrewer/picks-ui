@@ -38,7 +38,13 @@ class FormPage extends React.Component {
             onSubmit={this.handleSubmit}
             submitButtonText="Search"
             >
-            <Field label="Search" type="search" name="query" required />
+            <Field
+              label="Search"
+              type="search"
+              name="query"
+              required
+              value="Example Search"
+            />
           </Form>
         </Example>
         <Example>
@@ -49,6 +55,7 @@ class FormPage extends React.Component {
             <Field
               type="radio"
               name="radioGroup"
+              value="blue"
               options={[
                 { text: 'Red', value: 'red' },
                 { text: 'Yellow', value: 'green' },
@@ -57,11 +64,40 @@ class FormPage extends React.Component {
             <Field
               type="checkbox"
               name="checkboxGroup"
+              value={[ 'green' ]}
               options={[
                 { text: 'Orange', value: 'orange' },
                 { text: 'Green', value: 'green' },
                 { text: 'Purple', value: 'purple' } ]}
               />
+          </Form>
+        </Example>
+        <Example>
+          <Form
+            method="get"
+            onSubmit={this.handleSubmit}
+            >
+            <Field
+              type="checkbox"
+              name="checkboxGroup2"
+              options={[
+                { text: 'Orange', value: 'orange' }
+              ]}
+            />
+            <Field
+              type="checkbox"
+              name="checkboxGroup3"
+              options={[
+                { text: 'Green', value: 'green' }
+              ]}
+            />
+            <Field
+              type="checkbox"
+              name="checkboxGroup4"
+              options={[
+                { text: 'Purple', value: 'purple' }
+              ]}
+            />
           </Form>
         </Example>
       </div>

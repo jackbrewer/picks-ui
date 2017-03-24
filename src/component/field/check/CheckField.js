@@ -38,10 +38,7 @@ CheckField.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
   id: PropTypes.string,
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node
-  ]),
+  label: PropTypes.string,
   name: PropTypes.string.isRequired
 }
 

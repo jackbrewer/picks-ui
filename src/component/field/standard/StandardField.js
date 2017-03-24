@@ -46,10 +46,7 @@ StandardField.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
   id: PropTypes.string,
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node
-  ]).isRequired,
+  label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired
 }
 

@@ -36,15 +36,12 @@ SingleCheckControl.propTypes = {
   ]),
   native: PropTypes.bool,
   option: PropTypes.shape({
-    text: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
+    text: PropTypes.string,
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
     ])
-  })
+  }).isRequired
 }
 
 export default SingleCheckControl

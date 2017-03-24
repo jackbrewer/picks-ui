@@ -58,10 +58,6 @@ class CustomFileControl extends Component {
   }
 }
 
-CustomFileControl.defaultProps = {
-  error: ''
-}
-
 CustomFileControl.propTypes = {
   error: PropTypes.string
 }

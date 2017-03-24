@@ -47,7 +47,7 @@ class ControlPage extends React.Component {
             placeholder="Placeholder Text"
             required
             type="password"
-            value={this.state['exampleFull'] || ''}
+            value={this.state['exampleFull']}
             additional={{}}
           />
         </Example>
