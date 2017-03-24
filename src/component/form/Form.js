@@ -4,23 +4,35 @@ import classNames from 'classnames'
 import Button from '../button/Button'
 
 class Form extends Component {
-  constructor () {
-    super()
-    this.state = {}
+  constructor (props) {
+    super(props)
+
+    const initialValues = Children.map(props.children,
+      child => {
+        return { [child.props.name]: child.props.value }
+      }
+    )
+    this.state = Object.assign({}, ...initialValues)
+
     this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+    this.handleInputValue = this.handleInputValue.bind(this)
+    this.handleArrayValue = this.handleArrayValue.bind(this)
   }
 
   handleInputChange (e) {
-    const target = e.target
-    const name = target.name
-    const value = target.type === 'checkbox'
-      ? this.handleCheckboxChange(name, target.value)
-      : target.value
-    this.setState({ [name]: value })
+    const value = this.handleInputValue(e.target)
+    this.setState({ [e.target.name]: value })
   }
 
-  handleCheckboxChange (name, value) {
+  handleInputValue (target) {
+    const { name, type, value } = target
+    if (type !== 'checkbox') return value
+    if (Array.isArray(this.state[name])) return this.handleArrayValue(name, value)
+    if (!target.checked) return ''
+    return value
+  }
+
+  handleArrayValue (name, value) {
     const valueArr = [ ...(this.state[name] || []) ]
     valueArr.includes(value)
       ? valueArr.splice(valueArr.indexOf(value), 1)

@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
 import Control from '../component/control/Control'
+import Note from '../component/note/Note'
 
 class ControlCheckPage extends React.Component {
   constructor () {
@@ -11,20 +12,26 @@ class ControlCheckPage extends React.Component {
       exampleCheckboxGroup: [ 'Foo3' ],
       exampleRadioGroup: 'Bar2'
     }
+
     this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+    this.handleInputValue = this.handleInputValue.bind(this)
+    this.handleArrayValue = this.handleArrayValue.bind(this)
   }
 
   handleInputChange (e) {
-    const target = e.target
-    const name = target.name
-    const value = target.type === 'checkbox'
-      ? this.handleCheckboxChange(name, target.value)
-      : target.value
-    this.setState({ [name]: value })
+    const value = this.handleInputValue(e.target)
+    this.setState({ [e.target.name]: value })
   }
 
-  handleCheckboxChange (name, value) {
+  handleInputValue (target) {
+    const { name, type, value } = target
+    if (type !== 'checkbox') return value
+    if (Array.isArray(this.state[name])) return this.handleArrayValue(name, value)
+    if (!target.checked) return ''
+    return value
+  }
+
+  handleArrayValue (name, value) {
     const valueArr = [ ...(this.state[name] || []) ]
     valueArr.includes(value)
       ? valueArr.splice(valueArr.indexOf(value), 1)
@@ -37,6 +44,22 @@ class ControlCheckPage extends React.Component {
       <div className="prose">
         <Helmet title="Check Control" />
         <h1>Check Control</h1>
+
+        <Example>
+          <Control
+            value={this.state.exampleCheckboxSingle}
+            type="checkbox"
+            name="exampleCheckboxSingle"
+            onChange={this.handleInputChange}
+            options={[
+              { text: 'Text here 1', value: 'Foo1' }
+            ]}
+          />
+        </Example>
+        <Note level="notice"
+          heading="Working with multiple checkboxes"
+          text="The Check control defaults to returning a single string value. If you need multiple checkbox support, set the Control’s value to an array."
+          />
         <Example>
           <Control
             value={this.state['exampleCheckboxGroup']}
@@ -95,7 +118,7 @@ class ControlCheckPage extends React.Component {
             onChange={this.handleInputChange}
             required
             type="radio"
-            value={this.state['exampleCheck']}
+            value=""
           />
         </Example>
       </div>

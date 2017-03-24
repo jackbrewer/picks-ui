@@ -8,7 +8,7 @@ const SingleCheckControl = (props) => {
   const CheckControlType = native ? NativeCheckControl : CustomCheckControl
 
   function isChecked (optionValue) {
-    if (Array.isArray(value) && value.indexOf(optionValue) !== -1) return true
+    if (Array.isArray(value) && value.includes(optionValue)) return true
     if (value === optionValue) return true
     return false
   }
