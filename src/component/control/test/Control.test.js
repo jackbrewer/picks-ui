@@ -1,7 +1,7 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import sinon from 'sinon'
+import { stub } from 'sinon'
 
 import Control from '../Control'
 
@@ -13,7 +13,7 @@ const defaultOptions = [
 
 describe('Component: Control', () => {
   it('should error without the required props', () => {
-    sinon.stub(console, 'error', (warning) => { throw new Error(warning) })
+    stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Control />), Error)
   })
 

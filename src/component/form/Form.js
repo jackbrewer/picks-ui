@@ -33,7 +33,7 @@ class Form extends Component {
   }
 
   handleArrayValue (name, value) {
-    const valueArr = [ ...(this.state[name] || []) ]
+    const valueArr = [ ...(this.state[name]) ]
     valueArr.includes(value)
       ? valueArr.splice(valueArr.indexOf(value), 1)
       : valueArr.push(value)

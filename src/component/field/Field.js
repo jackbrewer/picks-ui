@@ -4,15 +4,15 @@ import CheckField from './check/CheckField'
 import StandardField from './standard/StandardField'
 
 const Field = (props) => {
-  const { layout, type } = props
+  const { type } = props
 
-  if (layout) {
-    switch (layout) {
-      case 'check':
-        return <CheckField {...props} />
-      default:
-    }
-  }
+  // if (layout) {
+  //   switch (layout) {
+  //     case 'multi':
+  //       return <CheckField {...props} />
+  //     default:
+  //   }
+  // }
 
   switch (type) {
     case 'checkbox':
@@ -24,7 +24,6 @@ const Field = (props) => {
 }
 
 Field.propTypes = {
-  layout: PropTypes.string,
   type: PropTypes.string
 }
 

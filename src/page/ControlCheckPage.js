@@ -10,6 +10,7 @@ class ControlCheckPage extends React.Component {
     super()
     this.state = {
       exampleCheckboxGroup: [ 'Foo3' ],
+      exampleCheckboxGroup2: [],
       exampleRadioGroup: 'Bar2'
     }
 
@@ -32,7 +33,7 @@ class ControlCheckPage extends React.Component {
   }
 
   handleArrayValue (name, value) {
-    const valueArr = [ ...(this.state[name] || []) ]
+    const valueArr = [ ...(this.state[name]) ]
     valueArr.includes(value)
       ? valueArr.splice(valueArr.indexOf(value), 1)
       : valueArr.push(value)
@@ -65,6 +66,18 @@ class ControlCheckPage extends React.Component {
             value={this.state['exampleCheckboxGroup']}
             type="checkbox"
             name="exampleCheckboxGroup"
+            onChange={this.handleInputChange}
+            options={[
+              { text: 'Text here 1', value: 'Foo1' },
+              { text: 'Text here 2', value: 'Foo2' },
+              { text: 'Text here 3', value: 'Foo3' },
+              { text: 'Text here 4', value: 'Foo4' }
+            ]}
+          />
+          <Control
+            value={this.state['exampleCheckboxGroup2']}
+            type="checkbox"
+            name="exampleCheckboxGroup2"
             onChange={this.handleInputChange}
             options={[
               { text: 'Text here 1', value: 'Foo1' },
