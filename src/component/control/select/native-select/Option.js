@@ -13,7 +13,7 @@ const Option = (props) => {
 }
 
 Option.propTypes = {
-  option: PropTypes.shape({
+  option: PropTypes.objectOf({
     text: PropTypes.string,
     value: PropTypes.oneOfType([
       PropTypes.string,
