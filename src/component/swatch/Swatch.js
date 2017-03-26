@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 
-const Swatch = ({ format, handleClick, name, value }) => (
+const Swatch = ({ onClick, name, value }) => (
   <div
     className="swatch"
     style={{ backgroundColor: value }}
-    onClick={handleClick}
+    onClick={onClick}
     >
     <div className="swatch__caption">
       <div className="swatch__title">{name}</div>
@@ -16,8 +16,7 @@ const Swatch = ({ format, handleClick, name, value }) => (
 )
 
 Swatch.propTypes = {
-  format: PropTypes.string.isRequired,
-  handleClick: PropTypes.func,
+  onClick: PropTypes.func,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired
 }

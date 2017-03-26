@@ -3,7 +3,7 @@ import convertColor from 'css-color-converter'
 
 import Swatch from '../Swatch'
 
-const SwatchContainer = ({ displayFormat, handleClick, name, value }) => {
+const SwatchContainer = ({ displayFormat, onClick, name, value }) => {
   const convertedColor = convertColor(value)
   let displayValue
 
@@ -18,12 +18,12 @@ const SwatchContainer = ({ displayFormat, handleClick, name, value }) => {
       displayValue = convertedColor.toHslString()
       break
     default:
+      displayValue = value
       break
   }
   return (
     <Swatch
-      format={displayFormat}
-      handleClick={handleClick}
+      onClick={onClick}
       name={name}
       value={displayValue}
     />
@@ -36,9 +36,9 @@ SwatchContainer.defaultProps = {
 
 SwatchContainer.propTypes = {
   displayFormat: PropTypes.string,
-  handleClick: PropTypes.func,
+  onClick: PropTypes.func,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string
+  value: PropTypes.string.isRequired
 }
 
 export default SwatchContainer

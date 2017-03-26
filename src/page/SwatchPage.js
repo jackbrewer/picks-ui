@@ -54,19 +54,19 @@ class SwatchPage extends Component {
         <Example previewWidth={previewWidth} displayName="Swatch">
           <Swatch
             displayFormat={this.state.displayFormat}
-            handleClick={this.handleClick}
+            onClick={this.handleClick}
             name=".88mm"
             value="#57a65e"
           />
           <Swatch
             displayFormat={this.state.displayFormat}
-            handleClick={this.handleClick}
+            onClick={this.handleClick}
             name="1.0mm"
             value="#4f86a9"
           />
           <Swatch
             displayFormat={this.state.displayFormat}
-            handleClick={this.handleClick}
+            onClick={this.handleClick}
             name="1.14mm"
             value="#9c5386"
           />
