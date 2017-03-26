@@ -4,5 +4,9 @@
 # testing
 /coverage
 
+# internals
+/config
+/scripts
+
 # production
 /build
