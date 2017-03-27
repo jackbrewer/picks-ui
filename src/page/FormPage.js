@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
+import Table from '../component/table/Table'
 import Form from '../component/form/Form'
 import Field from '../component/field/Field'
 
@@ -22,6 +23,17 @@ class FormPage extends React.Component {
         <Helmet title="Form" />
         <h1>Form</h1>
         <h2>Standard Layout</h2>
+        <p>Forms can be constructed manually using any combination of Field or Control components. This optional Form component provides a simple wrapper which handles state for all Fields as well as supplying an onSubmit prop to access submitted data. Example forms on this page use onSubmit to alert the submitted data for example purposes. This Form component also provides a default Submit button.</p>
+        <Table stickyHeader columns={[ 'Prop', 'Type', 'Description' ]}
+          data={[
+            [ 'action', 'String', 'Sets the form’s action attribute. Defaults to action="" (same page)' ],
+            [ 'children', 'String', 'Usually a collection of fields' ],
+            [ 'className', 'String', 'Adds a custom class or classes' ],
+            [ 'method', 'get/post', 'Sets the from’s submit method attribute' ],
+            [ 'onSubmit', 'Function', 'Callback triggered when the form is submitted' ],
+            [ 'submitText', 'String', 'Sets the text of the submit button. Defaults to “Submit”' ]
+          ]}
+        />
         <Example>
           <Form
             method="get"
@@ -36,7 +48,7 @@ class FormPage extends React.Component {
           <Form
             method="get"
             onSubmit={this.handleSubmit}
-            submitButtonText="Search"
+            submitText="Search"
             >
             <Field
               label="Search"

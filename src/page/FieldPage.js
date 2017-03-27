@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Example from '../component/example/Example'
+import Table from '../component/table/Table'
 import Field from '../component/field/Field'
 
 class FieldPage extends React.Component {
@@ -38,6 +39,15 @@ class FieldPage extends React.Component {
         <Helmet title="Field" />
         <h1>Field</h1>
         <h2>Standard Layout</h2>
+        <p>Fields make up each individual question in a form. Each field consists of a question (usually a label) and an answer (an input, or group of inputs).</p>
+        <p>As well as having a few bespoke props, each field can take any of the props usually passed to a Control component.</p>
+        <Table stickyHeader columns={[ 'Prop', 'Type', 'Description' ]}
+          data={[
+            [ 'assistance', 'String', 'Provides additional detail on the expected value' ],
+            [ 'className', 'String', 'Adds a custom class or classes' ],
+            [ 'label', 'String', 'This text makes up the Field’s label' ]
+          ]}
+        />
         <Example>
           <Field
             assistance="Additional text to provide assistance"

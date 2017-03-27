@@ -41,7 +41,7 @@ class Form extends Component {
   }
 
   render () {
-    const { action, children, className, method, onSubmit, submitButtonText } = this.props
+    const { action, children, className, method, onSubmit, submitText } = this.props
     const formClasses = classNames(
       'form',
       className
@@ -61,7 +61,7 @@ class Form extends Component {
           })
         )}
         <div className="form__actions">
-          <Button type="submit">{submitButtonText}</Button>
+          <Button type="submit">{submitText}</Button>
         </div>
       </form>
     )
@@ -71,7 +71,7 @@ class Form extends Component {
 Form.defaultProps = {
   action: '',
   method: 'post',
-  submitButtonText: 'Submit'
+  submitText: 'Submit'
 }
 
 Form.propTypes = {
@@ -80,7 +80,7 @@ Form.propTypes = {
   className: PropTypes.string,
   method: PropTypes.oneOf([ 'get', 'post' ]),
   onSubmit: PropTypes.func,
-  submitButtonText: PropTypes.string
+  submitText: PropTypes.string
 }
 
 export default Form

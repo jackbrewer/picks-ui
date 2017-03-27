@@ -37,7 +37,7 @@ describe('Component: Form', () => {
       action="/example"
       className="test-class"
       method="get"
-      submitButtonText="Example Text"
+      submitText="Example Text"
     >{defaultChild}</Form>)
     assert.equal(wrapper.prop('action'), '/example')
     assert.equal(wrapper.prop('className'), 'form test-class')
