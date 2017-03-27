@@ -39,7 +39,7 @@ class ControlPage extends React.Component {
           />
         </Example>
         <h3>Attributes</h3>
-        <Table columns={[ 'Prop', 'Type', 'Description' ]}
+        <Table stickyHeader columns={[ 'Prop', 'Type', 'Description' ]}
           data={[
             [ 'className', 'String', 'Adds a custom class or classes' ],
             [ 'disabled', 'Boolean', 'Disables User interaction' ],

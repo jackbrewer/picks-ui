@@ -1,0 +1,57 @@
+//
+// TABLES
+// ======
+//
+
+// Enabling a wrapper with overflow set causes the position fixed header to break - Chrome macOS
+// .table-wrapper
+//   position relative
+//   overflow-x auto
+//   -webkit-overflow-scrolling touch
+//
+//   // &.has-overflow
+//   //
+//   //   &:after
+//   //     content ''
+//   //     position absolute
+//   //     top rem(20)
+//   //     right rem(15)
+
+table
+  width 100%
+  border-collapse collapse
+  border-spacing 0
+  margin-bottom 0
+
+thead
+  background-color $color--white
+
+  &:after
+    position absolute
+    content ''
+    width 100%
+    height 3px
+    background-color $color--light-grey
+
+  .table.has-sticky-header &
+    position sticky
+    top 0
+
+
+tr
+  vertical-align top
+
+  tbody &
+    border-bottom 1px solid $color--light-grey
+
+th, td
+  font-weight normal
+  padding-top $spacing--default
+  padding-bottom $spacing--default
+  text-align left
+
+  &:not(:last-child)
+    padding-right $spacing--default
+
+th
+  font-weight bold
