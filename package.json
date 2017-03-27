@@ -5,7 +5,7 @@
   "homepage": "https://jackbrewer.github.io/picks-ui",
   "scripts": {
     "build:styles": "stylus -m -c -u stylus-mixins -u responsive-grid -u poststylus --with \"['autoprefixer']\" ./src/asset/stylus/index*.styl -o ./src/asset/css/",
-    "build": "node scripts/build.js && react-snapshot",
+    "build": "node scripts/build.js",
     "coverage": "npm test -- --coverage",
     "coverage:component": "npm test -- --coverage --collectCoverageFrom=src/component/**/*.js",
     "fix:js": "npm run js:lint -- --fix",
