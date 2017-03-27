@@ -15,10 +15,19 @@ class CheckField extends Component {
 
     return (
       <div
+        aria-labelledby={`question--${id || name}`}
         className={fieldClasses}
         id={`field--${id || name}`}
+        role="group"
         >
-        {label && <div className="field__question">{label}</div>}
+        {label &&
+          <div
+            className="field__question"
+            id={`question--${id || name}`}
+            >
+            {label}
+          </div>
+        }
         <div className="field__answer">
           <Control
             {...this.props}

@@ -19,6 +19,7 @@ const Navigation = () => (
         <NavigationItem to="/card" text="Card" />
         <NavigationItem to="/code" text="Code" />
         <NavigationItem to="/control" text="Control">
+          <NavigationItem to="/control/input" text="Input" />
           <NavigationItem to="/control/check" text="Check" />
           <NavigationItem to="/control/date" text="Date" />
           <NavigationItem to="/control/file" text="File" />

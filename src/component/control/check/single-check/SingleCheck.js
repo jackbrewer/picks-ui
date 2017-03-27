@@ -35,7 +35,7 @@ SingleCheckControl.propTypes = {
     )
   ]),
   native: PropTypes.bool,
-  option: PropTypes.objectOf({
+  option: PropTypes.shape({
     text: PropTypes.string,
     value: PropTypes.oneOfType([
       PropTypes.string,

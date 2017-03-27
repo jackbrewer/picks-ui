@@ -1,19 +1,15 @@
 import React, { PropTypes } from 'react'
 
-const Option = (props) => {
-  const { text, value } = props.option
-
-  return (
-    <option
-      value={value || text}
-      >
-      {text}
-    </option>
-  )
-}
+const Option = ({ option }) => (
+  <option
+    value={option.value || option.text}
+    >
+    {option.text}
+  </option>
+)
 
 Option.propTypes = {
-  option: PropTypes.objectOf({
+  option: PropTypes.shape({
     text: PropTypes.string,
     value: PropTypes.oneOfType([
       PropTypes.string,

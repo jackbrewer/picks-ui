@@ -16,6 +16,7 @@ import ControlPage from './page/ControlPage'
 import ControlCheckPage from './page/ControlCheckPage'
 import ControlDatePage from './page/ControlDatePage'
 import ControlFilePage from './page/ControlFilePage'
+import ControlInputPage from './page/ControlInputPage'
 import ControlSelectPage from './page/ControlSelectPage'
 import ControlTextareaPage from './page/ControlTextareaPage'
 import FieldPage from './page/FieldPage'
@@ -41,6 +42,7 @@ class Routes extends Component {
           <Route exact path="/control/check" component={ControlCheckPage} />
           <Route exact path="/control/date" component={ControlDatePage} />
           <Route exact path="/control/file" component={ControlFilePage} />
+          <Route exact path="/control/input" component={ControlInputPage} />
           <Route exact path="/control/select" component={ControlSelectPage} />
           <Route exact path="/control/textarea" component={ControlTextareaPage} />
           <Route exact path="/field" component={FieldPage} />
