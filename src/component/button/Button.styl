@@ -22,19 +22,20 @@
   line-height 1.2
   font-size 1em
   font-family inherit
-  color inherit
-  background-color $color--grey
   text-align center
   text-decoration none
+  color $color--white
+  background-color $color--primary
 
   &:focus
   &:hover
     text-decoration none
-    background-color lighten($color--grey, 10%)
+    color $color--white
+    background-color tint($color--primary, 10%)
     outline 0
 
   &:active
-    background-color darken($color--grey, 20%)
+    background-color tint($color--primary, 20%)
 
 
 //
@@ -42,17 +43,17 @@
 // Remember to add button variation modifier examples to the style guide page.
 //
 
-.button--primary
-  color $color--white
-  background-color $color--primary
+.button--inverse
+  color $color--primary
+  background-color $color--white
 
   &:focus
   &:hover
-    color $color--white
-    background-color lighten($color--primary, 10%)
+    color $color--primary
+    background-color tint($color--primary, 90%)
 
   &:active
-    background-color darken($color--primary, 20%)
+    background-color tint($color--primary, 80%)
 
 
 //

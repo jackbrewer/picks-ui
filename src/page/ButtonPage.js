@@ -31,10 +31,10 @@ class ButtonPage extends React.Component {
           <Button href="#">Anchor<br />with multi-line</Button>
           <Button>Button<br />with multi-line</Button>
         </Example>
-        <h2>Button Primary</h2>
+        <h2>Button Inverse</h2>
         <Example previewWidth="auto">
-          <Button className="button--primary" href="#">Anchor</Button>
-          <Button className="button--primary">Button</Button>
+          <Button className="button--inverse" href="#">Anchor</Button>
+          <Button className="button--inverse">Button</Button>
         </Example>
         <h2>Disabled Buttons</h2>
         <Example previewWidth="auto">
