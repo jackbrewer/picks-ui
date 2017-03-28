@@ -3,13 +3,11 @@ import React, { PropTypes } from 'react'
 import CustomFileControl from './CustomFile'
 import NativeFileControl from './NativeFile'
 
-const FileControl = (props) => {
-  const { native } = props
-
+const FileControl = ({ native, ...other }) => {
   const FileControlType = native ? NativeFileControl : CustomFileControl
 
   return (
-    <FileControlType {...props} />
+    <FileControlType {...other} />
   )
 }
 

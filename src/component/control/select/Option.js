@@ -1,12 +1,15 @@
 import React, { PropTypes } from 'react'
 
-const Option = ({ option }) => (
-  <option
-    value={option.value || option.text}
-    >
-    {option.text}
-  </option>
-)
+const Option = ({ option }) => {
+  const { text, value } = option
+  return (
+    <option
+      value={value || text}
+      >
+      {text}
+    </option>
+  )
+}
 
 Option.propTypes = {
   option: PropTypes.shape({

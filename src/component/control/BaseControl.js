@@ -3,8 +3,10 @@ import classNames from 'classnames'
 
 const BaseControl = (props) => {
   const {
-    children, className, disabled, element: Element, error, id, name, onBlur, onChange, onFocus, required, type, value,
-    // Attributes added
+    children, className, error, name,
+    // Use the element prop as a React component
+    element: Element,
+    // Attributes added by author, or embellished by type-spcific controls
     ...other
   } = props
 
@@ -17,15 +19,7 @@ const BaseControl = (props) => {
   return (
     <Element
       className={controlClassNames}
-      disabled={disabled}
-      id={id}
       name={name}
-      onBlur={onBlur}
-      onChange={onChange}
-      onFocus={onFocus}
-      required={required}
-      type={type}
-      value={value}
       {...other}
       >
       {children}
@@ -36,20 +30,9 @@ const BaseControl = (props) => {
 BaseControl.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  disabled: PropTypes.bool,
   element: PropTypes.string.isRequired,
   error: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  required: PropTypes.bool,
-  type: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
+  name: PropTypes.string.isRequired
 }
 
 export default BaseControl

@@ -3,13 +3,11 @@ import React, { PropTypes } from 'react'
 import CustomSelectControl from './CustomSelect'
 import NativeSelectControl from './NativeSelect'
 
-const SelectControl = (props) => {
-  const { native } = props
-
+const SelectControl = ({ native, ...other }) => {
   const SelectControlType = native ? NativeSelectControl : CustomSelectControl
 
   return (
-    <SelectControlType {...props} />
+    <SelectControlType {...other} />
   )
 }
 

@@ -82,22 +82,16 @@ class ControlPage extends React.Component {
         <h3>Props</h3>
         <Table stickyHeader columns={[ 'Prop', 'Type', 'Description' ]}
           data={[
-            [ 'className', 'String', 'Adds a custom class or classes' ],
-            [ 'disabled', 'Boolean', 'Disables User interaction' ],
+            [ 'className', 'String', 'Adds a custom class or classes. Embellished by control type' ],
             [ 'error', 'String', 'Adds a class to the control if passed' ],
-            [ 'id', 'String', 'Allows a label to target the control using a matching `for` attribute.' ],
             [ 'name (required)', 'String', 'Adds the name attribute, which is submitted with the form data' ],
-            [ 'onBlur', 'Function', 'Callback triggered when the control is blurred' ],
-            [ 'onChange', 'Function', 'Callback triggered when the control is changed' ],
-            [ 'onFocus', 'Function', 'Callback triggered when the control is focussed' ],
-            [ 'options', 'Array', 'An array of “text” and “value” options, required by Select or Choice controls' ],
-            [ 'placeholder', 'String', 'Adds a `placeholder` attribute.' ],
-            [ 'required', 'Boolean', 'Adds a `required` attribute.' ],
+            [ 'onBlur, onChange, onFocus', 'Function', 'Event triggered allbacks' ],
+            [ 'options', 'Array', 'An array of “text” and “value” objects, required by Select or Choice controls' ],
             [ 'type (required)', 'String', 'Specifies the type of input required. May be one of checkbox, radio, select, textarea, hidden, or any of the standard text input types such as text, password, email, date.' ],
             [ 'value', 'String', 'The initial value of the control. Use a state variable to manage as a controlled input' ]
           ]}
         />
-        <p>Additional valid attributes can be added and will be passed directly to the control, e.g. maxLength, rows, pattern, accepts.</p>
+        <p>Additional valid attributes can be added and will be passed directly to the control, e.g. disabled, id, onBlur, onChange, onFocus, placeholder, required</p>
       </div>
     )
   }
