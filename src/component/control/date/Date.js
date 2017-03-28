@@ -8,7 +8,7 @@ import CalendarSvg from '../../svg/Calendar'
 
 const DateControl = (props) => {
   const { error } = props
-  const controlClassNames = classNames(
+  const datepickerClassNames = classNames(
     'datepicker',
     { 'datepicker--error': error }
   )
@@ -16,7 +16,7 @@ const DateControl = (props) => {
   value = value && moment(value).format('YYYY-MM-DD')
 
   return (
-    <span className={controlClassNames}>
+    <span className={datepickerClassNames}>
       <span className="datepicker__icon">
         <Icon type="calendar">
           <CalendarSvg />

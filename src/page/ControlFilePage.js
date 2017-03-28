@@ -10,22 +10,19 @@ class ControlPage extends React.Component {
       <div className="prose">
         <Helmet title="File Control" />
         <h1>File Control</h1>
-        <p>Uncontrolled input as it is not possibl to set a value on a file input.</p>
+        <p>Uncontrolled input as it is not possible to set a value on a file input.</p>
         <Example>
           <Control
             name="controlFile"
-            onChange={this.handleTextChange}
             type="file"
             additional={{ multiple: true }}
             />
         </Example>
         <Example>
           <Control
-            name="controlFile"
+            name="controlNativeFile"
             native
-            onChange={this.handleTextChange}
             type="file"
-            additional={{ multiple: true }}
             />
         </Example>
       </div>

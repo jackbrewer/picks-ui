@@ -1,53 +1,32 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
+import BaseControl from '../../BaseControl'
 import Option from './Option'
 
-const NativeSelectControl = (props) => {
-  const { additional, className, value, disabled, error, id, name, onBlur, onChange, onFocus, options, required } = props
+const NativeSelectControl = ({ className, options, type, ...other }) => {
   const controlClassNames = classnames(
-    'control',
     'control--choice',
-    className,
-    { 'control--error': error }
+    className
   )
 
   return (
-    <select
+    <BaseControl
+      {...other}
       className={controlClassNames}
-      disabled={disabled}
-      id={id}
-      name={name}
-      onBlur={onBlur}
-      onChange={onChange}
-      onFocus={onFocus}
-      required={required}
-      value={value}
-      {...additional}
+      element={type}
       >
       {options.map((option, i) =>
         <Option key={i} option={option} />
       )}
-    </select>
+    </BaseControl>
   )
 }
 
 NativeSelectControl.propTypes = {
-  additional: PropTypes.object,
   className: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  disabled: PropTypes.bool,
-  error: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
   options: PropTypes.array.isRequired,
-  required: PropTypes.bool
+  type: PropTypes.string
 }
 
 export default NativeSelectControl

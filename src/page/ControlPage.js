@@ -94,10 +94,10 @@ class ControlPage extends React.Component {
             [ 'placeholder', 'String', 'Adds a `placeholder` attribute.' ],
             [ 'required', 'Boolean', 'Adds a `required` attribute.' ],
             [ 'type (required)', 'String', 'Specifies the type of input required. May be one of checkbox, radio, select, textarea, hidden, or any of the standard text input types such as text, password, email, date.' ],
-            [ 'value', 'String', 'The initial value of the control. Use a state variable to manage as a controlled input' ],
-            [ 'additional', 'Object', 'Pass additional attributes directly to the input, e.g. { maxLength: 30, autoFocus: true }' ]
+            [ 'value', 'String', 'The initial value of the control. Use a state variable to manage as a controlled input' ]
           ]}
         />
+        <p>Additional valid attributes can be added and will be passed directly to the control, e.g. maxLength, rows, pattern, accepts.</p>
       </div>
     )
   }

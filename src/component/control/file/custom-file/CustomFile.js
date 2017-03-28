@@ -36,17 +36,18 @@ class CustomFileControl extends Component {
       <span className={customFileClassNames}>
 
         <span className="custom-file__button-wrapper">
-          <button
-            className="button button--block custom-file__button"
-            type="button"
-            >
-            Browse
-          </button>
           <NativeFileControl
             {...this.props}
             onChange={this.handleFileChange}
             className="custom-file__hidden-input"
-          />
+            />
+          <button
+            className="button button--block custom-file__button"
+            type="button"
+            tabIndex="-1"
+            >
+            Browse
+          </button>
         </span>
 
         <span className="control control--text custom-file__filename">
