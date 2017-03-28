@@ -11,6 +11,7 @@ describe('Component: CheckField', () => {
   it('should error without the required props', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<CheckField />), Error)
+    console.error.restore()
   })
 
   it('should not error with required props', () => {

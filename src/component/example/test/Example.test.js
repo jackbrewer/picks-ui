@@ -9,6 +9,7 @@ describe('Component: Example', () => {
   it('should error if no children are passed', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Example />), Error)
+    console.error.restore()
   })
 
   it('should render expected defaults when no props passed', () => {

@@ -20,6 +20,7 @@ describe('Component: NativeSelectControl', () => {
     assert.throws(() => shallow(<NativeSelectControl />), Error)
     assert.throws(() => shallow(<NativeSelectControl name="example" options={null} />), Error)
     assert.throws(() => shallow(<NativeSelectControl name={null} options={defaultProps.options} />), Error)
+    console.error.restore()
   })
 
   it('should not error with required props', () => {

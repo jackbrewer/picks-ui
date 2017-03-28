@@ -8,12 +8,13 @@ import NativeCheckControl from '../NativeCheck'
 const defaultProps = { name: 'example', type: 'checkbox' }
 
 describe('Component: NativeCheckControl', () => {
-  stub(console, 'error', (warning) => { throw new Error(warning) })
   it('should error without the required props', () => {
+    stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<NativeCheckControl />), Error)
     assert.throws(() => shallow(<NativeCheckControl name="example" type={null} />), Error)
     assert.throws(() => shallow(<NativeCheckControl name={null} type="text" />), Error)
     assert.throws(() => shallow(<NativeCheckControl name="example" type="text" />), Error)
+    console.error.restore()
   })
 
   it('should not error with required props', () => {

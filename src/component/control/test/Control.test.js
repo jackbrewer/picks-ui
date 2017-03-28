@@ -15,6 +15,7 @@ describe('Component: Control', () => {
   it('should error without the required props', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Control />), Error)
+    console.error.restore()
   })
 
   it('should render correct specialised control based on `type` prop', () => {

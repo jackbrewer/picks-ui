@@ -15,6 +15,7 @@ describe('Component: Table', () => {
   it('should error if required props not passed', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Table />), Error)
+    console.error.restore()
   })
 
   it('should output the expected markup when passed expected props', () => {

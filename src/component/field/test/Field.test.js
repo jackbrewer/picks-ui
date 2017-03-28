@@ -9,6 +9,7 @@ describe('Component: Field', () => {
   it('should error without the required props', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Field />), Error)
+    console.error.restore()
   })
 
   it('should render correct default Field based on `type` prop', () => {

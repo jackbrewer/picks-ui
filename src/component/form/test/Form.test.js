@@ -13,6 +13,7 @@ describe('Component: Form', () => {
   it('should error without the required props', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Form />), Error)
+    console.error.restore()
   })
 
   it('should not error with required props', () => {

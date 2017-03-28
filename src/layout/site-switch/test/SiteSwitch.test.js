@@ -9,6 +9,7 @@ describe('Component: SiteSwitch', () => {
   it('should error if no href is passed', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<SiteSwitch />), Error)
+    console.error.restore()
   })
 
   it('should render expected defaults when reqired props passed', () => {

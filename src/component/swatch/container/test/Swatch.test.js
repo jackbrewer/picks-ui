@@ -10,6 +10,7 @@ describe('Component: SwatchContainer', () => {
     assert.throws(() => shallow(<Swatch />), Error)
     assert.throws(() => shallow(<Swatch name={undefined} value="#fff" />), Error)
     assert.throws(() => shallow(<Swatch name="Example" value={undefined} />), Error)
+    console.error.restore()
   })
 
   it('should pass through expected props to child Swatch', () => {

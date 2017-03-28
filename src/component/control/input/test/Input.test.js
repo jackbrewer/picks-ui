@@ -13,6 +13,7 @@ describe('Component: InputControl', () => {
     assert.throws(() => shallow(<InputControl />), Error)
     assert.throws(() => shallow(<InputControl name="example" type={null} />), Error)
     assert.throws(() => shallow(<InputControl name={null} type="text" />), Error)
+    console.error.restore()
   })
 
   it('should not error with required props', () => {

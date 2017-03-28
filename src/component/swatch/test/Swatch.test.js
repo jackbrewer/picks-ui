@@ -8,6 +8,7 @@ describe('Component: Swatch', () => {
   it('should error if required props not passed', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Swatch />), Error)
+    console.error.restore()
   })
 
   it('should output the expected markup when passed expected props', () => {

@@ -16,6 +16,7 @@ describe('Component: Option', () => {
   it('should error without the required props', () => {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Option />), Error)
+    console.error.restore()
   })
 
   it('should not error with required props', () => {
