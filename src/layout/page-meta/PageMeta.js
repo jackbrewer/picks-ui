@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const Table = ({ name, slug }) => (
+const PageMeta = ({ name, slug }) => (
   <div className="page-meta">
     <ul className="list--inline-separated">
       <li>
@@ -12,9 +12,9 @@ const Table = ({ name, slug }) => (
   </div>
 )
 
-Table.propTypes = {
+PageMeta.propTypes = {
   name: PropTypes.string.isRequired,
   slug: PropTypes.string
 }
 
-export default Table
+export default PageMeta

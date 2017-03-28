@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
-const Table = ({ name, slug }) => (
+const PreHeader = () => (
   <div className="pre-header">
     <div className="content-center content-gutter">
       <p className="text-center">
@@ -10,9 +10,4 @@ const Table = ({ name, slug }) => (
   </div>
 )
 
-Table.propTypes = {
-  name: PropTypes.string.isRequired,
-  slug: PropTypes.string
-}
-
-export default Table
+export default PreHeader
