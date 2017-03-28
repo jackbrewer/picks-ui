@@ -38,16 +38,41 @@ class FieldPage extends React.Component {
       <div className="prose">
         <Helmet title="Field" />
         <h1>Field</h1>
-        <h2>Standard Layout</h2>
         <p>Fields make up each individual question in a form. Each field consists of a question (usually a label) and an answer (an input, or group of inputs).</p>
         <p>As well as having a few bespoke props, each field can take any of the props usually passed to a Control component.</p>
+        <Example toggleSource>
+          <Field
+            assistance="Works with text based Controls, including Select and Textarea"
+            className="additional-field-class"
+            label="Standard Text Layout"
+            required
+            type="text"
+            name="exampleFieldTop"
+            onChange={this.handleInputChange}
+            value={this.state.exampleFieldTop}
+          />
+          <Field
+            assistance="Allows for single or multi-check layouts of checkboxes or radios."
+            className="additional-field-class"
+            label="Standard Check Layout"
+            onChange={this.handleInputChange}
+            value={this.state.exampleCheckboxGroupTop}
+            name="exampleCheckboxGroupTop"
+            type="checkbox"
+            options={[
+              { text: 'Text here 1', value: 'Bar1' },
+              { text: 'Text here 2', value: 'Bar2' }
+            ]}
+          />
+        </Example>
         <Table stickyHeader columns={[ 'Prop', 'Type', 'Description' ]}
           data={[
             [ 'assistance', 'String', 'Provides additional detail on the expected value' ],
             [ 'className', 'String', 'Adds a custom class or classes' ],
-            [ 'label', 'String', 'This text makes up the Field’s label' ]
+            [ 'label', 'String', 'This text makes up the Field’s label. Required for text-based layouts but optional for check-based layouts' ]
           ]}
         />
+        <h2>Standard Layout</h2>
         <Example>
           <Field
             assistance="Additional text to provide assistance"
@@ -89,8 +114,7 @@ class FieldPage extends React.Component {
             value={this.state.erroredField}
           />
         </Example>
-
-        <h2>Boolean Layout</h2>
+        <h2>Check Layout</h2>
         <Example>
           <Field
             assistance="Additional text to provide assistance"

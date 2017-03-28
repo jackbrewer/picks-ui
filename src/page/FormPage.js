@@ -24,6 +24,16 @@ class FormPage extends React.Component {
         <h1>Form</h1>
         <h2>Standard Layout</h2>
         <p>Forms can be constructed manually using any combination of Field or Control components. This optional Form component provides a simple wrapper which handles state for all Fields as well as supplying an onSubmit prop to access submitted data. Example forms on this page use onSubmit to alert the submitted data for example purposes. This Form component also provides a default Submit button.</p>
+        <Example toggleSource>
+          <Form
+            method="get"
+            onSubmit={this.handleSubmit}
+            >
+            <Field label="Username" type="text" name="username" required />
+            <Field label="Password" type="password" name="password" required />
+            <Field type="checkbox" name="remember" options={[ { text: 'Remember me', value: 'yes' } ]} />
+          </Form>
+        </Example>
         <Table stickyHeader columns={[ 'Prop', 'Type', 'Description' ]}
           data={[
             [ 'action', 'String', 'Sets the form’s action attribute. Defaults to action="" (same page)' ],
@@ -34,16 +44,6 @@ class FormPage extends React.Component {
             [ 'submitText', 'String', 'Sets the text of the submit button. Defaults to “Submit”' ]
           ]}
         />
-        <Example>
-          <Form
-            method="get"
-            onSubmit={this.handleSubmit}
-            >
-            <Field label="Username" type="text" name="username" required />
-            <Field label="Password" type="password" name="password" required />
-            <Field type="checkbox" name="remember" options={[ { text: 'Remember me', value: 'yes' } ]} />
-          </Form>
-        </Example>
         <Example>
           <Form
             method="get"
