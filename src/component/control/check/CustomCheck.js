@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
-import NativeCheckControl from '../native-check/NativeCheck'
+import NativeCheckControl from './NativeCheck'
 
 const CustomCheckControl = (props) => {
   const { error, type } = props

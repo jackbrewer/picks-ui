@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react'
 
-import CustomCheckControl from '../custom-check/CustomCheck'
-import NativeCheckControl from '../native-check/NativeCheck'
+import CustomCheckControl from './CustomCheck'
+import NativeCheckControl from './NativeCheck'
 
-const SingleCheckControl = (props) => {
-  const { option, native, value } = props
+const SingleCheckControl = ({ option, native, value, ...other }) => {
   const CheckControlType = native ? NativeCheckControl : CustomCheckControl
 
   function isChecked (optionValue) {
@@ -16,7 +15,7 @@ const SingleCheckControl = (props) => {
   return (
     <label className="control-wrap">
       <span className="control-wrap__item control-wrap__item--shrink">
-        <CheckControlType {...props} value={option.value} checked={isChecked(option.value)} />
+        <CheckControlType {...other} value={option.value} checked={isChecked(option.value)} />
       </span>
       <span className="control-wrap__item">{option.text}</span>
     </label>
