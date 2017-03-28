@@ -85,7 +85,7 @@ class ControlPage extends React.Component {
             [ 'className', 'String', 'Adds a custom class or classes. Embellished by control type' ],
             [ 'error', 'String', 'Adds a class to the control if passed' ],
             [ 'name (required)', 'String', 'Adds the name attribute, which is submitted with the form data' ],
-            [ 'onBlur, onChange, onFocus', 'Function', 'Event triggered allbacks' ],
+            [ 'onBlur, onChange, onFocus', 'Function', 'Event triggered callbacks' ],
             [ 'options', 'Array', 'An array of “text” and “value” objects, required by Select or Choice controls' ],
             [ 'type (required)', 'String', 'Specifies the type of input required. May be one of checkbox, radio, select, textarea, hidden, or any of the standard text input types such as text, password, email, date.' ],
             [ 'value', 'String', 'The initial value of the control. Use a state variable to manage as a controlled input' ]
