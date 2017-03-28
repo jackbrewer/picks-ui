@@ -14,12 +14,12 @@ describe('Component: Field', () => {
 
   it('should render correct default Field based on `type` prop', () => {
     const wrapper = shallow(<Field type="checkbox" name="example" />)
-    assert.equal(wrapper.name(), 'CheckField')
+    assert.equal(wrapper.name(), 'StandardCheckField')
     wrapper.setProps({ type: 'text' })
-    assert.equal(wrapper.name(), 'StandardField')
+    assert.equal(wrapper.name(), 'StandardTextField')
     wrapper.setProps({ type: 'radio' })
-    assert.equal(wrapper.name(), 'CheckField')
+    assert.equal(wrapper.name(), 'StandardCheckField')
     wrapper.setProps({ type: 'url' })
-    assert.equal(wrapper.name(), 'StandardField')
+    assert.equal(wrapper.name(), 'StandardTextField')
   })
 })

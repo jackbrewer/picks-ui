@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import CheckField from './check/CheckField'
-import StandardField from './standard/StandardField'
+import StandardCheckField from './standard/StandardCheckField'
+import StandardTextField from './standard/StandardTextField'
 
 const Field = (props) => {
   const { type } = props
@@ -17,9 +17,9 @@ const Field = (props) => {
   switch (type) {
     case 'checkbox':
     case 'radio':
-      return <CheckField {...props} />
+      return <StandardCheckField {...props} />
     default:
-      return <StandardField {...props} />
+      return <StandardTextField {...props} />
   }
 }
 

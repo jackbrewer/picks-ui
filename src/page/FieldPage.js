@@ -68,7 +68,8 @@ class FieldPage extends React.Component {
         <Table stickyHeader columns={[ 'Prop', 'Type', 'Description' ]}
           data={[
             [ 'assistance', 'String', 'Provides additional detail on the expected value' ],
-            [ 'className', 'String', 'Adds a custom class or classes' ],
+            [ 'className', 'String', 'Adds a custom class or classes to the field' ],
+            [ 'controlClassName', 'String', 'Passes a custom class or classes to the child control' ],
             [ 'label', 'String', 'This text makes up the Field’s label. Required for text-based layouts but optional for check-based layouts' ]
           ]}
         />
