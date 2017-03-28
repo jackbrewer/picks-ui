@@ -7,7 +7,7 @@ import Card from '../Card'
 describe('Component: Card', () => {
   it('should output the expected container element', () => {
     const wrapper = shallow(<Card />)
-    assert.equal(wrapper.type(), 'div')
+    // assert.equal(wrapper.type(), 'div')
     assert.equal(wrapper.prop('className'), 'card')
   })
 
@@ -19,6 +19,14 @@ describe('Component: Card', () => {
   it('should allow custom class names to be passed', () => {
     const wrapper = shallow(<Card className="additional-class foo" />)
     assert.equal(wrapper.prop('className'), 'card additional-class foo')
+  })
+
+  it('should add an overlay link if passed an `overlayUrl` prop', () => {
+    const wrapper = shallow(<Card overlayUrl="http://example.com" />)
+    assert.equal(wrapper.find('a.card__overlay-link').length, 1)
+    assert.equal(wrapper.find('a.card__overlay-link').text(), '')
+    wrapper.setProps({ heading: 'Example Heading' })
+    assert.equal(wrapper.find('a.card__overlay-link').text(), 'Example Heading')
   })
 
   describe('Image:', () => {

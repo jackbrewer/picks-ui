@@ -16,8 +16,9 @@
     line-height 1.2
     color $color--black
 
-  h2, h3, h4, h5, h6
-    margin-top $spacing--default * 2
+  >
+    h2, h3, h4, h5, h6
+      margin-top $spacing--default * 2
 
   h1
     font-size rem(60)
@@ -45,3 +46,8 @@
   a:not(.button)
     color $color--dark-grey
     text-decoration underline
+
+    &:hover
+    &:focus
+    &:active
+      color $color--primary

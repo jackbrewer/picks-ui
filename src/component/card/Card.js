@@ -4,14 +4,20 @@ import classNames from 'classnames'
 import Button from '../button/Button'
 import ResponsiveMedia from '../responsive-media/ResponsiveMedia'
 
-const Card = ({ actionText, actionUrl, centered, children, className, heading, imgAlt, imgRatio, imgSrc, text }) => {
+const Card = ({ actionText, actionUrl, centered, children, className, heading, imgAlt, imgRatio, imgSrc, overlayUrl, text }) => {
   const cardClassNames = classNames(
     'card',
     { 'card--centered': centered },
+    { 'has-overlay-link': overlayUrl },
     className
   )
   return (
     <div className={cardClassNames}>
+      {overlayUrl &&
+        <a className="card__overlay-link" href={overlayUrl} tabIndex="-1">
+          {heading && <span className="is-vhidden">{heading}</span>}
+        </a>
+      }
       {imgSrc &&
         <div className="card__hero">
           <ResponsiveMedia ratio={imgRatio}>
@@ -21,7 +27,7 @@ const Card = ({ actionText, actionUrl, centered, children, className, heading, i
       }
       <div className="card__content">
         {heading &&
-          <h2>{heading}</h2>
+          <h2 className="card__heading">{heading}</h2>
         }
         {text &&
           <p>{text}</p>
@@ -45,6 +51,7 @@ Card.propTypes = {
   imgAlt: PropTypes.string,
   imgRatio: PropTypes.string,
   imgSrc: PropTypes.string,
+  overlayUrl: PropTypes.string,
   text: PropTypes.string
 }
 

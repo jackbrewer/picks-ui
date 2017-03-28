@@ -1,9 +1,27 @@
 .card
+  position relative
   border 1px solid $color--grey
   border-radius $border-radius--default
 
 .card--centered
   text-align center
+
+.card__overlay-link
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 1
+
+.card.has-overlay-link
+  a:not(.card__overlay-link)
+  button
+    position relative
+    z-index 2
+
+.card__heading
+  //
 
 .card__hero
   //

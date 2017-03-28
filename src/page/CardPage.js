@@ -45,6 +45,17 @@ const IndexPage = () => {
           <p>Mix <strong>prop</strong> content with <em>children</em> content.</p>
         </Card>
       </Example>
+      <Example previewWidth={previewWidth} toggleSource>
+        <Card
+          heading="Overlay Link"
+          imgSrc="http://img.clock.co.uk/800x450"
+          overlayUrl="#overlay-link"
+          actionText="Action"
+          actionUrl="#action-link"
+          >
+          <p>Copy with <a href="#child-link">clickable link</a>.</p>
+        </Card>
+      </Example>
     </div>
   )
 }
