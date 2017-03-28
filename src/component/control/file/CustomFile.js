@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 
-import NativeFileControl from '../native-file/NativeFile'
+import NativeFileControl from './NativeFile'
 
 class CustomFileControl extends Component {
   constructor () {

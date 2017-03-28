@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
-import NativeSelectControl from '../native-select/NativeSelect'
+import NativeSelectControl from './NativeSelect'
 
 const CustomSelectControl = (props) => {
   const { error } = props

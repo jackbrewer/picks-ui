@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import CustomFileControl from './custom-file/CustomFile'
-import NativeFileControl from './native-file/NativeFile'
+import CustomFileControl from './CustomFile'
+import NativeFileControl from './NativeFile'
 
 const FileControl = (props) => {
   const { native } = props

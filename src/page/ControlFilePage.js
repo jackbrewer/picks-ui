@@ -15,7 +15,7 @@ class ControlPage extends React.Component {
           <Control
             name="controlFile"
             type="file"
-            additional={{ multiple: true }}
+            multiple
             />
         </Example>
         <Example>

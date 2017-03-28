@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-import BaseControl from '../../BaseControl'
+import BaseControl from '../BaseControl'
 import Option from './Option'
 
 const NativeSelectControl = ({ className, options, type, ...other }) => {

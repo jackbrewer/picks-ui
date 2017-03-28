@@ -48,17 +48,17 @@ class ControlPage extends React.Component {
             required
             type="password"
             value={this.state['exampleFull']}
-            additional={{}}
           />
         </Example>
 
         <Example>
           <Control
             type="text"
-            additional={{ maxLength: 8, size: 20 }}
             name="controlText"
             onChange={this.handleInputChange}
             value={this.state['controlText']}
+            maxLength="8"
+            size="20"
           />
           <Control
             type="number"

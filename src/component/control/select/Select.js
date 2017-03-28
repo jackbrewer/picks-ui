@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import CustomSelectControl from './custom-select/CustomSelect'
-import NativeSelectControl from './native-select/NativeSelect'
+import CustomSelectControl from './CustomSelect'
+import NativeSelectControl from './NativeSelect'
 
 const SelectControl = (props) => {
   const { native } = props
