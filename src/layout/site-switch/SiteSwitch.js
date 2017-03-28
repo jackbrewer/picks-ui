@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import PickSvg from '../../svg/Pick'
+import PickSvg from '../../component/svg/Pick'
 
 const SiteSwitch = ({ href, label }) => {
   return (

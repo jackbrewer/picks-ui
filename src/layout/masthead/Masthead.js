@@ -1,7 +1,7 @@
 import React from 'react'
 
-import SiteTitle from '../layout/site-title/SiteTitle'
-import Button from '../button/Button'
+import SiteTitle from '../site-title/SiteTitle'
+import Button from '../../component/button/Button'
 
 const Masthead = () => (
   <div className="masthead">

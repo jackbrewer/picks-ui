@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
-import PickSvg from '../../svg/Pick'
+import PickSvg from '../../component/svg/Pick'
 
 const SiteTitle = ({ href, isFeature }) => {
   const siteTitleClasses = classNames('site-title', { 'site-title--feature': isFeature })

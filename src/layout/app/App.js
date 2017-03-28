@@ -3,10 +3,11 @@ import { HashRouter as Router, Route } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
 // Layout Components
-import A11yNavigation from '../layout/a11y-navigation/A11yNavigation'
-import Footer from '../layout/footer/Footer'
-import Header from '../layout/header/Header'
-import Navigation from '../layout/navigation/Navigation'
+import A11yNavigation from '../a11y-navigation/A11yNavigation'
+import Footer from '../footer/Footer'
+import PreHeader from '../pre-header/PreHeader'
+import Header from '../header/Header'
+import Navigation from '../navigation/Navigation'
 import Routes from '../../Routes'
 
 import Masthead from '../masthead/Masthead'
@@ -21,6 +22,7 @@ class App extends Component {
             titleTemplate="%s | Picks UI"
             />
           <A11yNavigation />
+          <PreHeader />
           <Route path="/:foo" component={Header} />
           <Route exact path="/" component={Masthead} />
           <div className="page-container content-center content-gutter">

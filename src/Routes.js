@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import ScrollToTop from './component/scroll-to-top/ScrollToTop'
+import ScrollToTop from './layout/scroll-to-top/ScrollToTop'
 
 // Site Pages
 import IndexPage from './page/IndexPage'
