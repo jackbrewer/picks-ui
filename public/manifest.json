@@ -1,0 +1,25 @@
+{
+  "short_name": "Picks UI",
+  "name": "Picks UI",
+  "icons": [{
+    "src": "apple-touch-icon-precomposed-76x76.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    }, {
+      "src": "apple-touch-icon-precomposed-120x120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    }, {
+      "src": "apple-touch-icon-precomposed-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "apple-touch-icon-precomposed-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }],
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#63bb6b",
+  "theme_color": "#57a65e"
+}
