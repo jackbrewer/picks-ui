@@ -22,7 +22,6 @@ class FormPage extends React.Component {
       <div className="prose">
         <Helmet title="Form" />
         <h1>Form</h1>
-        <h2>Standard Layout</h2>
         <p>Forms can be constructed manually using any combination of Field or Control components. This optional Form component provides a simple wrapper which handles state for all Fields as well as supplying an onSubmit prop to access submitted data. Example forms on this page use onSubmit to alert the submitted data for example purposes. This Form component also provides a default Submit button.</p>
         <Example toggleSource>
           <Form
@@ -44,6 +43,7 @@ class FormPage extends React.Component {
             [ 'submitText', 'String', 'Sets the text of the submit button. Defaults to “Submit”' ]
           ]}
         />
+        <h2>Examples</h2>
         <Example>
           <Form
             method="get"
