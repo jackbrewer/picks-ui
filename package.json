@@ -2,7 +2,7 @@
   "name": "picks-ui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jackbrewer.github.io/picks-ui",
+  "homepage": "http://picks.jackbrewer.co.uk",
   "scripts": {
     "build:styles": "stylus -m -c -u stylus-mixins -u responsive-grid -u poststylus --with \"['autoprefixer']\" ./src/asset/stylus/index*.styl -o ./src/asset/css/",
     "build": "node scripts/build.js && sw-precache --config=sw-precache-config.js",
