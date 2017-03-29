@@ -41,7 +41,7 @@ class Form extends Component {
   }
 
   render () {
-    const { action, children, className, method, onSubmit, submitText } = this.props
+    const { action, children, className, method, onSubmit, submitText, ...other } = this.props
     const formClasses = classNames(
       'form',
       className
@@ -53,6 +53,7 @@ class Form extends Component {
         className={formClasses}
         method={method}
         onSubmit={(e) => onSubmit(e, this.state)}
+        {...other}
         >
         {Children.map(children,
           (child) => React.cloneElement(child, {
