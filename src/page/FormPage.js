@@ -38,7 +38,7 @@ class FormPage extends React.Component {
             [ 'action', 'String', 'Sets the form’s action attribute. Defaults to action="" (same page)' ],
             [ 'children', 'String', 'Usually a collection of fields (required)' ],
             [ 'className', 'String', 'Adds a custom class or classes' ],
-            [ 'method', 'get/post', 'Sets the from’s submit method attribute. Dfaults to post' ],
+            [ 'method', 'get/post', 'Sets the from’s submit method attribute. Defaults to post' ],
             [ 'onSubmit', 'Function', 'Callback triggered when the form is submitted. Returns the event and state data as parameters' ],
             [ 'submitText', 'String', 'Sets the text of the submit button. Defaults to “Submit”' ]
           ]}
