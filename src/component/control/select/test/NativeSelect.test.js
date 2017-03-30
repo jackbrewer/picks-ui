@@ -14,15 +14,15 @@ const defaultProps = {
   type: 'select'
 }
 
-describe('Component: NativeSelectControl', () => {
-  it('should add expected default type-specific props', () => {
+describe('Component: NativeSelectControl', function () {
+  it('should add expected default type-specific props', function () {
     const wrapper = shallow(<NativeSelectControl {...defaultProps} />)
     assert.equal(wrapper.prop('element'), 'select')
     assert.equal(wrapper.prop('className'), 'control--choice')
     assert.equal(wrapper.find('Option').length, 3)
   })
 
-  it('should add optional type-specific props if set', () => {
+  it('should add optional type-specific props if set', function () {
     const wrapper = shallow(<NativeSelectControl {...defaultProps}
       className="test-class"
     />)

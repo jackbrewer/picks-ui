@@ -5,8 +5,8 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import ScrollToTop from '../ScrollToTop'
 
-describe('Component: ScrollToTop', () => {
-  it('should output expected children', () => {
+describe('Component: ScrollToTop', function () {
+  it('should output expected children', function () {
     const wrapper = shallow(
       <Router>
         <ScrollToTop>

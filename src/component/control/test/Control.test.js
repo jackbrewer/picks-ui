@@ -11,14 +11,14 @@ const defaultOptions = [
   { text: 'Option 3', value: 3 }
 ]
 
-describe('Component: Control', () => {
-  it('should error without the required props', () => {
+describe('Component: Control', function () {
+  it('should error without the required props', function () {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Control />), Error)
     console.error.restore()
   })
 
-  it('should render correct specialised control based on `type` prop', () => {
+  it('should render correct specialised control based on `type` prop', function () {
     const wrapper = shallow(<Control type="date" name="example" />)
     assert.equal(wrapper.name(), 'DateControl')
     wrapper.setProps({ type: 'file' })
@@ -27,7 +27,7 @@ describe('Component: Control', () => {
     assert.equal(wrapper.name(), 'TextareaControl')
   })
 
-  it('should render correct option control based on `type` prop', () => {
+  it('should render correct option control based on `type` prop', function () {
     const wrapper = shallow(<Control type="checkbox" name="example" options={defaultOptions} />)
     assert.equal(wrapper.name(), 'CheckControl')
     wrapper.setProps({ type: 'radio' })
@@ -36,7 +36,7 @@ describe('Component: Control', () => {
     assert.equal(wrapper.name(), 'SelectControl')
   })
 
-  it('should render default generic control based on `type` prop', () => {
+  it('should render default generic control based on `type` prop', function () {
     const wrapper = shallow(<Control type="text" name="example" />)
     assert.equal(wrapper.name(), 'TextControl')
     wrapper.setProps({ type: 'email' })

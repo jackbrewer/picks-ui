@@ -8,8 +8,8 @@ const defaultProps = {
   name: 'example'
 }
 
-describe('Component: CustomFileControl', () => {
-  it('should render output the expected HTML by default', () => {
+describe('Component: CustomFileControl', function () {
+  it('should render output the expected HTML by default', function () {
     const wrapper = shallow(<CustomFileControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'span')
     assert.equal(wrapper.prop('className'), 'custom-file')
@@ -18,14 +18,14 @@ describe('Component: CustomFileControl', () => {
     assert.equal(wrapper.find('span.custom-file__filename').text(), 'No file chosen')
   })
 
-  it('should add an error class if passed an `error` prop', () => {
+  it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<CustomFileControl {...defaultProps}
       error="Something went wrong"
     />)
     assert.equal(wrapper.prop('className'), 'custom-file custom-file--error')
   })
 
-  it('should trigger passed onChange function when changed', () => {
+  it('should trigger passed onChange function when changed', function () {
     const wrapper = shallow(<CustomFileControl {...defaultProps} />)
     wrapper.find('NativeFileControl').simulate('change', { target: { files: [ { name: 'example-file.txt' } ] } })
     assert.equal(wrapper.find('span.custom-file__filename').text(), 'example-file.txt')

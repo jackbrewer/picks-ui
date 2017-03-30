@@ -5,21 +5,21 @@ import { stub } from 'sinon'
 
 import SiteSwitch from '../SiteSwitch'
 
-describe('Component: SiteSwitch', () => {
-  it('should error if no href is passed', () => {
+describe('Component: SiteSwitch', function () {
+  it('should error if no href is passed', function () {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<SiteSwitch />), Error)
     console.error.restore()
   })
 
-  it('should render expected defaults when reqired props passed', () => {
+  it('should render expected defaults when reqired props passed', function () {
     const wrapper = shallow(<SiteSwitch href="http://example.com" />)
     assert.equal(wrapper.type(), 'a')
     assert.equal(wrapper.prop('className'), 'site-switch')
     assert.equal(wrapper.prop('href'), 'http://example.com')
   })
 
-  it('should show a label if prop passed', () => {
+  it('should show a label if prop passed', function () {
     const wrapper = shallow(<SiteSwitch href="http://example.com" />)
     assert.equal(wrapper.find('.site-switch__label').length, 0)
     wrapper.setProps({ label: 'Example' })

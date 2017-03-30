@@ -9,13 +9,13 @@ const defaultProps = {
   options: [ { text: 'Option 1', value: 1 } ]
 }
 
-describe('Component: SelectControl', () => {
-  it('should render a CustomSelectControl by default', () => {
+describe('Component: SelectControl', function () {
+  it('should render a CustomSelectControl by default', function () {
     const wrapper = shallow(<SelectControl {...defaultProps} />)
     assert.equal(wrapper.name(), 'CustomSelectControl')
   })
 
-  it('should render a NativeSelectControl if passed `native` prop', () => {
+  it('should render a NativeSelectControl if passed `native` prop', function () {
     const wrapper = shallow(<SelectControl {...defaultProps}
       native
     />)

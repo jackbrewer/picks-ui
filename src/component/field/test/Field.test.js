@@ -5,14 +5,14 @@ import { stub } from 'sinon'
 
 import Field from '../Field'
 
-describe('Component: Field', () => {
-  it('should error without the required props', () => {
+describe('Component: Field', function () {
+  it('should error without the required props', function () {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Field />), Error)
     console.error.restore()
   })
 
-  it('should render correct default Field based on `type` prop', () => {
+  it('should render correct default Field based on `type` prop', function () {
     const wrapper = shallow(<Field type="checkbox" name="example" />)
     assert.equal(wrapper.name(), 'StandardCheckField')
     wrapper.setProps({ type: 'text' })

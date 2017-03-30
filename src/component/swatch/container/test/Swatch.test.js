@@ -4,8 +4,8 @@ import { shallow } from 'enzyme'
 import { stub } from 'sinon'
 import Swatch from '../Swatch'
 
-describe('Component: SwatchContainer', () => {
-  it('should error if required props not passed', () => {
+describe('Component: SwatchContainer', function () {
+  it('should error if required props not passed', function () {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Swatch />), Error)
     assert.throws(() => shallow(<Swatch name={undefined} value="#fff" />), Error)
@@ -13,7 +13,7 @@ describe('Component: SwatchContainer', () => {
     console.error.restore()
   })
 
-  it('should pass through expected props to child Swatch', () => {
+  it('should pass through expected props to child Swatch', function () {
     const wrapper = shallow(<Swatch name="white" value="#fff" onClick={() => {}} />)
     assert.equal(wrapper.name(), 'Swatch')
     assert.equal(wrapper.prop('name'), 'white')
@@ -21,7 +21,7 @@ describe('Component: SwatchContainer', () => {
     assert.equal(typeof wrapper.prop('onClick'), 'function')
   })
 
-  it('should format the passed colour value if `displayFormat` set', () => {
+  it('should format the passed colour value if `displayFormat` set', function () {
     const wrapper = shallow(<Swatch name="white" value="#57a65e" />)
     assert.equal(wrapper.prop('value'), '#57a65e')
     wrapper.setProps({ displayFormat: 'Hex' })

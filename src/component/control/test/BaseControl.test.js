@@ -10,8 +10,8 @@ const defaultProps = {
   name: 'example'
 }
 
-describe('Component: BaseControl', () => {
-  it('should error without the required props', () => {
+describe('Component: BaseControl', function () {
+  it('should error without the required props', function () {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<BaseControl />), Error)
     assert.throws(() => shallow(<BaseControl name={undefined} element="input" />), Error)
@@ -19,13 +19,13 @@ describe('Component: BaseControl', () => {
     console.error.restore()
   })
 
-  it('should not error with required props', () => {
+  it('should not error with required props', function () {
     const wrapper = shallow(<BaseControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'input')
     assert.equal(wrapper.prop('name'), 'example')
   })
 
-  it('should not render additional attributes if props not set', () => {
+  it('should not render additional attributes if props not set', function () {
     const wrapper = shallow(<BaseControl {...defaultProps} />)
     assert.equal(wrapper.prop('className'), 'control')
     assert.equal(wrapper.prop('disabled'), undefined)
@@ -38,7 +38,7 @@ describe('Component: BaseControl', () => {
     assert.equal(wrapper.prop('type'), undefined)
   })
 
-  it('should render additional attributes if props set', () => {
+  it('should render additional attributes if props set', function () {
     const wrapper = shallow(<BaseControl {...defaultProps}
       className="test-class"
       disabled
@@ -66,7 +66,7 @@ describe('Component: BaseControl', () => {
     assert.equal(wrapper.prop('type'), 'password')
   })
 
-  it('should trigger passed onBlur function when blurred', () => {
+  it('should trigger passed onBlur function when blurred', function () {
     const mockHandleBlur = spy()
     const wrapper = shallow(<BaseControl {...defaultProps}
       onBlur={mockHandleBlur}
@@ -76,7 +76,7 @@ describe('Component: BaseControl', () => {
     assert.equal(mockHandleBlur.calledOnce, true)
   })
 
-  it('should trigger passed onChange function when changed', () => {
+  it('should trigger passed onChange function when changed', function () {
     const mockHandleChange = spy()
     const wrapper = shallow(<BaseControl {...defaultProps}
       onChange={mockHandleChange}
@@ -86,7 +86,7 @@ describe('Component: BaseControl', () => {
     assert.equal(mockHandleChange.calledOnce, true)
   })
 
-  it('should trigger passed onFocus function when focussed', () => {
+  it('should trigger passed onFocus function when focussed', function () {
     const mockHandleFocus = spy()
     const wrapper = shallow(<BaseControl {...defaultProps}
       onFocus={mockHandleFocus}
@@ -96,7 +96,7 @@ describe('Component: BaseControl', () => {
     assert.equal(mockHandleFocus.calledOnce, true)
   })
 
-  it('should render additional attributes passed as props from parent components', () => {
+  it('should render additional attributes passed as props from parent components', function () {
     const wrapper = shallow(<BaseControl {...defaultProps}
       maxLength="20"
       autoFocus
@@ -109,7 +109,7 @@ describe('Component: BaseControl', () => {
     assert.equal(wrapper.prop('rows'), 5)
   })
 
-  it('should add an error class if passed an `error` prop', () => {
+  it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<BaseControl {...defaultProps}
       error="Something went wrong"
     />)

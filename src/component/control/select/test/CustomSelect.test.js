@@ -13,15 +13,15 @@ const defaultProps = {
   ]
 }
 
-describe('Component: CustomSelectControl', () => {
-  it('should render output the expected HTML by default', () => {
+describe('Component: CustomSelectControl', function () {
+  it('should render output the expected HTML by default', function () {
     const wrapper = shallow(<CustomSelectControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'span')
     assert.equal(wrapper.prop('className'), 'custom-select')
     assert.equal(wrapper.find('NativeSelectControl').length, 1)
   })
 
-  it('should add an error class if passed an `error` prop', () => {
+  it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<CustomSelectControl {...defaultProps}
       error="Something went wrong"
     />)

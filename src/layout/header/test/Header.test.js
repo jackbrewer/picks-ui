@@ -4,8 +4,8 @@ import { shallow } from 'enzyme'
 
 import Header from '../Header'
 
-describe('Component: Header', () => {
-  it('should render expected defaults', () => {
+describe('Component: Header', function () {
+  it('should render expected defaults', function () {
     const wrapper = shallow(<Header />)
     assert.equal(wrapper.type(), 'header')
     assert.equal(wrapper.prop('className'), 'header')

@@ -11,15 +11,15 @@ const defaultProps = {
   value: 1
 }
 
-describe('Component: CustomCheckControl', () => {
-  it('should render output the expected HTML by default', () => {
+describe('Component: CustomCheckControl', function () {
+  it('should render output the expected HTML by default', function () {
     const wrapper = shallow(<CustomCheckControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'span')
     assert.equal(wrapper.prop('className'), 'custom-check custom-check--checkbox')
     assert.equal(wrapper.find('NativeCheckControl').prop('type'), 'checkbox')
   })
 
-  it('should render output the expected HTML by default', () => {
+  it('should render output the expected HTML by default', function () {
     const wrapper = shallow(<CustomCheckControl {...defaultProps}
       type="radio"
     />)
@@ -27,7 +27,7 @@ describe('Component: CustomCheckControl', () => {
     assert.equal(wrapper.find('NativeCheckControl').prop('type'), 'radio')
   })
 
-  it('should add an error class if passed an `error` prop', () => {
+  it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<CustomCheckControl {...defaultProps}
       error="Something went wrong"
     />)

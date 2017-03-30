@@ -9,8 +9,8 @@ const defaultProps = {
   type: 'date'
 }
 
-describe('Component: DateControl', () => {
-  it('should render output the expected HTML by default', () => {
+describe('Component: DateControl', function () {
+  it('should render output the expected HTML by default', function () {
     const wrapper = shallow(<DateControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'span')
     assert.equal(wrapper.prop('className'), 'datepicker')
@@ -19,14 +19,14 @@ describe('Component: DateControl', () => {
     assert.equal(wrapper.find('TextControl').length, 1)
   })
 
-  it('should format value prop to the expected date format', () => {
+  it('should format value prop to the expected date format', function () {
     const wrapper = shallow(<DateControl {...defaultProps}
       value="2014-04-25T01:32:21.196Z"
     />)
     assert.equal(wrapper.find('TextControl').prop('value'), '2014-04-25')
   })
 
-  it('should add an error class if passed an `error` prop', () => {
+  it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<DateControl {...defaultProps}
       error="Something went wrong"
     />)

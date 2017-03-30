@@ -4,30 +4,30 @@ import { shallow } from 'enzyme'
 
 import Note from '../Note'
 
-describe('Component: Note', () => {
-  it('should not output anything by default', () => {
+describe('Component: Note', function () {
+  it('should not output anything by default', function () {
     const wrapper = shallow(<Note />)
     assert.equal(wrapper.html(), null)
   })
 
-  it('should output prop content if passed', () => {
+  it('should output prop content if passed', function () {
     const wrapper = shallow(<Note heading="Example Heading" text="Example Text" />)
     assert.equal(wrapper.prop('className'), 'note')
     assert.equal(wrapper.find('.note__heading').text(), 'Example Heading')
     assert.equal(wrapper.find('p').text(), 'Example Text')
   })
 
-  it('should add additional class if `className` prop set', () => {
+  it('should add additional class if `className` prop set', function () {
     const wrapper = shallow(<Note className="optional-class" heading="Example Heading" />)
     assert.equal(wrapper.hasClass('optional-class'), true)
   })
 
-  it('should output children if set', () => {
+  it('should output children if set', function () {
     const wrapper = shallow(<Note><p>Hi</p></Note>)
     assert.equal(wrapper.find('p').text(), 'Hi')
   })
 
-  it('should add correct class if `state` prop set', () => {
+  it('should add correct class if `state` prop set', function () {
     const states = [ 'error', 'notice', 'success', 'warning' ]
     const wrapper = shallow(<Note heading="Example Heading" />)
     states.map(state => {

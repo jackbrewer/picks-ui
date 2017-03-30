@@ -9,31 +9,31 @@ const defaultChild = (
   <input type="text" name="exampleInput" />
 )
 
-describe('Component: Form', () => {
-  it('should error without the required props', () => {
+describe('Component: Form', function () {
+  it('should error without the required props', function () {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Form />), Error)
     console.error.restore()
   })
 
-  it('should not error with required props', () => {
+  it('should not error with required props', function () {
     const wrapper = shallow(<Form>{defaultChild}</Form>)
     assert.equal(wrapper.childAt(0).type(), 'input')
   })
 
-  it('should use defaultProps if props not set', () => {
+  it('should use defaultProps if props not set', function () {
     const wrapper = mount(<Form>{defaultChild}</Form>)
     assert.equal(wrapper.prop('action'), '')
     assert.equal(wrapper.prop('method'), 'post')
     assert.equal(wrapper.find('button[type="submit"]').text(), 'Submit')
   })
 
-  it('should not render additional attributes if props not set', () => {
+  it('should not render additional attributes if props not set', function () {
     const wrapper = shallow(<Form>{defaultChild}</Form>)
     assert.equal(wrapper.prop('className'), 'form')
   })
 
-  it('should render additional attributes if props set', () => {
+  it('should render additional attributes if props set', function () {
     const wrapper = shallow(<Form
       action="/example"
       className="test-class"
@@ -46,7 +46,7 @@ describe('Component: Form', () => {
     assert.equal(wrapper.find('Button').prop('children'), 'Example Text')
   })
 
-  it('should trigger passed onSubmit function when submitted', () => {
+  it('should trigger passed onSubmit function when submitted', function () {
     const mockHandleSubmit = spy()
     const wrapper = shallow(<Form
       onSubmit={mockHandleSubmit}
@@ -56,14 +56,14 @@ describe('Component: Form', () => {
     assert.equal(mockHandleSubmit.calledOnce, true)
   })
 
-  it('should add childrens’ values to the Form’s state', () => {
+  it('should add childrens’ values to the Form’s state', function () {
     const wrapper = shallow(<Form>
       <input type="text" name="exampleInput" value="Example Value" />
     </Form>)
     assert.deepEqual(wrapper.state(), { exampleInput: 'Example Value' })
   })
 
-  it('should pass a state-conrolled value to children', () => {
+  it('should pass a state-conrolled value to children', function () {
     const wrapper = shallow(<Form>
       <input type="text" name="exampleInput" value="Example Value" />
     </Form>)
@@ -71,14 +71,14 @@ describe('Component: Form', () => {
     assert.equal(wrapper.childAt(0).prop('value'), 'New Value')
   })
 
-  it('should pass an onChange prop to children', () => {
+  it('should pass an onChange prop to children', function () {
     const wrapper = shallow(<Form>
       <input type="text" name="exampleInput" value="Example Value" />
     </Form>)
     assert.equal(typeof wrapper.childAt(0).prop('onChange'), 'function')
   })
 
-  it('should handle a child onChange (simple input type)', () => {
+  it('should handle a child onChange (simple input type)', function () {
     const wrapper = shallow(<Form>
       <input type="text" name="exampleInput" value="Example Value" />
     </Form>)
@@ -87,7 +87,7 @@ describe('Component: Form', () => {
     assert.equal(wrapper.childAt(0).prop('value'), 'New Value')
   })
 
-  it('should handle a child onChange (adding to checkbox array)', () => {
+  it('should handle a child onChange (adding to checkbox array)', function () {
     const wrapper = shallow(<Form>
       <input type="checkbox" name="exampleInput" value={[ 'a', 'b' ]} />
     </Form>)
@@ -96,7 +96,7 @@ describe('Component: Form', () => {
     assert.deepEqual(wrapper.childAt(0).prop('value'), [ 'a', 'b', 'c' ])
   })
 
-  it('should handle a child onChange (removing from checkbox array)', () => {
+  it('should handle a child onChange (removing from checkbox array)', function () {
     const wrapper = shallow(<Form>
       <input type="checkbox" name="exampleInput" value={[ 'a', 'b', 'c' ]} />
     </Form>)
@@ -105,7 +105,7 @@ describe('Component: Form', () => {
     assert.deepEqual(wrapper.childAt(0).prop('value'), [ 'a', 'b' ])
   })
 
-  it('should handle a child onChange (checking checkbox single string)', () => {
+  it('should handle a child onChange (checking checkbox single string)', function () {
     const wrapper = shallow(<Form>
       <input type="checkbox" name="exampleInput" value="" />
     </Form>)
@@ -114,7 +114,7 @@ describe('Component: Form', () => {
     assert.equal(wrapper.childAt(0).prop('value'), 'Example Value')
   })
 
-  it('should handle a child onChange (unchecking checkbox single string)', () => {
+  it('should handle a child onChange (unchecking checkbox single string)', function () {
     const wrapper = shallow(<Form>
       <input type="checkbox" name="exampleInput" value="Example Value" />
     </Form>)

@@ -13,15 +13,15 @@ const defaultProps = {
   type: 'checkbox'
 }
 
-describe('Component: SingleCheckControl', () => {
-  it('should render a CustomCheckControl by default', () => {
+describe('Component: SingleCheckControl', function () {
+  it('should render a CustomCheckControl by default', function () {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
     assert.equal(wrapper.type(), 'label')
     assert.equal(wrapper.find('CustomCheckControl').length, 1)
     assert.equal(wrapper.find('span').at(1).text(), 'Option 1')
   })
 
-  it('should render a NativeCheckControl if passed `native` prop', () => {
+  it('should render a NativeCheckControl if passed `native` prop', function () {
     const wrapper = shallow(<SingleCheckControl {...defaultProps}
       native
     />)
@@ -30,14 +30,14 @@ describe('Component: SingleCheckControl', () => {
     assert.equal(wrapper.find('span').at(1).text(), 'Option 1')
   })
 
-  it('should add a checked attribute if value === option.value', () => {
+  it('should add a checked attribute if value === option.value', function () {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)
     wrapper.setProps({ value: 1 })
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), true)
   })
 
-  it('should add a checked attribute if value is in an array of option values', () => {
+  it('should add a checked attribute if value is in an array of option values', function () {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)
     wrapper.setProps({ value: [ 1, 2, 3 ] })

@@ -8,13 +8,13 @@ const defaultProps = {
   name: 'example'
 }
 
-describe('Component: FileControl', () => {
-  it('should render a CustomFileControl by default', () => {
+describe('Component: FileControl', function () {
+  it('should render a CustomFileControl by default', function () {
     const wrapper = shallow(<FileControl {...defaultProps} />)
     assert.equal(wrapper.name(), 'CustomFileControl')
   })
 
-  it('should render a NativeFileControl if passed `native` prop', () => {
+  it('should render a NativeFileControl if passed `native` prop', function () {
     const wrapper = shallow(<FileControl {...defaultProps}
       native
     />)

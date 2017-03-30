@@ -4,19 +4,19 @@ import { shallow } from 'enzyme'
 import { stub } from 'sinon'
 import ResponsiveMedia from '../ResponsiveMedia'
 
-describe('Component: ResponsiveMedia', () => {
-  it('should not output anything but children by default', () => {
+describe('Component: ResponsiveMedia', function () {
+  it('should not output anything but children by default', function () {
     const wrapper = shallow(<ResponsiveMedia><img src="http://img.clock.co.uk/10" /></ResponsiveMedia>)
     assert.equal(wrapper.html(), '<img src="http://img.clock.co.uk/10"/>')
   })
 
-  it('should output the expected markup when passed a ratio prop', () => {
+  it('should output the expected markup when passed a ratio prop', function () {
     const wrapper = shallow(<ResponsiveMedia ratio="16:9"><img src="http://img.clock.co.uk/16x9" /></ResponsiveMedia>)
     assert.equal(wrapper.hasClass('responsive-media'), true)
     assert.equal(wrapper.prop('style').paddingBottom, '56.25%')
   })
 
-  it('should handle a variety of ratio types', () => {
+  it('should handle a variety of ratio types', function () {
     const wrapper = shallow(<ResponsiveMedia ratio="1:1"><img src="http://img.clock.co.uk/16x9" /></ResponsiveMedia>)
     assert.equal(wrapper.prop('style').paddingBottom, '100%')
     wrapper.setProps({ ratio: '2:1' })
@@ -29,7 +29,7 @@ describe('Component: ResponsiveMedia', () => {
     assert.equal(wrapper.prop('style').paddingBottom, '10000%')
   })
 
-  it('should error if passed an invalid ratio', () => {
+  it('should error if passed an invalid ratio', function () {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<ResponsiveMedia ratio="1"><p /></ResponsiveMedia>), Error)
     console.error.restore()

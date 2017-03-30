@@ -9,15 +9,15 @@ const defaultProps = {
   type: 'textarea'
 }
 
-describe('Component: TextareaControl', () => {
-  it('should add expected default type-specific props', () => {
+describe('Component: TextareaControl', function () {
+  it('should add expected default type-specific props', function () {
     const wrapper = shallow(<TextareaControl {...defaultProps} />)
     assert.equal(wrapper.prop('element'), 'textarea')
     assert.equal(wrapper.prop('placeholder'), undefined)
     assert.equal(wrapper.prop('className'), 'control--text control--multiline')
   })
 
-  it('should add optional type-specific props if set', () => {
+  it('should add optional type-specific props if set', function () {
     const wrapper = shallow(<TextareaControl {...defaultProps}
       className="test-class"
       placeholder="Example placeholder"

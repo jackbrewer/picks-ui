@@ -4,15 +4,15 @@ import { mount } from 'enzyme'
 
 import Code from '../Code'
 
-describe('Component: Code', () => {
-  describe('Component: Highlight', () => {
-    it('should render expected Highlight sub-component as expected', () => {
+describe('Component: Code', function () {
+  describe('Component: Highlight', function () {
+    it('should render expected Highlight sub-component as expected', function () {
       const wrapper = mount(<Code><svg /></Code>)
       assert.equal(wrapper.find('pre').hasClass('hljs'), true)
       assert.equal(wrapper.find('pre code.code.html').text(), '<svg />')
     })
 
-    it('should add expected syntax language when `language` set', () => {
+    it('should add expected syntax language when `language` set', function () {
       const wrapper = mount(<Code><svg /></Code>)
       assert.equal(wrapper.find('code.html').length, 1)
       const languages = [ 'bash', 'css', 'html', 'javascript', 'json', 'stylus' ]
@@ -22,17 +22,17 @@ describe('Component: Code', () => {
       })
     })
 
-    it('should show custom component name when `displayName` set', () => {
+    it('should show custom component name when `displayName` set', function () {
       const wrapper = mount(<Code displayName="test"><svg /></Code>)
       assert.equal(wrapper.find('code').text(), '<test />')
     })
 
-    it('should filter key prop by default', () => {
+    it('should filter key prop by default', function () {
       const wrapper = mount(<Code><svg key="1" /></Code>)
       assert.equal(wrapper.find('code').text(), '<svg />')
     })
 
-    it('should filter additional props when `filterProps` set', () => {
+    it('should filter additional props when `filterProps` set', function () {
       const wrapper = mount(<Code filterProps={[ 'name', 'defaultValue' ]}><input name="Name" defaultValue="Value" id="Id" /></Code>)
       assert.equal(wrapper.find('code').text(), '<input id="Id" />')
     })

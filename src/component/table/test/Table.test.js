@@ -11,14 +11,14 @@ const defaultProps = {
     [ 'Three', 'Charlie', 'C' ]
   ]
 }
-describe('Component: Table', () => {
-  it('should error if required props not passed', () => {
+describe('Component: Table', function () {
+  it('should error if required props not passed', function () {
     stub(console, 'error', (warning) => { throw new Error(warning) })
     assert.throws(() => shallow(<Table />), Error)
     console.error.restore()
   })
 
-  it('should output the expected markup when passed expected props', () => {
+  it('should output the expected markup when passed expected props', function () {
     const wrapper = shallow(<Table {...defaultProps} />)
     assert.equal(wrapper.type(), 'table')
     assert.equal(wrapper.prop('className'), 'table')
@@ -26,7 +26,7 @@ describe('Component: Table', () => {
     assert.equal(wrapper.find('td').length, 9)
   })
 
-  it('should output table header if passed `columns` prop', () => {
+  it('should output table header if passed `columns` prop', function () {
     const wrapper = shallow(<Table {...defaultProps}
       columns={[ 'Number', 'Phonetic', 'Alpha' ]}
     />)
@@ -36,7 +36,7 @@ describe('Component: Table', () => {
     assert.equal(wrapper.find('th').at(2).text(), 'Alpha')
   })
 
-  it('should add a class if `stickyHeader` prop set', () => {
+  it('should add a class if `stickyHeader` prop set', function () {
     const wrapper = shallow(<Table {...defaultProps}
       stickyHeader
     />)

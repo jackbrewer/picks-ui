@@ -17,13 +17,13 @@ const defaultMultipleProps = {
   ]
 }
 
-describe('Component: CheckControl', () => {
-  it('should render the expected HTML when passed one option', () => {
+describe('Component: CheckControl', function () {
+  it('should render the expected HTML when passed one option', function () {
     const wrapper = shallow(<CheckControl {...defaultSingleProps} />)
     assert.equal(wrapper.name(), 'SingleCheckControl')
   })
 
-  it('should render the expected HTML when passed multiple options', () => {
+  it('should render the expected HTML when passed multiple options', function () {
     const wrapper = shallow(<CheckControl {...defaultMultipleProps} />)
     assert.equal(wrapper.type(), 'ul')
     assert.equal(wrapper.find('li SingleCheckControl').length, 3)
