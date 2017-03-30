@@ -16,14 +16,14 @@ describe('Component: DateControl', () => {
     assert.equal(wrapper.prop('className'), 'datepicker')
     assert.equal(wrapper.find('Icon').length, 1)
     assert.equal(wrapper.find('CalendarSvg').length, 1)
-    assert.equal(wrapper.find('InputControl').length, 1)
+    assert.equal(wrapper.find('TextControl').length, 1)
   })
 
   it('should format value prop to the expected date format', () => {
     const wrapper = shallow(<DateControl {...defaultProps}
       value="2014-04-25T01:32:21.196Z"
     />)
-    assert.equal(wrapper.find('InputControl').prop('value'), '2014-04-25')
+    assert.equal(wrapper.find('TextControl').prop('value'), '2014-04-25')
   })
 
   it('should add an error class if passed an `error` prop', () => {

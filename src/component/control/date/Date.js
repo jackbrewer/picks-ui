@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 import moment from 'moment'
 
-import InputControl from '../input/Input'
+import TextControl from '../text/Text'
 import Icon from '../../icon/Icon'
 import CalendarSvg from '../../svg/Calendar'
 
@@ -22,7 +22,7 @@ const DateControl = (props) => {
           <CalendarSvg />
         </Icon>
       </span>
-      <InputControl {...props} {...value && { value }} />
+      <TextControl {...props} {...value && { value }} />
     </span>
   )
 }

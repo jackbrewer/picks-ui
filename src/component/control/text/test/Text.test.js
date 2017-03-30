@@ -2,23 +2,23 @@ import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
 
-import InputControl from '../Input'
+import TextControl from '../Text'
 
 const defaultProps = {
   name: 'example',
   type: 'text'
 }
 
-describe('Component: InputControl', () => {
+describe('Component: TextControl', () => {
   it('should add expected default type-specific props', () => {
-    const wrapper = shallow(<InputControl {...defaultProps} />)
+    const wrapper = shallow(<TextControl {...defaultProps} />)
     assert.equal(wrapper.prop('element'), 'input')
     assert.equal(wrapper.prop('className'), 'control--text')
     assert.equal(wrapper.prop('placeholder'), undefined)
   })
 
   it('should add type-specific props if set', () => {
-    const wrapper = shallow(<InputControl {...defaultProps}
+    const wrapper = shallow(<TextControl {...defaultProps}
       className="test-class"
       placeholder="Example placeholder"
     />)

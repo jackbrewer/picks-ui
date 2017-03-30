@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import BaseControl from '../BaseControl'
 
-const InputControl = ({ className, placeholder, ...other }) => {
+const TextControl = ({ className, placeholder, ...other }) => {
   const controlClassNames = classNames(
     'control--text',
     className
@@ -19,9 +19,9 @@ const InputControl = ({ className, placeholder, ...other }) => {
   )
 }
 
-InputControl.propTypes = {
+TextControl.propTypes = {
   className: PropTypes.string,
   placeholder: PropTypes.string
 }
 
-export default InputControl
+export default TextControl

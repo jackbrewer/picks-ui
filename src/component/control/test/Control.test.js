@@ -38,12 +38,12 @@ describe('Component: Control', () => {
 
   it('should render default generic control based on `type` prop', () => {
     const wrapper = shallow(<Control type="text" name="example" />)
-    assert.equal(wrapper.name(), 'InputControl')
+    assert.equal(wrapper.name(), 'TextControl')
     wrapper.setProps({ type: 'email' })
-    assert.equal(wrapper.name(), 'InputControl')
+    assert.equal(wrapper.name(), 'TextControl')
     wrapper.setProps({ type: 'url' })
-    assert.equal(wrapper.name(), 'InputControl')
+    assert.equal(wrapper.name(), 'TextControl')
     wrapper.setProps({ type: 'password' })
-    assert.equal(wrapper.name(), 'InputControl')
+    assert.equal(wrapper.name(), 'TextControl')
   })
 })
