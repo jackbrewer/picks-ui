@@ -4,31 +4,23 @@ import CheckControl from './check/Check'
 import SelectControl from './select/Select'
 import FileControl from './file/File'
 import DateControl from './date/Date'
-import InputControl from './input/Input'
+import TextControl from './text/Text'
 import TextareaControl from './textarea/Textarea'
 
 const Control = (props) => {
   const { type } = props
-
-  switch (type) {
-    case 'checkbox':
-    case 'radio':
-      return <CheckControl {...props} />
-    case 'date':
-      return <DateControl {...props} />
-    case 'file':
-      return <FileControl {...props} />
-    // case 'hidden':
-    //   return null
-    // case 'range':
-    //   return null
-    case 'select':
-      return <SelectControl {...props} />
-    case 'textarea':
-      return <TextareaControl {...props} />
-    default:
-      return <InputControl {...props} />
+  const componentMap = {
+    checkbox: () => <CheckControl {...props} />,
+    radio: () => <CheckControl {...props} />,
+    date: () => <DateControl {...props} />,
+    file: () => <FileControl {...props} />,
+    select: () => <SelectControl {...props} />,
+    textarea: () => <TextareaControl {...props} />
   }
+
+  return componentMap[type]
+    ? componentMap[type]()
+    : <TextControl {...props} />
 }
 
 Control.propTypes = {
