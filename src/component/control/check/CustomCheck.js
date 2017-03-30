@@ -4,10 +4,11 @@ import classNames from 'classnames'
 import NativeCheckControl from './NativeCheck'
 
 const CustomCheckControl = (props) => {
-  const { error, type } = props
+  const { error, modifiers, type } = props
   const controlClassNames = classNames(
     'custom-check',
     `custom-check--${type}`,
+    modifiers && modifiers.map(modifierClass => `custom-check--${modifierClass}`),
     { 'custom-check--error': error }
   )
 
@@ -21,6 +22,7 @@ const CustomCheckControl = (props) => {
 
 CustomCheckControl.propTypes = {
   error: PropTypes.string,
+  modifiers: PropTypes.arrayOf(PropTypes.string),
   type: PropTypes.string.isRequired
 }
 

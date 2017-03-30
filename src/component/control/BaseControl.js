@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 const BaseControl = (props) => {
   const {
-    children, className, error, name,
+    children, className, error, modifiers, name,
     // Use the element prop as a React component
     element: Element,
     // Attributes added by author, or embellished by type-spcific controls
@@ -12,6 +12,7 @@ const BaseControl = (props) => {
 
   const controlClassNames = classNames(
     'control',
+    modifiers && modifiers.map(modifierClass => `control--${modifierClass}`),
     className,
     { 'control--error': error }
   )
@@ -32,6 +33,7 @@ BaseControl.propTypes = {
   className: PropTypes.string,
   element: PropTypes.string.isRequired,
   error: PropTypes.string,
+  modifiers: PropTypes.arrayOf(PropTypes.string),
   name: PropTypes.string.isRequired
 }
 

@@ -26,9 +26,10 @@ class CustomFileControl extends Component {
   }
 
   render () {
-    const { error } = this.props
+    const { error, modifiers } = this.props
     const customFileClassNames = classNames(
       'custom-file',
+      modifiers && modifiers.map(modifierClass => `custom-file--${modifierClass}`),
       { 'custom-file--error': error }
     )
 
@@ -60,7 +61,8 @@ class CustomFileControl extends Component {
 }
 
 CustomFileControl.propTypes = {
-  error: PropTypes.string
+  error: PropTypes.string,
+  modifiers: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default CustomFileControl

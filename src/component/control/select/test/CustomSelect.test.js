@@ -21,6 +21,13 @@ describe('Component: CustomSelectControl', function () {
     assert.equal(wrapper.find('NativeSelectControl').length, 1)
   })
 
+  it('should add classes if passed a `modifiers` prop', function () {
+    const wrapper = shallow(<CustomSelectControl {...defaultProps}
+      modifiers={[ 'one', 'two' ]}
+    />)
+    assert.equal(wrapper.prop('className'), 'custom-select custom-select--one custom-select--two')
+  })
+
   it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<CustomSelectControl {...defaultProps}
       error="Something went wrong"

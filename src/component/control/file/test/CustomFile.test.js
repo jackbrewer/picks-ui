@@ -18,6 +18,13 @@ describe('Component: CustomFileControl', function () {
     assert.equal(wrapper.find('span.custom-file__filename').text(), 'No file chosen')
   })
 
+  it('should add classes if passed a `modifiers` prop', function () {
+    const wrapper = shallow(<CustomFileControl {...defaultProps}
+      modifiers={[ 'one', 'two' ]}
+    />)
+    assert.equal(wrapper.prop('className'), 'custom-file custom-file--one custom-file--two')
+  })
+
   it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<CustomFileControl {...defaultProps}
       error="Something went wrong"

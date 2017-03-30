@@ -27,6 +27,13 @@ describe('Component: CustomCheckControl', function () {
     assert.equal(wrapper.find('NativeCheckControl').prop('type'), 'radio')
   })
 
+  it('should add classes if passed a `modifiers` prop', function () {
+    const wrapper = shallow(<CustomCheckControl {...defaultProps}
+      modifiers={[ 'one', 'two' ]}
+    />)
+    assert.equal(wrapper.prop('className'), 'custom-check custom-check--checkbox custom-check--one custom-check--two')
+  })
+
   it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<CustomCheckControl {...defaultProps}
       error="Something went wrong"

@@ -16,6 +16,13 @@ describe('Component: NativeCheckControl', function () {
     assert.equal(wrapper.prop('className'), 'control--check')
   })
 
+  it('should add classes if passed a `modifiers` prop', function () {
+    const wrapper = shallow(<NativeCheckControl {...defaultProps}
+      modifiers={[ 'one', 'two' ]}
+    />)
+    assert.equal(wrapper.prop('className'), 'control--check custom-search--one custom-search--two')
+  })
+
   it('should add type-specific props if set', function () {
     const wrapper = shallow(<NativeCheckControl {...defaultProps}
       className="test-class"

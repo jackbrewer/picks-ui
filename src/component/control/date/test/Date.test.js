@@ -26,6 +26,13 @@ describe('Component: DateControl', function () {
     assert.equal(wrapper.find('TextControl').prop('value'), '2014-04-25')
   })
 
+  it('should add classes if passed a `modifiers` prop', function () {
+    const wrapper = shallow(<DateControl {...defaultProps}
+      modifiers={[ 'one', 'two' ]}
+    />)
+    assert.equal(wrapper.prop('className'), 'datepicker datepicker--one datepicker--two')
+  })
+
   it('should add an error class if passed an `error` prop', function () {
     const wrapper = shallow(<DateControl {...defaultProps}
       error="Something went wrong"

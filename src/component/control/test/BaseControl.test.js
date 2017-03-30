@@ -97,6 +97,13 @@ describe('Component: BaseControl', function () {
     assert.equal(mockHandleFocus.calledOnce, true)
   })
 
+  it('should add classes if passed a `modifiers` prop', function () {
+    const wrapper = shallow(<BaseControl {...defaultProps}
+      modifiers={[ 'one', 'two' ]}
+    />)
+    assert.equal(wrapper.prop('className'), 'control control--one control--two')
+  })
+
   it('should render additional attributes passed as props from parent components', function () {
     const wrapper = shallow(<BaseControl {...defaultProps}
       maxLength="20"

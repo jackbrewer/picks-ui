@@ -7,9 +7,10 @@ import Icon from '../../icon/Icon'
 import CalendarSvg from '../../svg/Calendar'
 
 const DateControl = (props) => {
-  const { error } = props
+  const { error, modifiers } = props
   const datepickerClassNames = classNames(
     'datepicker',
+    modifiers && modifiers.map(modifierClass => `datepicker--${modifierClass}`),
     { 'datepicker--error': error }
   )
   let { value } = props
@@ -29,6 +30,7 @@ const DateControl = (props) => {
 
 DateControl.propTypes = {
   error: PropTypes.string,
+  modifiers: PropTypes.arrayOf(PropTypes.string),
   value: PropTypes.string
 }
 

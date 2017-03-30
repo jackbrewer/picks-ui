@@ -49,6 +49,13 @@ describe('Component: StandardCheckField', function () {
     assert.equal(wrapper.find('.field__assistance').text(), 'Example Assistance')
   })
 
+  it('should add classes if passed a `modifiers` prop', function () {
+    const wrapper = shallow(<StandardCheckField {...defaultProps}
+      modifiers={[ 'one', 'two' ]}
+    />)
+    assert.equal(wrapper.prop('className'), 'field field--standard-check field--one field--two')
+  })
+
   it('should add an error class and message if passed an `error` prop', function () {
     const wrapper = shallow(<StandardCheckField {...defaultProps}
       error="Something went wrong"
