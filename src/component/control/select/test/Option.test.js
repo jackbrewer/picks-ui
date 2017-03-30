@@ -1,7 +1,6 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 
 import Option from '../Option'
 
@@ -14,9 +13,10 @@ const defaultProps = {
 
 describe('Component: Option', function () {
   it('should error without the required props', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<Option />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should not error with required props', function () {

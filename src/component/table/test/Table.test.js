@@ -1,7 +1,6 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 import Table from '../Table'
 
 const defaultProps = {
@@ -13,9 +12,10 @@ const defaultProps = {
 }
 describe('Component: Table', function () {
   it('should error if required props not passed', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<Table />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should output the expected markup when passed expected props', function () {

@@ -1,7 +1,7 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow, mount } from 'enzyme'
-import { spy, stub } from 'sinon'
+import { spy } from 'sinon'
 
 import Form from '../Form'
 
@@ -11,9 +11,10 @@ const defaultChild = (
 
 describe('Component: Form', function () {
   it('should error without the required props', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<Form />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should not error with required props', function () {

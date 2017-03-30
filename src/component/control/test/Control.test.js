@@ -1,7 +1,6 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 
 import Control from '../Control'
 
@@ -13,9 +12,10 @@ const defaultOptions = [
 
 describe('Component: Control', function () {
   it('should error without the required props', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<Control />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should render correct specialised control based on `type` prop', function () {

@@ -1,15 +1,15 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 
 import Field from '../Field'
 
 describe('Component: Field', function () {
   it('should error without the required props', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<Field />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should render correct default Field based on `type` prop', function () {

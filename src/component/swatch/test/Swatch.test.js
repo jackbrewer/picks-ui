@@ -1,14 +1,15 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { spy, stub } from 'sinon'
+import { spy } from 'sinon'
 import Swatch from '../Swatch'
 
 describe('Component: Swatch', function () {
   it('should error if required props not passed', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<Swatch />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should output the expected markup when passed expected props', function () {

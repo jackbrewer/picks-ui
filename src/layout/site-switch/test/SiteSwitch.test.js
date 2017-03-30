@@ -1,15 +1,15 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 
 import SiteSwitch from '../SiteSwitch'
 
 describe('Component: SiteSwitch', function () {
   it('should error if no href is passed', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<SiteSwitch />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should render expected defaults when reqired props passed', function () {

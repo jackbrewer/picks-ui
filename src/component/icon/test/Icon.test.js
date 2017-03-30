@@ -1,15 +1,15 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 
 import Icon from '../Icon'
 
 describe('Component: Icon', function () {
   it('should error if no children are passed', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<Icon />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should render expected defaults when no props passed', function () {

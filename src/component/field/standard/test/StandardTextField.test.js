@@ -1,7 +1,6 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 
 import StandardTextField from '../StandardTextField'
 
@@ -9,9 +8,10 @@ const defaultProps = { label: 'Example Label', name: 'example', type: 'text' }
 
 describe('Component: StandardTextField', function () {
   it('should error without the required props', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<StandardTextField />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should not error with required props', function () {

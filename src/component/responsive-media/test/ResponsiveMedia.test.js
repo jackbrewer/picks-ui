@@ -1,7 +1,6 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 import ResponsiveMedia from '../ResponsiveMedia'
 
 describe('Component: ResponsiveMedia', function () {
@@ -30,8 +29,9 @@ describe('Component: ResponsiveMedia', function () {
   })
 
   it('should error if passed an invalid ratio', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<ResponsiveMedia ratio="1"><p /></ResponsiveMedia>), Error)
-    console.error.restore()
+    console.error = originalError
   })
 })

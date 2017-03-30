@@ -1,16 +1,16 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { stub } from 'sinon'
 import Swatch from '../Swatch'
 
 describe('Component: SwatchContainer', function () {
   it('should error if required props not passed', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<Swatch />), Error)
     assert.throws(() => shallow(<Swatch name={undefined} value="#fff" />), Error)
     assert.throws(() => shallow(<Swatch name="Example" value={undefined} />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should pass through expected props to child Swatch', function () {

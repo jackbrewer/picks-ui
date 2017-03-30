@@ -1,7 +1,7 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
-import { spy, stub } from 'sinon'
+import { spy } from 'sinon'
 
 import BaseControl from '../BaseControl'
 
@@ -12,11 +12,12 @@ const defaultProps = {
 
 describe('Component: BaseControl', function () {
   it('should error without the required props', function () {
-    stub(console, 'error', (warning) => { throw new Error(warning) })
+    const originalError = console.error
+    console.error = message => { throw new Error(message) }
     assert.throws(() => shallow(<BaseControl />), Error)
     assert.throws(() => shallow(<BaseControl name={undefined} element="input" />), Error)
     assert.throws(() => shallow(<BaseControl name="example" element={undefined} />), Error)
-    console.error.restore()
+    console.error = originalError
   })
 
   it('should not error with required props', function () {
