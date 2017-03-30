@@ -16,10 +16,12 @@ const StandardCheckField = ({ assistance, className, controlClassName, error, id
 
   return (
     <div
-      aria-labelledby={questionId}
       className={fieldClasses}
       id={fieldId}
-      role="group"
+      {...label && {
+        'aria-labelledby': questionId,
+        role: 'group'
+      }}
       >
       {label &&
         <div

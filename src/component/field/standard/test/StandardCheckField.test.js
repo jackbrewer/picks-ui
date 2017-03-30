@@ -35,11 +35,20 @@ describe('Component: StandardCheckField', function () {
     assert.equal(wrapper.prop('className'), 'field field--standard-check test-class')
   })
 
-  it('should add a label if passed a `label` prop', function () {
+  it('should not add label-specific a11y props if not passed a `label` prop', function () {
+    const wrapper = shallow(<StandardCheckField {...defaultProps} />)
+    assert.equal(wrapper.find('.field__question').length, 0)
+    assert.equal(wrapper.prop('aria-labelledby'), undefined)
+    assert.equal(wrapper.prop('role'), undefined)
+  })
+
+  it('should add a label and label-specific a11y props if passed a `label` prop', function () {
     const wrapper = shallow(<StandardCheckField {...defaultProps}
       label="Example Label"
     />)
     assert.equal(wrapper.find('.field__question').text(), 'Example Label')
+    assert.equal(wrapper.prop('aria-labelledby'), 'question--example')
+    assert.equal(wrapper.prop('role'), 'group')
   })
 
   it('should add an assistance message if passed an `assistance` prop', function () {
