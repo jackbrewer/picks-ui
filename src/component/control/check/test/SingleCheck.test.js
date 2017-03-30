@@ -30,6 +30,17 @@ describe('Component: SingleCheckControl', function () {
     assert.equal(wrapper.find('span').at(1).text(), 'Option 1')
   })
 
+  it('should allow a Component as the text prop', function () {
+    const wrapper = shallow(<SingleCheckControl {...defaultProps}
+      option={{
+        text: <span>I am <strong>HTML</strong></span>,
+        value: 'example value'
+      }}
+    />)
+    assert.equal(wrapper.find('span').at(1).childAt(0).text(), 'I am HTML')
+    assert.equal(wrapper.find('span').at(1).childAt(0).html(), '<span>I am <strong>HTML</strong></span>')
+  })
+
   it('should add a checked attribute if value === option.value', function () {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)

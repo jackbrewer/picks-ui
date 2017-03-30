@@ -35,7 +35,10 @@ SingleCheckControl.propTypes = {
   ]),
   native: PropTypes.bool,
   option: PropTypes.shape({
-    text: PropTypes.string,
+    text: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.element
+    ]),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
