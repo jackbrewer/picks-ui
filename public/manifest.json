@@ -1,25 +1,19 @@
 {
-  "short_name": "Picks UI",
   "name": "Picks UI",
+  "short_name": "Picks UI",
+  "description": "Strapline to appear here",
+  "start_url": ".?launcher=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#57a65e",
+
   "icons": [{
-    "src": "apple-touch-icon-precomposed-76x76.png",
-      "sizes": "76x76",
-      "type": "image/png"
-    }, {
-      "src": "apple-touch-icon-precomposed-120x120.png",
-      "sizes": "120x120",
-      "type": "image/png"
-    }, {
-      "src": "apple-touch-icon-precomposed-152x152.png",
+      "src": "/asset/image/meta/apple-touch-icon-precomposed-152x152.png",
       "sizes": "152x152",
       "type": "image/png"
     }, {
-      "src": "apple-touch-icon-precomposed-180x180.png",
-      "sizes": "180x180",
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
       "type": "image/png"
-    }],
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#63bb6b",
-  "theme_color": "#57a65e"
+    }]
 }

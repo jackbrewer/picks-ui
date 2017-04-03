@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Helmet from 'react-helmet'
 
 // Layout Components
+import DocumentHead from '../document-head/DocumentHead'
 import A11yNavigation from '../a11y-navigation/A11yNavigation'
 import Footer from '../footer/Footer'
 import PreHeader from '../pre-header/PreHeader'
@@ -17,10 +17,7 @@ class App extends Component {
     return (
       <Router>
         <div className="site-container">
-          <Helmet
-            defaultTitle="Picks UI"
-            titleTemplate="%s | Picks UI"
-            />
+          <DocumentHead />
           <A11yNavigation />
           <PreHeader />
           <Route path="/:foo" component={Header} />
