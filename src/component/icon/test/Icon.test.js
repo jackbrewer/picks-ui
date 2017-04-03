@@ -21,20 +21,32 @@ describe('Component: Icon', function () {
     assert.equal(wrapper.find('svg').length, 1)
   })
 
-  it('should add additional class if `className` prop set', function () {
-    const wrapper = shallow(<Icon className="optional-class"><svg /></Icon>)
-    assert.equal(wrapper.hasClass('optional-class'), true)
-  })
-
-  it('should add accessibility text if `a11yText` prop set', function () {
+  it('should add accessibility text if `a11yText` prop set', () => {
     const wrapper = shallow(<Icon a11yText="Accessibility Text"><svg /></Icon>)
     assert.equal(wrapper.find('span.is-vhidden').length, 1)
     assert.equal(wrapper.find('span.is-vhidden').text(), 'Accessibility Text')
   })
 
-  it('should add a class and inline width if `width` prop set', function () {
+  it('should add additional class if `className` prop set', () => {
+    const wrapper = shallow(<Icon className="optional-class"><svg /></Icon>)
+    assert.equal(wrapper.hasClass('optional-class'), true)
+  })
+
+  it('should add classes if passed a `modifiers` prop', function () {
+    const wrapper = shallow(<Icon modifiers={[ 'one', 'two' ]} />)
+    assert.equal(wrapper.prop('className'), 'icon icon--one icon--two')
+  })
+
+  it('should add a class and inline width if `width` prop set', () => {
     const wrapper = shallow(<Icon width={30}><svg /></Icon>)
-    assert.equal(wrapper.hasClass('icon--custom-width'), true)
-    assert.equal(wrapper.prop('style').width, '30')
+    assert.equal(wrapper.hasClass('icon--custom-size'), true)
+    assert.equal(wrapper.prop('style').width, '30px')
+  })
+
+  it('should add a class and inline height if `height` prop set', () => {
+    const wrapper = shallow(<Icon height={40}><svg /></Icon>)
+    assert.equal(wrapper.hasClass('icon--custom-size'), true)
+    assert.equal(wrapper.prop('style').height, '40px')
+    assert.equal(wrapper.prop('style').lineHeight, '40px')
   })
 })

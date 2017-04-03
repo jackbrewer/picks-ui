@@ -18,6 +18,7 @@ const IconPage = () => (
         a11yText="Helpful accessibility text"
         className="optional-class"
         width={30}
+        height={36}
         >
         <PickSvg />
       </Icon>
