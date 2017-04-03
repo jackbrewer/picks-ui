@@ -25,7 +25,7 @@ const IndexPage = () => {
           heading="Example Heading"
           imgAlt="A placeholder image"
           imgRatio="16:9"
-          imgSrc="http://img.clock.co.uk/800x450"
+          imgSrc="https://img.clock.co.uk/800x450"
           text="Fusce dapibus, tellus ac cursus commodo, tortor mauris."
         />
       </Example>
@@ -40,7 +40,7 @@ const IndexPage = () => {
       <Example previewWidth={previewWidth} toggleSource>
         <Card
           heading="You can"
-          imgSrc="http://img.clock.co.uk/800x450"
+          imgSrc="https://img.clock.co.uk/800x450"
           >
           <p>Mix <strong>prop</strong> content with <em>children</em> content.</p>
         </Card>
@@ -48,7 +48,7 @@ const IndexPage = () => {
       <Example previewWidth={previewWidth} toggleSource>
         <Card
           heading="Overlay Link"
-          imgSrc="http://img.clock.co.uk/800x450"
+          imgSrc="https://img.clock.co.uk/800x450"
           overlayUrl="#overlay-link"
           actionText="Action"
           actionUrl="#action-link"

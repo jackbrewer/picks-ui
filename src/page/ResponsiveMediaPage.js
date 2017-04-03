@@ -11,19 +11,19 @@ const ResponsiveMediaPage = () => (
     <Example>
       <ResponsiveMedia ratio="1:1">
         <img
-          src="http://img.clock.co.uk/500x500"
+          src="https://img.clock.co.uk/500x500"
           alt=""
         />
       </ResponsiveMedia>
       <ResponsiveMedia ratio="3:2">
         <img
-          src="http://img.clock.co.uk/300x200"
+          src="https://img.clock.co.uk/300x200"
           alt=""
         />
       </ResponsiveMedia>
       <ResponsiveMedia ratio="312:109">
         <img
-          src="http://img.clock.co.uk/312x109"
+          src="https://img.clock.co.uk/312x109"
           alt=""
         />
       </ResponsiveMedia>
@@ -31,7 +31,7 @@ const ResponsiveMediaPage = () => (
     <Example>
       <ResponsiveMedia ratio="16:9">
         <iframe
-          src="//www.youtube.com/embed/TkyLnWm1iCs"
+          src="https://www.youtube.com/embed/TkyLnWm1iCs"
           width="560"
           height="315"
           frameBorder="0"
