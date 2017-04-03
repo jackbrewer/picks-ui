@@ -24,7 +24,7 @@ const NativeCheckControl = ({ className, checked, modifiers, ...other }) => {
 NativeCheckControl.propTypes = {
   checked: PropTypes.bool,
   className: PropTypes.string,
-  modifiers: React.PropTypes.arrayOf(React.PropTypes.string)
+  modifiers: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default NativeCheckControl
