@@ -12,6 +12,10 @@ const Navigation = () => (
     <h2 className="is-vhidden">Primary Navigation</h2>
     <div className="navigation__group">
 
+      <h3>Documentation</h3>
+      <ul className="list--unstyled">
+        <NavigationItem to="/docs" text="Docs" />
+      </ul>
       <h3>Components</h3>
       <ul className="list--unstyled">
         <NavigationItem to="/blockquote" text="Blockquote" />

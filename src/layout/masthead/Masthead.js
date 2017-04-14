@@ -11,7 +11,7 @@ const Masthead = () => (
         <div className="masthead__content">
           <p>A well thought out strapline will appear here.</p>
           <p>
-            <Button className="button--inverse" href="/docs">Documentation</Button>
+            <Button className="button--inverse" href="/docs">Docs</Button>
             <Button className="button--inverse" href="https://github.com/jackbrewer/picks-ui">GitHub</Button>
           </p>
         </div>

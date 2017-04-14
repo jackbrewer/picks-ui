@@ -6,6 +6,7 @@ import ScrollToTop from './layout/scroll-to-top/ScrollToTop'
 // Site Pages
 import IndexPage from './page/IndexPage'
 import NotFoundPage from './page/NotFoundPage'
+import DocsPage from './page/DocsPage'
 
 // Component Pages
 import BlockquotePage from './page/BlockquotePage'
@@ -35,6 +36,8 @@ class Routes extends Component {
       <ScrollToTop>
         <Switch>
           <Route exact path="/" component={IndexPage} />
+          <Route exact path="/docs" component={DocsPage} />
+
           <Route exact path="/blockquote" component={BlockquotePage} />
           <Route exact path="/button" component={ButtonPage} />
           <Route exact path="/card" component={CardPage} />

@@ -22,6 +22,7 @@ class App extends Component {
           <PreHeader />
           <Route path="/:foo" component={Header} />
           <Route exact path="/" component={Masthead} />
+
           <div className="page-container content-center content-gutter">
             <div className="grid grid--full-height">
               <div className="grid__item tablet-one-quarter">
