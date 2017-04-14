@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 export default function Icon ({ a11yText, children, className, height, modifiers, width }) {

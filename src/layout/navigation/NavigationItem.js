@@ -1,4 +1,5 @@
-import React, { Children, PropTypes } from 'react'
+import React, { Children } from 'react'
+import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 
 const NavigationItem = ({ children, to, text }) => (

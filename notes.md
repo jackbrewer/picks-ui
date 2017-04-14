@@ -1,7 +1,7 @@
 Style Guide:
 
 - `import classNames`, not `import classnames`
-- `import React, { Children, PropTypes }` as required
+- `import React, { Children, Component }` as required
 - Alphabetical propTypes in destructuring / propType validation
 - Alphabetical attributes in JSX
 - Directories always singular - `asset`, not `assets`

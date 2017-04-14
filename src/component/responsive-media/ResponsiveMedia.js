@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Ratio should be supplied in a `16:9` style format
 const ratioRegex = /^\d+:\d+$/
