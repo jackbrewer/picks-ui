@@ -4,10 +4,10 @@ import { shallow } from 'enzyme'
 
 import DateControl from '../Date'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example',
   type: 'date'
-}
+})
 
 describe('Component: DateControl', function () {
   it('should render output the expected HTML by default', function () {

@@ -4,7 +4,10 @@ import { shallow } from 'enzyme'
 
 import StandardCheckField from '../StandardCheckField'
 
-const defaultProps = { name: 'example', type: 'checkbox' }
+const defaultProps = Object.freeze({
+  name: 'example',
+  type: 'checkbox'
+})
 
 describe('Component: StandardCheckField', function () {
   it('should error without the required props', function () {

@@ -5,10 +5,10 @@ import { spy } from 'sinon'
 
 import BaseControl from '../BaseControl'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   element: 'input',
   name: 'example'
-}
+})
 
 describe('Component: BaseControl', function () {
   it('should error without the required props', function () {

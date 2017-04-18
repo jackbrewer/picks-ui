@@ -4,12 +4,12 @@ import { shallow } from 'enzyme'
 
 import Option from '../Option'
 
-const defaultProps = {
-  option: {
+const defaultProps = Object.freeze({
+  option: Object.freeze({
     text: 'Option 1',
     value: 1
-  }
-}
+  })
+})
 
 describe('Component: Option', function () {
   it('should error without the required props', function () {

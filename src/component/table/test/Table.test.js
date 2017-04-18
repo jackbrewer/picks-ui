@@ -3,13 +3,14 @@ import assert from 'assert'
 import { shallow } from 'enzyme'
 import Table from '../Table'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   data: [
     [ 'One', 'Alpha', 'A' ],
-    [ 'Two', 'Broavo', 'B' ],
+    [ 'Two', 'Bravo', 'B' ],
     [ 'Three', 'Charlie', 'C' ]
   ]
-}
+})
+
 describe('Component: Table', function () {
   it('should error if required props not passed', function () {
     const originalError = console.error

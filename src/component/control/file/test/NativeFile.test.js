@@ -4,9 +4,9 @@ import { shallow } from 'enzyme'
 
 import NativeFileControl from '../NativeFile'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example'
-}
+})
 
 describe('Component: NativeFileControl', function () {
   it('should add expected default type-specific props', function () {

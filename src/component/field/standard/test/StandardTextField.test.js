@@ -4,7 +4,11 @@ import { shallow } from 'enzyme'
 
 import StandardTextField from '../StandardTextField'
 
-const defaultProps = { label: 'Example Label', name: 'example', type: 'text' }
+const defaultProps = Object.freeze({
+  label: 'Example Label',
+  name: 'example',
+  type: 'text'
+})
 
 describe('Component: StandardTextField', function () {
   it('should error without the required props', function () {

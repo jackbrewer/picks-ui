@@ -4,10 +4,10 @@ import { shallow } from 'enzyme'
 
 import NativeCheckControl from '../NativeCheck'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example',
   type: 'checkbox'
-}
+})
 
 describe('Component: NativeCheckControl', function () {
   it('should add expected default type-specific props', function () {

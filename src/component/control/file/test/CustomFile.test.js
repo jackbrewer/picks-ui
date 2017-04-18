@@ -4,9 +4,9 @@ import { shallow } from 'enzyme'
 
 import CustomFileControl from '../CustomFile'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example'
-}
+})
 
 describe('Component: CustomFileControl', function () {
   it('should render output the expected HTML by default', function () {

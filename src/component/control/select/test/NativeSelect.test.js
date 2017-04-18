@@ -4,15 +4,15 @@ import { shallow } from 'enzyme'
 
 import NativeSelectControl from '../NativeSelect'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example',
   options: [
-    { text: 'Option 1', value: 1 },
-    { text: 'Option 2', value: 2 },
-    { text: 'Option 3', value: 3 }
+    Object.freeze({ text: 'Option 1', value: 1 }),
+    Object.freeze({ text: 'Option 2', value: 2 }),
+    Object.freeze({ text: 'Option 3', value: 3 })
   ],
   type: 'select'
-}
+})
 
 describe('Component: NativeSelectControl', function () {
   it('should add expected default type-specific props', function () {

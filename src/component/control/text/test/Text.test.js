@@ -4,10 +4,10 @@ import { shallow } from 'enzyme'
 
 import TextControl from '../Text'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example',
   type: 'text'
-}
+})
 
 describe('Component: TextControl', function () {
   it('should add expected default type-specific props', function () {

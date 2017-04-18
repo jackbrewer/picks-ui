@@ -4,10 +4,10 @@ import { shallow } from 'enzyme'
 
 import TextareaControl from '../Textarea'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example',
   type: 'textarea'
-}
+})
 
 describe('Component: TextareaControl', function () {
   it('should add expected default type-specific props', function () {

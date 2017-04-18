@@ -4,12 +4,12 @@ import { shallow } from 'enzyme'
 
 import CustomCheckControl from '../CustomCheck'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example',
   text: 'Option 1',
   type: 'checkbox',
   value: 1
-}
+})
 
 describe('Component: CustomCheckControl', function () {
   it('should render output the expected HTML by default', function () {

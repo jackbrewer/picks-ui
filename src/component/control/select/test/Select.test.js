@@ -4,10 +4,10 @@ import { shallow } from 'enzyme'
 
 import SelectControl from '../Select'
 
-const defaultProps = {
+const defaultProps = Object.freeze({
   name: 'example',
-  options: [ { text: 'Option 1', value: 1 } ]
-}
+  options: [ Object.freeze({ text: 'Option 1', value: 1 }) ]
+})
 
 describe('Component: SelectControl', function () {
   it('should render a CustomSelectControl by default', function () {
