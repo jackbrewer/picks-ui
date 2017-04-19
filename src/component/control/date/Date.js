@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import moment from 'moment'
+import format from 'date-fns/format'
 
 import TextControl from '../text/Text'
 import Icon from '../../icon/Icon'
@@ -15,7 +15,7 @@ const DateControl = (props) => {
     { 'datepicker--error': error }
   )
   let { value } = props
-  value = value && moment(value).format('YYYY-MM-DD')
+  value = value && format(value, 'YYYY-MM-DD')
 
   return (
     <span className={datepickerClassNames}>
