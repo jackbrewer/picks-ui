@@ -1,12 +1,13 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
+import deepFreeze from 'deep-freeze'
 
 import SelectControl from '../Select'
 
-const defaultProps = Object.freeze({
+const defaultProps = deepFreeze({
   name: 'example',
-  options: [ Object.freeze({ text: 'Option 1', value: 1 }) ]
+  options: [ { text: 'Option 1', value: 1 } ]
 })
 
 describe('Component: SelectControl', function () {

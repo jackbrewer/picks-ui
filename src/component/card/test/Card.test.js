@@ -7,7 +7,6 @@ import Card from '../Card'
 describe('Component: Card', function () {
   it('should output the expected container element', function () {
     const wrapper = shallow(<Card />)
-    // assert.equal(wrapper.type(), 'div')
     assert.equal(wrapper.prop('className'), 'card')
   })
 

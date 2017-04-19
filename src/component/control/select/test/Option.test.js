@@ -1,14 +1,15 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
+import deepFreeze from 'deep-freeze'
 
 import Option from '../Option'
 
-const defaultProps = Object.freeze({
-  option: Object.freeze({
+const defaultProps = deepFreeze({
+  option: {
     text: 'Option 1',
     value: 1
-  })
+  }
 })
 
 describe('Component: Option', function () {

@@ -1,9 +1,11 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
+import deepFreeze from 'deep-freeze'
+
 import Table from '../Table'
 
-const defaultProps = Object.freeze({
+const defaultProps = deepFreeze({
   data: [
     [ 'One', 'Alpha', 'A' ],
     [ 'Two', 'Bravo', 'B' ],

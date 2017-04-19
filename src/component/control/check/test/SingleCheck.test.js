@@ -1,15 +1,16 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
+import deepFreeze from 'deep-freeze'
 
 import SingleCheckControl from '../SingleCheck'
 
-const defaultProps = Object.freeze({
+const defaultProps = deepFreeze({
   name: 'example',
-  option: Object.freeze({
+  option: {
     text: 'Option 1',
     value: 1
-  }),
+  },
   type: 'checkbox'
 })
 

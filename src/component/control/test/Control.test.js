@@ -1,14 +1,15 @@
 import React from 'react'
 import assert from 'assert'
 import { shallow } from 'enzyme'
+import deepFreeze from 'deep-freeze'
 
 import Control from '../Control'
 
-const defaultOptions = [
+const defaultOptions = deepFreeze([
   { text: 'Option 1', value: 1 },
   { text: 'Option 2', value: 2 },
   { text: 'Option 3', value: 3 }
-]
+])
 
 describe('Component: Control', function () {
   it('should error without the required props', function () {
