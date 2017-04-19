@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Blockquote from '../component/blockquote/Blockquote'
+import Example from '../../component/example/Example'
+import Blockquote from '../../component/blockquote/Blockquote'
 
 const BlockquotePage = () => (
   <div className="prose">

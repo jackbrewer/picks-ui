@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Notification from '../component/notification/Notification'
+import Example from '../../component/example/Example'
+import Notification from '../../component/notification/Notification'
 
 function dismissNotification (e) {
   const notificationEl = e.target.closest('.notification')

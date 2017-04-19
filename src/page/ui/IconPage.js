@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Icon from '../component/icon/Icon'
-import PickSvg from '../component/svg/Pick'
+import Example from '../../component/example/Example'
+import Icon from '../../component/icon/Icon'
+import PickSvg from '../../component/svg/Pick'
 
 const IconPage = () => (
   <div className="prose">

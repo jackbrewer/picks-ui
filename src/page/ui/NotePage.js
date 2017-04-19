@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Note from '../component/note/Note'
+import Example from '../../component/example/Example'
+import Note from '../../component/note/Note'
 
 const NotePage = () => (
   <div className="prose">

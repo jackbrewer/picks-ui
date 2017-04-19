@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Card from '../component/card/Card'
+import Example from '../../component/example/Example'
+import Card from '../../component/card/Card'
 
 const IndexPage = () => {
   const previewWidth = 'desktop-one-half'

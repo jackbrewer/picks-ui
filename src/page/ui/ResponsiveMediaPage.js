@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import ResponsiveMedia from '../component/responsive-media/ResponsiveMedia'
+import Example from '../../component/example/Example'
+import ResponsiveMedia from '../../component/responsive-media/ResponsiveMedia'
 
 const ResponsiveMediaPage = () => (
   <div className="prose">

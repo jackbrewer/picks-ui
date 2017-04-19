@@ -1,10 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import PageMeta from '../layout/page-meta/PageMeta'
-import Example from '../component/example/Example'
-import Table from '../component/table/Table'
-import Control from '../component/control/Control'
+import PageMeta from '../../layout/page-meta/PageMeta'
+import Example from '../../component/example/Example'
+import Table from '../../component/table/Table'
+import Control from '../../component/control/Control'
 
 class ControlPage extends React.Component {
   constructor () {

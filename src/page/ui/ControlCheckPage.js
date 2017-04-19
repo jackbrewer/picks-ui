@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Control from '../component/control/Control'
-import Note from '../component/note/Note'
+import Example from '../../component/example/Example'
+import Control from '../../component/control/Control'
+import Note from '../../component/note/Note'
 
 class ControlCheckPage extends React.Component {
   constructor () {

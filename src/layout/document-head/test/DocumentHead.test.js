@@ -26,7 +26,7 @@ describe('Component: DocumentHead', function () {
     )
     setImmediate(() => {
       assert.equal(document.title, 'Picks UI')
-      assert.equal(document.querySelector('link[rel="canonical"]').getAttribute('href'), 'https://picks.jackbrewer.co.uk/')
+      assert.equal(document.querySelector('link[rel="canonical"]').getAttribute('href'), 'https://picks.tech/')
       done()
     })
   })

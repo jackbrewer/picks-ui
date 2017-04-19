@@ -6,29 +6,29 @@ import ScrollToTop from './layout/scroll-to-top/ScrollToTop'
 // Site Pages
 import IndexPage from './page/IndexPage'
 import NotFoundPage from './page/NotFoundPage'
-import DocsPage from './page/DocsPage'
 
 // Component Pages
-import BlockquotePage from './page/BlockquotePage'
-import ButtonPage from './page/ButtonPage'
-import CardPage from './page/CardPage'
-import CodePage from './page/CodePage'
-import ControlPage from './page/ControlPage'
-import ControlCheckPage from './page/ControlCheckPage'
-import ControlDatePage from './page/ControlDatePage'
-import ControlFilePage from './page/ControlFilePage'
-import ControlInputPage from './page/ControlInputPage'
-import ControlSelectPage from './page/ControlSelectPage'
-import ControlTextareaPage from './page/ControlTextareaPage'
-import FieldPage from './page/FieldPage'
-import FormPage from './page/FormPage'
-import IconPage from './page/IconPage'
-import NotificationPage from './page/NotificationPage'
-import NotePage from './page/NotePage'
-import ResponsiveMediaPage from './page/ResponsiveMediaPage'
-import SwatchPage from './page/SwatchPage'
-import TablePage from './page/TablePage'
-import TypographyPage from './page/TypographyPage'
+import UiPage from './page/ui/UiPage'
+import BlockquotePage from './page/ui/BlockquotePage'
+import ButtonPage from './page/ui/ButtonPage'
+import CardPage from './page/ui/CardPage'
+import CodePage from './page/ui/CodePage'
+import ControlPage from './page/ui/ControlPage'
+import ControlCheckPage from './page/ui/ControlCheckPage'
+import ControlDatePage from './page/ui/ControlDatePage'
+import ControlFilePage from './page/ui/ControlFilePage'
+import ControlInputPage from './page/ui/ControlInputPage'
+import ControlSelectPage from './page/ui/ControlSelectPage'
+import ControlTextareaPage from './page/ui/ControlTextareaPage'
+import FieldPage from './page/ui/FieldPage'
+import FormPage from './page/ui/FormPage'
+import IconPage from './page/ui/IconPage'
+import NotificationPage from './page/ui/NotificationPage'
+import NotePage from './page/ui/NotePage'
+import ResponsiveMediaPage from './page/ui/ResponsiveMediaPage'
+import SwatchPage from './page/ui/SwatchPage'
+import TablePage from './page/ui/TablePage'
+import TypographyPage from './page/ui/TypographyPage'
 
 class Routes extends Component {
   render () {
@@ -36,28 +36,29 @@ class Routes extends Component {
       <ScrollToTop>
         <Switch>
           <Route exact path="/" component={IndexPage} />
-          <Route exact path="/docs" component={DocsPage} />
 
-          <Route exact path="/blockquote" component={BlockquotePage} />
-          <Route exact path="/button" component={ButtonPage} />
-          <Route exact path="/card" component={CardPage} />
-          <Route exact path="/code" component={CodePage} />
-          <Route exact path="/control" component={ControlPage} />
-          <Route exact path="/control/check" component={ControlCheckPage} />
-          <Route exact path="/control/date" component={ControlDatePage} />
-          <Route exact path="/control/file" component={ControlFilePage} />
-          <Route exact path="/control/input" component={ControlInputPage} />
-          <Route exact path="/control/select" component={ControlSelectPage} />
-          <Route exact path="/control/textarea" component={ControlTextareaPage} />
-          <Route exact path="/field" component={FieldPage} />
-          <Route exact path="/form" component={FormPage} />
-          <Route exact path="/icon" component={IconPage} />
-          <Route exact path="/note" component={NotePage} />
-          <Route exact path="/notification" component={NotificationPage} />
-          <Route exact path="/responsive-media" component={ResponsiveMediaPage} />
-          <Route exact path="/swatch" component={SwatchPage} />
-          <Route exact path="/table" component={TablePage} />
-          <Route exact path="/typography" component={TypographyPage} />
+          <Route exact path="/ui" component={UiPage} />
+          <Route exact path="/ui/blockquote" component={BlockquotePage} />
+          <Route exact path="/ui/button" component={ButtonPage} />
+          <Route exact path="/ui/card" component={CardPage} />
+          <Route exact path="/ui/code" component={CodePage} />
+          <Route exact path="/ui/control" component={ControlPage} />
+          <Route exact path="/ui/control/check" component={ControlCheckPage} />
+          <Route exact path="/ui/control/date" component={ControlDatePage} />
+          <Route exact path="/ui/control/file" component={ControlFilePage} />
+          <Route exact path="/ui/control/input" component={ControlInputPage} />
+          <Route exact path="/ui/control/select" component={ControlSelectPage} />
+          <Route exact path="/ui/control/textarea" component={ControlTextareaPage} />
+          <Route exact path="/ui/field" component={FieldPage} />
+          <Route exact path="/ui/form" component={FormPage} />
+          <Route exact path="/ui/icon" component={IconPage} />
+          <Route exact path="/ui/note" component={NotePage} />
+          <Route exact path="/ui/notification" component={NotificationPage} />
+          <Route exact path="/ui/responsive-media" component={ResponsiveMediaPage} />
+          <Route exact path="/ui/swatch" component={SwatchPage} />
+          <Route exact path="/ui/table" component={TablePage} />
+          <Route exact path="/ui/typography" component={TypographyPage} />
+
           <Route component={NotFoundPage} />
         </Switch>
       </ScrollToTop>

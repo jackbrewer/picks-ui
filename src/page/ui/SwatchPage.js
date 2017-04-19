@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Swatch from '../component/swatch/container/Swatch'
+import Example from '../../component/example/Example'
+import Swatch from '../../component/swatch/container/Swatch'
 
 class SwatchPage extends Component {
   constructor (props) {

@@ -1,10 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Table from '../component/table/Table'
-import Form from '../component/form/Form'
-import Field from '../component/field/Field'
+import Example from '../../component/example/Example'
+import Table from '../../component/table/Table'
+import Form from '../../component/form/Form'
+import Field from '../../component/field/Field'
 
 class FormPage extends React.Component {
   constructor () {

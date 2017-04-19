@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Control from '../component/control/Control'
+import Example from '../../component/example/Example'
+import Control from '../../component/control/Control'
 
 class ControlPage extends React.Component {
   render () {

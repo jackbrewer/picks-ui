@@ -9,7 +9,7 @@ const DocumentHead = ({ location }) => {
     <Helmet
       defaultTitle="Picks UI"
       titleTemplate="%s | Picks UI"
-      link={[ { href: `https://picks.jackbrewer.co.uk${location.pathname}`, rel: 'canonical' } ]}
+      link={[ { href: `https://picks.tech${location.pathname}`, rel: 'canonical' } ]}
     />
   )
 }

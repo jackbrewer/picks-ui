@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Code from '../component/code/Code'
+import Example from '../../component/example/Example'
+import Code from '../../component/code/Code'
 
 const IndexPage = () => {
   return (

@@ -1,10 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-const DocsPage = () => (
+const UiPage = () => (
   <div className="prose">
-    <Helmet title="Docs" />
-    <h1>Docs</h1>
+    <Helmet title="UI" />
+    <h1>UI</h1>
 
     <h2>To write:</h2>
     <ul>
@@ -16,4 +16,4 @@ const DocsPage = () => (
   </div>
 )
 
-export default DocsPage
+export default UiPage

@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Table from '../component/table/Table'
-import Field from '../component/field/Field'
+import Example from '../../component/example/Example'
+import Table from '../../component/table/Table'
+import Field from '../../component/field/Field'
 
 class FieldPage extends React.Component {
   constructor () {

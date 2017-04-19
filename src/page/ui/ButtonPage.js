@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Button from '../component/button/Button'
+import Example from '../../component/example/Example'
+import Button from '../../component/button/Button'
 
 class ButtonPage extends React.Component {
   constructor () {

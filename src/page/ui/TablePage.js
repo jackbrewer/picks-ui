@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Example from '../component/example/Example'
-import Table from '../component/table/Table'
+import Example from '../../component/example/Example'
+import Table from '../../component/table/Table'
 
 const TablePage = () => (
   <div className="prose">
