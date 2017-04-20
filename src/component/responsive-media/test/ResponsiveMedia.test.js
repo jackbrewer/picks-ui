@@ -28,6 +28,11 @@ describe('Component: ResponsiveMedia', function () {
     assert.equal(wrapper.prop('style').paddingBottom, '10000%')
   })
 
+  it('should round ratio percentage to 4 decimal places', function () {
+    const wrapper = shallow(<ResponsiveMedia ratio="111:321"><img src="https://img.clock.co.uk/16x9" /></ResponsiveMedia>)
+    assert.equal(wrapper.prop('style').paddingBottom, '289.1892%')
+  })
+
   it('should error if passed an invalid ratio', function () {
     const originalError = console.error
     console.error = message => { throw new Error(message) }

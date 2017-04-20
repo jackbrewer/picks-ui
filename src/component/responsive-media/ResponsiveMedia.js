@@ -10,11 +10,12 @@ const ResponsiveMedia = ({ children, ratio }) => {
 
   const ratioParts = ratio.split(':')
   const ratioPercentage = ratio && (ratioParts[1] / ratioParts[0]) * 100
+  const ratioPercentageRounded = ratioPercentage && parseFloat(ratioPercentage.toFixed(4))
 
   return (
     <div
       className="responsive-media"
-      style={ratio && { paddingBottom: `${ratioPercentage}%` }}
+      style={ratio && { paddingBottom: `${ratioPercentageRounded}%` }}
       >
       {children}
     </div>
