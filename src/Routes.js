@@ -28,6 +28,7 @@ import NotePage from './page/ui/NotePage'
 import ResponsiveMediaPage from './page/ui/ResponsiveMediaPage'
 import SwatchPage from './page/ui/SwatchPage'
 import TablePage from './page/ui/TablePage'
+import TogglePage from './page/ui/TogglePage'
 import TypographyPage from './page/ui/TypographyPage'
 
 class Routes extends Component {
@@ -57,6 +58,7 @@ class Routes extends Component {
           <Route exact path="/ui/responsive-media" component={ResponsiveMediaPage} />
           <Route exact path="/ui/swatch" component={SwatchPage} />
           <Route exact path="/ui/table" component={TablePage} />
+          <Route exact path="/ui/toggle" component={TogglePage} />
           <Route exact path="/ui/typography" component={TypographyPage} />
 
           <Route component={NotFoundPage} />

@@ -1,0 +1,69 @@
+//
+// TOGGLE
+// ======
+//
+
+
+$toggle--diameter = 26px
+$toggle--border = 2px
+
+.toggle
+  position relative
+  -webkit-tap-highlight-color transparent
+  display inline-block
+  cursor pointer
+
+  margin-left 10px
+  vertical-align -11px
+
+.toggle__frame
+  display block
+  width $toggle--diameter * 2 + ($toggle--border * 2)
+  height $toggle--diameter + ($toggle--border * 2)
+  border-radius $toggle--diameter * 0.5 + $toggle--border
+  background-color red
+  overflow hidden
+  transition background-color 0.2s ease-out
+
+  .toggle__input:checked ~ &
+    background-color $color--primary
+
+  &:before
+  &:after
+    position absolute
+    top 0
+    height $toggle--diameter + ($toggle--border * 2)
+    width 50%
+    text-align center
+    line-height $toggle--diameter + ($toggle--border * 2)
+    color $color--white
+    font-size rem(12)
+    font-weight bold
+
+  &:before
+    content attr(data-text-unchecked)
+    right 2px
+
+  &:after
+    content attr(data-text-checked)
+    left 2px
+
+.toggle__input
+  position absolute
+  z-index -1
+  visibility hidden
+
+.toggle__indicator
+  position absolute
+  top $toggle--border
+  left $toggle--border
+  z-index 1
+  display block
+  width $toggle--diameter
+  height $toggle--diameter
+  border-radius 50%
+  background-color $color--white
+  transition transform 0.2s ease-out
+
+  .toggle__input:checked ~ &
+    transform translateX(100%)
