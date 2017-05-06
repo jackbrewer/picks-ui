@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 
 import Example from '../../component/example/Example'
 import Icon from '../../component/icon/Icon'
-import PickSvg from '../../component/svg/Pick'
 
 const IconPage = () => (
   <div className="prose">
@@ -11,17 +10,14 @@ const IconPage = () => (
     <h1>Icon</h1>
     <p>Icons require a child element, usually an SVG.</p>
     <Example previewWidth="auto">
-      <Icon>
-        <PickSvg />
-      </Icon>
+      <Icon type="pick" />
       <Icon
         a11yText="Helpful accessibility text"
         className="optional-class"
         width={30}
         height={36}
-        >
-        <PickSvg />
-      </Icon>
+        type="pick"
+        />
     </Example>
   </div>
 )

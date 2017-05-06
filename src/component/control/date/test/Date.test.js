@@ -15,7 +15,6 @@ describe('Component: DateControl', function () {
     assert.equal(wrapper.type(), 'span')
     assert.equal(wrapper.prop('className'), 'datepicker')
     assert.equal(wrapper.find('Icon').length, 1)
-    assert.equal(wrapper.find('CalendarSvg').length, 1)
     assert.equal(wrapper.find('TextControl').length, 1)
   })
 

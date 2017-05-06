@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
-import PickSvg from '../../component/svg/Pick'
+import Icon from '../../component/icon/Icon'
 
 const SiteTitle = ({ href, isFeature }) => {
   const siteTitleClasses = classNames('site-title', { 'site-title--feature': isFeature })
@@ -13,7 +13,7 @@ const SiteTitle = ({ href, isFeature }) => {
       className={siteTitleClasses}
       {...href && { to: href }}
       >
-      <i className="icon icon--pick"><PickSvg /></i>
+      <Icon type="pick" />
       Picks <span>UI</span>
     </SiteTitleEl>
   )

@@ -3,7 +3,7 @@ More detail to follow
 For now:
 ```
 yarn install
-yarn start
+yarn watch
 ```
 
 ---

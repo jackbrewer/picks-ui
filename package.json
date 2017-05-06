@@ -12,7 +12,7 @@
     "lint:js": "eslint .",
     "pretest": "concurrently --names \"Lint JS\" --prefix name \"npm run lint:js\" --prefix-colors \"bgYellow.bold\"",
     "start": "node scripts/start.js",
-    "test": "node scripts/test.js --env=jsdom",
+    "test": "node scripts/test.js --env=jsdom --config .jestrc",
     "watch:styles": "npm run build:styles -- -w",
     "watch": "concurrently --names \"webpack,stylus\" --prefix name \"npm run start\" \"npm run watch:styles\" --prefix-colors \"bgBlue.bold,bgMagenta.bold\"",
     "predeploy": "npm run build",
@@ -24,6 +24,7 @@
     "babel-eslint": "^7.2.2",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.4.1",
+    "babel-plugin-inline-react-svg": "^0.4.0",
     "babel-preset-react-app": "^2.1.1",
     "babel-runtime": "^6.20.0",
     "case-sensitive-paths-webpack-plugin": "^2.0.0",
@@ -91,34 +92,5 @@
     "stylus": "^0.54.5",
     "stylus-mixins": "^0.4.0",
     "surge": "^0.19.0"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](build|docs|node_modules|scripts)[/\\\\]"
-    ],
-    "testEnvironment": "node",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    }
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
   }
 }

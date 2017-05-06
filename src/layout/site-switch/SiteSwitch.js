@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import PickSvg from '../../component/svg/Pick'
+import Svg from '../../component/svg/Svg'
 
 const SiteSwitch = ({ href, label }) => {
   return (
@@ -12,10 +12,10 @@ const SiteSwitch = ({ href, label }) => {
       {label && <span className="site-switch__label">{label}</span>}
       <span className="site-switch__icon">
         <i className="icon icon--pick-group">
-          <PickSvg />
-          <PickSvg />
-          <PickSvg />
-          <PickSvg />
+          <Svg type="pick" />
+          <Svg type="pick" />
+          <Svg type="pick" />
+          <Svg type="pick" />
         </i>
       </span>
     </a>

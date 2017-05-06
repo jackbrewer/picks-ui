@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import Icon from '../icon/Icon'
-import CrossSvg from '../svg/Cross'
 
 const Notification = ({ children, className, handleDismiss, heading, text, state }) => {
   if (!children && !heading && !text) return null
@@ -16,9 +15,7 @@ const Notification = ({ children, className, handleDismiss, heading, text, state
     <div className={notificationClasses}>
       {handleDismiss &&
         <button className="notification__action text-button" onClick={handleDismiss}>
-          <Icon a11yText="Dismiss">
-            <CrossSvg />
-          </Icon>
+          <Icon a11yText="Dismiss" type="cross" />
         </button>
       }
       {heading && <div className="notification__heading">{heading}</div>}

@@ -1,0 +1,20 @@
+{
+  "presets": [
+    "react-app"
+  ],
+  "plugins": [
+    [ "inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            { "cleanupIds": true },
+            { "collapseGroups": true },
+            { "removeStyleElement": true },
+            { "removeTitle": true },
+            { "removeXMLNS": true }
+          ]
+        }
+      }
+    ]
+  ]
+}

@@ -5,7 +5,6 @@ import format from 'date-fns/format'
 
 import TextControl from '../text/Text'
 import Icon from '../../icon/Icon'
-import CalendarSvg from '../../svg/Calendar'
 
 const DateControl = (props) => {
   const { error, modifiers } = props
@@ -20,9 +19,7 @@ const DateControl = (props) => {
   return (
     <span className={datepickerClassNames}>
       <span className="datepicker__icon">
-        <Icon type="calendar">
-          <CalendarSvg />
-        </Icon>
+        <Icon type="calendar" />
       </span>
       <TextControl {...props} {...value && { value }} />
     </span>

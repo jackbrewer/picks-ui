@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-export default function Icon ({ a11yText, children, className, height, modifiers, width }) {
+import Svg from '../svg/Svg'
+
+export default function Icon ({ a11yText, type, className, height, modifiers, width }) {
   const iconsClassNames = classNames(
     'icon',
     { 'icon--custom-size': width || height },
@@ -22,14 +24,14 @@ export default function Icon ({ a11yText, children, className, height, modifiers
       {a11yText &&
         <span className="is-vhidden">{a11yText}</span>
       }
-      {children}
+      <Svg type={type} />
     </i>
   )
 }
 
 Icon.propTypes = {
   a11yText: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  type: PropTypes.string.isRequired,
   className: PropTypes.string,
   height: PropTypes.number,
   modifiers: PropTypes.arrayOf(PropTypes.string),
