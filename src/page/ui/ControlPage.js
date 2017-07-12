@@ -1,7 +1,6 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 
-import PageMeta from '../../layout/page-meta/PageMeta'
+import Page from '../../layout/page/Page'
 import Example from '../../component/example/Example'
 import Table from '../../component/table/Table'
 import Control from '../../component/control/Control'
@@ -44,10 +43,7 @@ class ControlPage extends React.Component {
 
   render () {
     return (
-      <div className="prose">
-        <Helmet title="Control" />
-        <h1>Control</h1>
-        <PageMeta name="Control" />
+      <Page name="Control">
         <p>Controls are basic inputs and will rarely be used directly. You’ll likely use fields which will pull in the desired control type.</p>
         <Example toggleSource>
           <Control
@@ -92,7 +88,7 @@ class ControlPage extends React.Component {
           ]}
         />
         <p>Additional valid attributes can be added and will be passed directly to the control, e.g. disabled, id, onBlur, onChange, onFocus, placeholder, required</p>
-      </div>
+      </Page>
     )
   }
 }
