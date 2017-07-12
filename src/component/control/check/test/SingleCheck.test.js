@@ -42,16 +42,21 @@ describe('Component: SingleCheckControl', function () {
     assert.equal(wrapper.find('span').at(1).childAt(0).html(), '<span>I am <strong>HTML</strong></span>')
   })
 
+  it('should not add a checked attribute if value not set', function () {
+    const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
+    assert.equal(wrapper.find('CustomCheckControl').prop('checked'), undefined)
+  })
+
   it('should add a checked attribute if value === option.value', function () {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
-    assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)
+    assert.equal(wrapper.find('CustomCheckControl').prop('checked'), undefined)
     wrapper.setProps({ value: 1 })
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), true)
   })
 
   it('should add a checked attribute if value is in an array of option values', function () {
     const wrapper = shallow(<SingleCheckControl {...defaultProps} />)
-    assert.equal(wrapper.find('CustomCheckControl').prop('checked'), false)
+    assert.equal(wrapper.find('CustomCheckControl').prop('checked'), undefined)
     wrapper.setProps({ value: [ 1, 2, 3 ] })
     assert.equal(wrapper.find('CustomCheckControl').prop('checked'), true)
   })

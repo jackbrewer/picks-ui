@@ -119,6 +119,19 @@ class ControlCheckPage extends React.Component {
             type="checkbox"
             />
         </Example>
+        <p>Uncontrolled inputs</p>
+        <Example>
+          <Control
+            name="exampleUncontrolledRadio"
+            options={[ { text: 'Text here 1', value: 'Bar1' } ]}
+            type="radio"
+            />
+          <Control
+            name="exampleUncontrolledCheckbox"
+            options={[ { text: 'Text here 1', value: 'Bar1' } ]}
+            type="checkbox"
+            />
+        </Example>
         <h3>Attributes</h3>
         <p>These need splitting and explaining better</p>
         <Example noPreview>

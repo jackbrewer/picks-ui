@@ -8,15 +8,21 @@ const SingleCheckControl = ({ option, native, value, ...other }) => {
   const CheckControlType = native ? NativeCheckControl : CustomCheckControl
 
   function isChecked (optionValue) {
-    if (Array.isArray(value) && value.includes(optionValue)) return true
+    if (!value) return false
     if (value === optionValue) return true
+    if (Array.isArray(value) && value.includes(optionValue)) return true
     return false
   }
 
   return (
     <label className="control-wrap">
       <span className="control-wrap__item control-wrap__item--shrink">
-        <CheckControlType {...other} value={option.value} checked={isChecked(option.value)} />
+        <CheckControlType
+          {...other}
+          value={option.value}
+          {...isChecked(option.value) && { checked: true }}
+          required={option.required}
+        />
       </span>
       <span className="control-wrap__item">{option.text}</span>
     </label>
